@@ -13,7 +13,7 @@ const BottomTabNavigator = () => {
       screenOptions={{
         // ...
         style: {borderTopWidth: 0},
-        tabBarActiveTintColor: '#00ccff',
+        tabBarActiveTintColor: '#1e90ff',
         tabBarInactiveTintColor: '#ababab',
         tabBarShowLabel: false,
       }}>
@@ -25,7 +25,7 @@ const BottomTabNavigator = () => {
           headerShown: false,
           headerShadowVisible: false,
           tabBarIcon: ({color, style}) => (
-            <Icons.GlobeAmericasIcon size={30} color={color} />
+            <Icons.HomeModernIcon size={30} color={color} />
           ),
         }}
       />
