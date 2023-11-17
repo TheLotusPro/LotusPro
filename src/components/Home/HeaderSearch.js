@@ -39,7 +39,7 @@ export default HeaderSearch;
 
 const styles = StyleSheet.create({
   container: {
-    margin: 10,
+    margin: 20,
     marginLeft: 19,
     flexDirection: "row",
     alignItems: "center",

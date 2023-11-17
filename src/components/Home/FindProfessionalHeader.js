@@ -1,7 +1,8 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import * as Icons from "react-native-heroicons/solid";
 import { useTheme } from '@react-navigation/native';
+import { Text } from "@gluestack-ui/themed";
 
 
 const FindProfessionalHeader = () => {

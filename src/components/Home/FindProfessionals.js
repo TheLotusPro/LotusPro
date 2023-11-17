@@ -22,7 +22,7 @@ export default FindProfessionals;
 const styles = StyleSheet.create({
   container: {
     margin: 10,
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: '#708090',
     shadowColor: "gray",
     shadowOpacity: 0.8,
     shadowRadius: 2,
@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
       width: 0.5
     },
     borderRadius: 10,
-    height: 135
+    height: 135,
+    marginBottom: 20
 
   
   },
