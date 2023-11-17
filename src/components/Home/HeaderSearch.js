@@ -28,7 +28,7 @@ const HeaderSearch = () => {
           <Icons.CameraIcon size={20} color={"gray"} />
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={{ marginRight: 10 }}>
+      <TouchableOpacity >
         <Icons.ShoppingCartIcon size={20} color={"gray"} />
       </TouchableOpacity>
     </View>
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   searchContainer: {
-    width: "85%",
+    width: "90%",
     borderColor: "#a9a9a950",
     borderWidth: 1,
     borderRadius: 10,
