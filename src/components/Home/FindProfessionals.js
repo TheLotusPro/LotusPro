@@ -1,31 +1,18 @@
-import { StyleSheet, TouchableOpacity, View, Image } from "react-native";
+import { StyleSheet, TouchableWithoutFeedback, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { Text } from "@gluestack-ui/themed";
 import * as Icons from "react-native-heroicons/solid";
 import HomeReno from "../../assets/images/HomeReno.jpeg";
 
-const FindProfessionals = () => {
+const FindProfessionals = (props) => {
   return (
     <View style={styles.container}>
-      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-        <View>
-          <Text style={styles.title}>Find Professionals</Text>
+      <TouchableWithoutFeedback style={styles.imageContainer}>
+        <View style={{ flexDirection: "column" }}>
+          <Image source={props?.proData?.image} style={styles.image} />
+          <Text style={styles.imageTitle}>{props?.proData?.name}</Text>
         </View>
-
-        <TouchableOpacity
-          style={{ flexDirection: "row", alignItems: "center" }}
-        >
-          <Text style={styles.seeAll}>See all</Text>
-          <Icons.ArrowLongRightIcon size={25} color={"#fa8072"} />
-        </TouchableOpacity>
-      </View>
-
-      <TouchableOpacity style={styles.imageContainer}>
-        <View style={{flexDirection: 'column'}}>
-          <Image source={HomeReno} style={styles.image} />
-          <Text style={styles.imageTitle}>Home Renovations</Text>
-        </View>
-      </TouchableOpacity>
+      </TouchableWithoutFeedback>
     </View>
   );
 };
@@ -34,16 +21,19 @@ export default FindProfessionals;
 
 const styles = StyleSheet.create({
   container: {
-    margin: 15,
-  },
-  title: {
-    fontWeight: "bold",
-    fontSize: 16,
-  },
-  seeAll: {
-    color: "#fa8072",
-    fontSize: 14,
-    marginRight: 5,
+    margin: 10,
+    backgroundColor: '#fffafa',
+    shadowColor: "gray",
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 0.5,
+      width: 0.5
+    },
+    borderRadius: 10,
+    height: 135
+
+  
   },
   image: {
     height: 100,
@@ -53,22 +43,16 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     marginTop: 15,
-    backgroundColor: 'white',
-    width: 200,
-    height: 140,
+    backgroundColor: "white",
+
     borderRadius: 10,
-    shadowColor: "gray",
-    shadowOpacity: 0.3,
-    shadowOffset: {
-      height: 0.1,
-      width: 0.5
-    }
+  
   },
   imageTitle: {
     fontWeight: "bold",
     fontSize: 13,
-    alignSelf: 'center',
-    marginTop: 7
-    
+    alignSelf: "center",
+    marginTop: 5,
+
   },
 });
