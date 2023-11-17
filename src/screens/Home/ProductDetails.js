@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Dimensions, Image } from "react-native";
+import { StyleSheet, Text, View, Dimensions, Image, TouchableOpacity } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import { useNavigation, useTheme } from "@react-navigation/native";
-import * as Icons from 'react-native-heroicons/outline';
+import * as Icons from "react-native-heroicons/outline";
 
 const { width } = Dimensions.get("window");
 
@@ -57,12 +57,13 @@ const ProductDetails = () => {
       </View>
 
       {/* Add the Go Back button at the top left */}
-      <Icons.ArrowLeftCircleIcon
-        onPress={goBack}
-        size={40}
-  
-        style={[styles.backButton, {color: '#fa8072'}]}
-      />
+      <TouchableOpacity 
+      onPress={goBack}
+      style={[styles.backButton]}>
+        <View style={{ padding: 3 }}>
+          <Icons.ArrowLongLeftIcon style={{color: 'white'}} size={30} />
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -111,6 +112,9 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 43,
     left: 20,
-    zIndex: 1, // Set a higher zIndex to make sure it's on top
+    zIndex: 1,
+    backgroundColor: "#fa807250",
+    borderRadius: 30,
+
   },
 });
