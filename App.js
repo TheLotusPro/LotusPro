@@ -8,7 +8,7 @@ export default function App() {
   return (
     <GluestackUIProvider config={config}>
       <View style={styles.container}>
-        <Text>Lotus Pro</Text>
+        <Text>Lotus Pro!</Text>
       </View>
     </GluestackUIProvider>
   );
