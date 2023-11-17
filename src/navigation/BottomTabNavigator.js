@@ -1,14 +1,36 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import * as Icons from 'react-native-heroicons/solid';
+import HomeScreen from '../screens/Home/HomeScreen'
+import HomeStackNavigator from "./HomeStackNavigator";
 
-const Tab = createBottomTabNavigator();
+const BottomTab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
   return (
-    <View>
-      <Text style={{color: 'red'}}>BottomTabNavigator</Text>
-    </View>
+    <BottomTab.Navigator
+      screenOptions={{
+        // ...
+        style: {borderTopWidth: 0},
+        tabBarActiveTintColor: '#00ccff',
+        tabBarInactiveTintColor: '#ababab',
+        tabBarShowLabel: false,
+      }}>
+         <BottomTab.Screen
+        name="Home"
+        component={HomeStackNavigator}
+        options={{
+          unmountOnBlur: true,
+          headerShown: false,
+          headerShadowVisible: false,
+          tabBarIcon: ({color, style}) => (
+            <Icons.GlobeAmericasIcon size={30} color={color} />
+          ),
+        }}
+      />
+
+      </BottomTab.Navigator>
   );
 };
 
