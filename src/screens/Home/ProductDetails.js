@@ -1,8 +1,15 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Dimensions, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Dimensions,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import { useNavigation, useTheme } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/outline";
+import { Text } from "@gluestack-ui/themed";
 
 const { width } = Dimensions.get("window");
 
@@ -13,6 +20,15 @@ const data = [
 ];
 
 const ProductDetails = () => {
+  return (
+    <View>
+      <Header />
+      <Info />
+    </View>
+  );
+};
+
+const Header = () => {
   const { colors } = useTheme();
   const [activeSlide, setActiveSlide] = useState(0);
   const navigation = useNavigation();
@@ -57,12 +73,29 @@ const ProductDetails = () => {
       </View>
 
       {/* Add the Go Back button at the top left */}
-      <TouchableOpacity 
-      onPress={goBack}
-      style={[styles.backButton]}>
+      <TouchableOpacity onPress={goBack} style={[styles.backButton]}>
         <View style={{ padding: 3 }}>
-          <Icons.ArrowLongLeftIcon style={{color: 'white'}} size={30} />
+          <Icons.ArrowLongLeftIcon style={{ color: "white" }} size={30} />
         </View>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const Info = () => {
+  const { colors } = useTheme();
+
+  return (
+    <View style={styles.infoContainer}>
+      <View>
+        <Text style={[styles.title, { color: colors.text }]}>
+          Victorian Villa Designs
+        </Text>
+      </View>
+
+      <TouchableOpacity style={{ alignItems: "center" }}>
+        <Icons.HeartIcon style={{ color: "gray" }} size={30} />
+        <Text>0</Text>
       </TouchableOpacity>
     </View>
   );
@@ -100,9 +133,9 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 50,
     right: 20,
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backgroundColor: "#fa807250",
     padding: 5,
-    borderRadius: 20,
+    borderRadius: 10,
   },
   imageCountText: {
     color: "white",
@@ -114,7 +147,16 @@ const styles = StyleSheet.create({
     left: 20,
     zIndex: 1,
     backgroundColor: "#fa807250",
-    borderRadius: 30,
-
+    borderRadius: 10,
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: "500",
+  },
+  infoContainer: {
+    margin: 20,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
 });
