@@ -5,7 +5,7 @@ import * as Icons from "react-native-heroicons/solid";
 const HomeHeaderRight = () => {
   return (
     <TouchableOpacity style={styles.container}>
-      <Icons.BellAlertIcon size={30} color={"dodgerblue"} />
+      <Icons.BellAlertIcon size={30} color={"#fa8072"} />
     </TouchableOpacity>
   );
 };

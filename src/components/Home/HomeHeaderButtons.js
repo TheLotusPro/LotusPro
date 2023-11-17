@@ -15,7 +15,7 @@ const HomeHeaderButtons = () => {
       <View style={styles.containerOptions}>
         <TouchableOpacity style={styles.options}>
           <View style={styles.background}>
-            <Icons.LightBulbIcon size={25} color={"dodgerblue"} />
+            <Icons.LightBulbIcon size={25} color={"#fa8072"} />
           </View>
           <View>
             <Text style={styles.title}>Ideas</Text>
@@ -24,7 +24,7 @@ const HomeHeaderButtons = () => {
 
         <TouchableOpacity style={styles.options}>
           <View style={styles.background}>
-            <Icons.BriefcaseIcon size={25} color={"dodgerblue"} />
+            <Icons.BriefcaseIcon size={25} color={"#fa8072"} />
           </View>
           <View>
             <Text style={styles.title}>Pros</Text>
@@ -33,7 +33,7 @@ const HomeHeaderButtons = () => {
 
         <TouchableOpacity style={styles.options}>
           <View style={styles.background}>
-            <Icons.ShoppingBagIcon size={25} color={"dodgerblue"} />
+            <Icons.ShoppingBagIcon size={25} color={"#fa8072"} />
           </View>
           <View>
             <Text style={styles.title}>Shop</Text>
@@ -42,7 +42,7 @@ const HomeHeaderButtons = () => {
 
         <TouchableOpacity style={styles.options}>
           <View style={styles.background}>
-            <Icons.AcademicCapIcon size={25} color={"dodgerblue"} />
+            <Icons.AcademicCapIcon size={25} color={"#fa8072"} />
           </View>
           <View>
             <Text style={styles.title}>Advice</Text>
@@ -57,7 +57,7 @@ export default HomeHeaderButtons;
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: "#1e90ff50",
+    backgroundColor: "#fa807250",
     width: 25,
     height: 25,
     padding: 25,
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
   },
   title: {
-    color: "dodgerblue",
+    color: "#fa8072",
     marginTop: 10,
     fontSize: 14,
   },

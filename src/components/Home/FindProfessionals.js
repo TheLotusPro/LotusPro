@@ -16,7 +16,7 @@ const FindProfessionals = () => {
           style={{ flexDirection: "row", alignItems: "center" }}
         >
           <Text style={styles.seeAll}>See all</Text>
-          <Icons.ArrowLongRightIcon size={25} color={"dodgerblue"} />
+          <Icons.ArrowLongRightIcon size={25} color={"#fa8072"} />
         </TouchableOpacity>
       </View>
 
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   seeAll: {
-    color: "dodgerblue",
+    color: "#fa8072",
     fontSize: 14,
     marginRight: 5,
   },
