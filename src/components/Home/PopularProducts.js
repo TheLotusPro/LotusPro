@@ -12,11 +12,11 @@ const PopularProducts = () => {
       <View style={{ alignItems: "center" }}>
         <Image source={Design} style={styles.image} />
       </View>
-      <View style={{ margin: 5, marginTop: 5, padding: 10 }}>
-        <Text style={[styles.title, { color: 'white' }]}>
+      <View style={{ margin: 5, marginTop: 5, padding: 5 }}>
+        <Text style={[styles.title, { color: "white" }]}>
           Victorian Villa by Absolute Architecture
         </Text>
-        <Text style={[styles.user, { color: 'white' }]}>
+        <Text style={[styles.user, { color: "white" }]}>
           by James Architecture Group
         </Text>
       </View>
@@ -29,16 +29,9 @@ export default PopularProducts;
 const styles = StyleSheet.create({
   container: {
     margin: 10,
-    backgroundColor: "#708090",
+    backgroundColor: "#fa8072",
     borderRadius: 10,
     maxHeight: 350,
-    shadowColor: "gray",
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    shadowOffset: {
-      height: 0.5,
-      width: 0.5,
-    },
   },
   image: {
     width: "100%",
