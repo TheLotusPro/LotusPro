@@ -3,12 +3,13 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 import { GluestackUIProvider, Text } from "@gluestack-ui/themed";
 import { config } from "@gluestack-ui/config";
+import Navigation from './src/navigation/index'
 
 export default function App() {
   return (
     <GluestackUIProvider config={config}>
       <View style={styles.container}>
-        <Text>Lotus Pro!</Text>
+       <Navigation />
       </View>
     </GluestackUIProvider>
   );
