@@ -1,21 +1,31 @@
-import { StyleSheet, View, Image, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Image,
+  Dimensions,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  Pressable,
+} from "react-native";
 import React, { useState } from "react";
 import Design from "../../assets/images/BathroomRemodeling.jpeg";
 import { Text } from "@gluestack-ui/themed";
-import { useTheme } from "@react-navigation/native";
-import Carousel, { Pagination } from 'react-native-snap-carousel';
+import { useNavigation, useTheme } from "@react-navigation/native";
+import Carousel, { Pagination } from "react-native-snap-carousel";
+import Lightbox from "react-native-lightbox-v2";
 
-const { width } = Dimensions.get('window');
+const { width } = Dimensions.get("window");
 
 const data = [
-  { id: '1', source: require('../../assets/images/ArchitecturalDesigns.jpeg') },
-  { id: '2', source: require('../../assets/images/ArchitecturalDrawing.jpeg') },
-  { id: '3', source: require('../../assets/images/BathroomRemodeling.jpeg') },
+  { id: "1", source: require("../../assets/images/ArchitecturalDesigns.jpeg") },
+  { id: "2", source: require("../../assets/images/ArchitecturalDrawing.jpeg") },
+  { id: "3", source: require("../../assets/images/BathroomRemodeling.jpeg") },
 ];
 
 const PopularProducts = () => {
   const { colors } = useTheme();
   const [activeSlide, setActiveSlide] = useState(0);
+  const navigation = useNavigation();
 
   const renderItem = ({ item }) => {
     return (
@@ -29,33 +39,42 @@ const PopularProducts = () => {
   return (
     <View style={styles.container}>
       <View style={{ alignItems: "center" }}>
-      <Carousel
-        data={data}
-        renderItem={renderItem}
-        sliderWidth={width -20}
-        itemWidth={width -20}
-        style={styles.image}
-        onSnapToItem={(index) => setActiveSlide(index)}
-      />
+        <Carousel
+          data={data}
+          renderItem={renderItem}
+          sliderWidth={width - 20}
+          itemWidth={width - 20}
+          style={styles.image}
+          onSnapToItem={(index) => setActiveSlide(index)}
+        />
         <Pagination
-        dotsLength={data.length}
-        activeDotIndex={activeSlide}
-        containerStyle={styles.paginationContainer}
-        dotStyle={styles.dotStyle}
-        inactiveDotStyle={styles.inactiveDotStyle}
-        inactiveDotOpacity={0.6}
-        inactiveDotScale={0.8}
-      />
+          dotsLength={data.length}
+          activeDotIndex={activeSlide}
+          containerStyle={styles.paginationContainer}
+          dotStyle={styles.dotStyle}
+          inactiveDotStyle={styles.inactiveDotStyle}
+          inactiveDotOpacity={0.6}
+          inactiveDotScale={0.8}
+        />
 
+        <View style={styles.imageCountContainer}>
+          <Text style={styles.imageCountText}>
+            {activeSlide + 1}/{data.length}
+          </Text>
+        </View>
       </View>
-      <View style={{ margin: 5, marginTop: 5, padding: 5 }}>
-        <Text style={[styles.title, { color: "white" }]}>
+
+      <TouchableOpacity
+        onPress={() => navigation.navigate("ProductDetails")}
+        style={{ margin: 5, marginTop: 5, padding: 5 }}
+      >
+        <Text style={[styles.title, { color: "black" }]}>
           Victorian Villa Designs
         </Text>
-        <Text style={[styles.user, { color: "white" }]}>
+        <Text style={[styles.user, { color: "black" }]}>
           by James Architecture Group
         </Text>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -65,9 +84,16 @@ export default PopularProducts;
 const styles = StyleSheet.create({
   container: {
     margin: 10,
-    backgroundColor: "#fa8072",
+    backgroundColor: "#f8f8ff",
     borderRadius: 10,
     maxHeight: 350,
+    shadowColor: "gray",
+    shadowOpacity: 0.5,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 1,
+      width: 1,
+    },
   },
   image: {
     width: "100%",
@@ -84,15 +110,27 @@ const styles = StyleSheet.create({
   },
   paginationContainer: {
     marginTop: -20,
-    marginBottom: -30
+    marginBottom: -30,
   },
   dotStyle: {
-    width: 10,
-    height: 10,
+    width: 7,
+    height: 7,
     borderRadius: 5,
-    backgroundColor: 'rgba(255, 255, 255, 0.92)',
+    backgroundColor: "#fa8072",
   },
   inactiveDotStyle: {
     // You can customize the inactive dot style here
+  },
+  imageCountContainer: {
+    position: "absolute",
+    top: 10,
+    right: 10,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    padding: 5,
+    borderRadius: 20,
+  },
+  imageCountText: {
+    color: "white",
+    fontSize: 14,
   },
 });

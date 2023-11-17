@@ -3,14 +3,17 @@ import React from "react";
 import { Text } from "@gluestack-ui/themed";
 import * as Icons from "react-native-heroicons/solid";
 import HomeReno from "../../assets/images/HomeReno.jpeg";
+import { useTheme } from "@react-navigation/native";
 
 const FindProfessionals = (props) => {
+  const { colors } = useTheme();
+
   return (
     <View style={styles.container}>
       <TouchableWithoutFeedback style={styles.imageContainer}>
         <View style={{ flexDirection: "column" }}>
           <Image source={props?.proData?.image} style={styles.image} />
-          <Text style={styles.imageTitle}>{props?.proData?.name}</Text>
+          <Text style={[styles.imageTitle, {color: 'black'}]}>{props?.proData?.name}</Text>
         </View>
       </TouchableWithoutFeedback>
     </View>
@@ -22,12 +25,17 @@ export default FindProfessionals;
 const styles = StyleSheet.create({
   container: {
     margin: 10,
-    backgroundColor: "#fa8072",
-
-  
+    backgroundColor: "#f8f8ff",
     borderRadius: 10,
     height: 135,
-    marginBottom: 20
+    marginBottom: 20,
+    shadowColor: "gray",
+    shadowOpacity: 0.5,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 1,
+      width: 1
+    }
 
   
   },

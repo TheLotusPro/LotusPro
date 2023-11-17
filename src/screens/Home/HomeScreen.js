@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { StyleSheet, Text, View, FlatList, ScrollView } from "react-native";
 import React from "react";
 import HomeHeaderButtons from "../../components/Home/HomeHeaderButtons";
 import FindProfessionals from "../../components/Home/FindProfessionals";
@@ -9,13 +9,13 @@ import PopularProductsHeader from "../../components/Home/PopularProductsHeader";
 
 const HomeScreen = () => {
   return (
-    <View>
+    <ScrollView>
       <HomeHeaderButtons />
       <FindProfessionalHeader />
       <Header />
       <PopularProductsHeader />
       <PopularProducts />
-    </View>
+    </ScrollView>
   );
 };
 
