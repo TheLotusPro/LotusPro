@@ -73,11 +73,6 @@ const Header = () => {
       </View>
 
       {/* Add the Go Back button at the top left */}
-      <TouchableOpacity onPress={goBack} style={[styles.backButton]}>
-        <View style={{ padding: 3 }}>
-          <Icons.ArrowLongLeftIcon style={{ color: "white" }} size={30} />
-        </View>
-      </TouchableOpacity>
     </View>
   );
 };
@@ -86,17 +81,31 @@ const Info = () => {
   const { colors } = useTheme();
 
   return (
-    <View style={styles.infoContainer}>
-      <View>
-        <Text style={[styles.title, { color: colors.text }]}>
-          Victorian Villa Designs
-        </Text>
+    <View style={{ margin: 10 }}>
+      {/* Header */}
+      <View style={styles.infoContainerHeader}>
+        <View>
+          <Text style={[styles.title, { color: colors.text }]}>
+            Victorian Villa Designs
+          </Text>
+        </View>
+
+        <TouchableOpacity style={{ alignItems: "center" }}>
+          <Icons.HeartIcon style={{ color: "gray" }} size={30} />
+          <Text style={{ fontWeight: "bold", color: "gray" }}>0</Text>
+        </TouchableOpacity>
+      </View>
+      {/* Price */}
+      <View style={{ marginHorizontal: 10, marginTop: 20 }}>
+        <Text style={styles.price}>$1,599</Text>
       </View>
 
-      <TouchableOpacity style={{ alignItems: "center" }}>
-        <Icons.HeartIcon style={{ color: "gray" }} size={30} />
-        <Text>0</Text>
-      </TouchableOpacity>
+      {/* Reviews */}
+      <View style={styles.reviewContainer}>
+        <View style={{ margin: 20 }}>
+          <Text style={[{color:'yellow'}]}>20 Reviews</Text>
+        </View>
+      </View>
     </View>
   );
 };
@@ -113,8 +122,6 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: 300,
-    borderTopRightRadius: 10,
-    borderTopLeftRadius: 10,
   },
   paginationContainer: {
     marginTop: -20,
@@ -131,7 +138,7 @@ const styles = StyleSheet.create({
   },
   imageCountContainer: {
     position: "absolute",
-    top: 50,
+    top: 20,
     right: 20,
     backgroundColor: "#fa807250",
     padding: 5,
@@ -153,10 +160,22 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: "500",
   },
-  infoContainer: {
-    margin: 20,
+  infoContainerHeader: {
+    marginHorizontal: 10,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+  },
+  infoContainer: {},
+  price: {
+    color: "#fa8072",
+    fontWeight: "bold",
+    fontSize: 22,
+  },
+  reviewContainer: {
+    marginHorizontal: 10,
+    marginTop: 20,
+    backgroundColor: "red",
+    
   },
 });

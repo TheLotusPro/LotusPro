@@ -3,6 +3,8 @@ import React from "react";
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import BottomTabNavigator from "./BottomTabNavigator";
 import ProductDetails from "../screens/Home/ProductDetails";
+import ProductHeaderLeft from '../components/Products/ProductHeaderLeft'
+import ProductHeaderRight from "../components/Products/ProductHeaderRight";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,8 +23,11 @@ const RootNavigator = () => {
       name="ProductDetails"
       component={ProductDetails}
       options={{
-        headerShown: false,
-        headerBackTitle: ' ',
+        headerShown: true,
+        headerShadowVisible: false,
+         headerTitle: 'Product Details',
+          headerLeft: () => <ProductHeaderLeft />,
+          headerRight: () => <ProductHeaderRight />,
       }}
     />
   </Stack.Navigator>
