@@ -11,7 +11,7 @@ const PopularProductsHeader = () => {
     return (
       <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 15  }}>
         <View>
-          <Text style={[styles.title, {color: colors.text}]}>Popular</Text>
+          <Text style={[styles.title, {color: colors.text}]}>Popular Designs</Text>
         </View>
   
         <TouchableOpacity style={{ flexDirection: "row", alignItems: "center" }}>

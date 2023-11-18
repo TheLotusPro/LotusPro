@@ -25,7 +25,7 @@ const RootNavigator = () => {
       options={{
         headerShown: true,
         headerShadowVisible: false,
-         headerTitle: 'Product Details',
+         headerTitle: 'Details',
           headerLeft: () => <ProductHeaderLeft />,
           headerRight: () => <ProductHeaderRight />,
       }}
