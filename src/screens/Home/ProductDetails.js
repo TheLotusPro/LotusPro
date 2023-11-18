@@ -40,6 +40,7 @@ const ProductDetails = () => {
         <Info />
         <Buttons />
         <Reviews />
+        <UserInfo />
       </ScrollView>
       <Footer />
     </View>
@@ -130,7 +131,7 @@ const Info = () => {
         </TouchableOpacity>
       </View>
       {/* Price */}
-      <View style={{ marginHorizontal: 10, marginTop: 20 }}>
+      <View style={{ marginHorizontal: 10, marginTop: 10 }}>
         <Text style={styles.price}>$1,599</Text>
       </View>
 
@@ -336,6 +337,34 @@ const Reviews = () => {
   );
 };
 
+const UserInfo = () => {
+  const { colors } = useTheme();
+
+  return (
+    <View style={styles.userInfo}>
+      <Text style={[styles.userInfoText, { color: "#fa8072" }]}>
+        Fulfilled by
+      </Text>
+      <View style={{ marginTop: 10, flexDirection: 'row', alignItems: 'center' }}>
+        <Avatar>
+          <AvatarFallbackText>SS</AvatarFallbackText>
+          <AvatarImage
+            source={{
+              uri: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+            }}
+          />
+        </Avatar>
+        <View style={{marginHorizontal: 10}}>
+        <Text style={[styles.userInfoText, { color: colors.text }]}>
+          James Architecture Group
+        </Text>
+        </View>
+       
+      </View>
+    </View>
+  );
+};
+
 export default ProductDetails;
 
 const styles = StyleSheet.create({
@@ -409,6 +438,8 @@ const styles = StyleSheet.create({
   },
   rating: {
     marginLeft: 10,
+    fontSize: 13,
+    fontWeight: "300",
   },
   avatar: {
     right: 10,
@@ -438,5 +469,12 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     flex: 1,
     backgroundColor: "red",
+  },
+  userInfo: {
+    paddingHorizontal: 20,
+
+  },
+  userInfoText: {
+    fontWeight: "bold",
   },
 });

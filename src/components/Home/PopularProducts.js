@@ -84,14 +84,14 @@ export default PopularProducts;
 const styles = StyleSheet.create({
   container: {
     margin: 10,
-    backgroundColor: "#f8f8ff",
+    backgroundColor: "#e0ffff",
     borderRadius: 10,
     maxHeight: 350,
     shadowColor: "gray",
-    shadowOpacity: 0.5,
+    shadowOpacity: 1.8,
     shadowRadius: 2,
     shadowOffset: {
-      height: 1,
+      height: 2,
       width: 1,
     },
   },
@@ -125,9 +125,9 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 10,
     right: 10,
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backgroundColor: "#fa807250",
     padding: 5,
-    borderRadius: 20,
+    borderRadius: 10,
   },
   imageCountText: {
     color: "white",

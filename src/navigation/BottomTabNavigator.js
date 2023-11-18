@@ -5,6 +5,9 @@ import * as Icons from 'react-native-heroicons/solid';
 import HomeScreen from '../screens/Home/HomeScreen'
 import HomeStackNavigator from "./HomeStackNavigator";
 import TestScreen from "../screens/TestScreen";
+import ChatStackNavigator from "./ChatStackNavigator";
+import ProfileStackNavigator from "./ProfileStackNavigator";
+import IdeaStackNavigator from "./IdeaStackNavigator";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -16,7 +19,7 @@ const BottomTabNavigator = () => {
         style: {borderTopWidth: 0},
         tabBarActiveTintColor: '#fa8072',
         tabBarInactiveTintColor: '#ababab',
-        tabBarShowLabel: false,
+        tabBarShowLabel: true,
       }}>
          <BottomTab.Screen
         name="Home"
@@ -26,7 +29,31 @@ const BottomTabNavigator = () => {
           headerShown: false,
           headerShadowVisible: false,
           tabBarIcon: ({color, style}) => (
-            <Icons.HomeModernIcon size={30} color={color} />
+            <Icons.HomeModernIcon size={25} color={color} />
+          ),
+        }}
+      />
+          <BottomTab.Screen
+        name="Chat"
+        component={ChatStackNavigator}
+        options={{
+          unmountOnBlur: true,
+          headerShown: false,
+          headerShadowVisible: false,
+          tabBarIcon: ({color, style}) => (
+            <Icons.ChatBubbleLeftEllipsisIcon size={25} color={color} />
+          ),
+        }}
+      />
+         <BottomTab.Screen
+        name="Ideabooks"
+        component={IdeaStackNavigator}
+        options={{
+          unmountOnBlur: true,
+          headerShown: false,
+          headerShadowVisible: false,
+          tabBarIcon: ({color, style}) => (
+            <Icons.HeartIcon size={25} color={color} />
           ),
         }}
       />
@@ -38,7 +65,19 @@ const BottomTabNavigator = () => {
           headerShown: false,
           headerShadowVisible: false,
           tabBarIcon: ({color, style}) => (
-            <Icons.RocketLaunchIcon size={30} color={color} />
+            <Icons.RocketLaunchIcon size={25} color={color} />
+          ),
+        }}
+      />
+          <BottomTab.Screen
+        name="Profile"
+        component={ProfileStackNavigator}
+        options={{
+          unmountOnBlur: true,
+          headerShown: false,
+          headerShadowVisible: false,
+          tabBarIcon: ({color, style}) => (
+            <Icons.UserCircleIcon size={25} color={color} />
           ),
         }}
       />

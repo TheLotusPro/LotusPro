@@ -9,7 +9,7 @@ import PopularProductsHeader from "../../components/Home/PopularProductsHeader";
 
 const HomeScreen = () => {
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <HomeHeaderButtons />
       <FindProfessionalHeader />
       <Header />

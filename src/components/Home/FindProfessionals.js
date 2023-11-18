@@ -25,15 +25,15 @@ export default FindProfessionals;
 const styles = StyleSheet.create({
   container: {
     margin: 10,
-    backgroundColor: "#f8f8ff",
+    backgroundColor: "#e0ffff",
     borderRadius: 10,
     height: 135,
     marginBottom: 20,
     shadowColor: "gray",
-    shadowOpacity: 0.5,
+    shadowOpacity: 1.8,
     shadowRadius: 2,
     shadowOffset: {
-      height: 1,
+      height: 2,
       width: 1
     }
 
