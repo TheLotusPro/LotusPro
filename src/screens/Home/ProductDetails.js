@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   StyleSheet,
   View,
@@ -157,21 +157,30 @@ const Info = () => {
 
 const Buttons = () => {
   const [activeCategory, setActiveCategory] = useState(1)
+  const carouselRef = useRef(null);
+
+  const handleSnapToItem = (index) => {
+    setActiveCategory(catagories[index].id);
+  };
+
   return (
     <View style={styles.buttonContainer}>
       <View>
-        <FlatList
+      <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
           data={catagories}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => {
             let isActive = item.id === activeCategory;
-            let textColor = isActive ? 'white' : 'gray'; // Change text color prop
+            let textColor = isActive ? 'white' : 'gray';
 
             return (
               <TouchableOpacity
-                onPress={() => setActiveCategory(item.id)} // Update the active category
+                onPress={() => {
+                  setActiveCategory(item.id);
+                  carouselRef.current?.snapToItem(catagories.indexOf(item));
+                }}
                 style={[styles.button, { backgroundColor: isActive ? '#fa8072' : '#fa807250' }]}>
                 <Text style={{ color: textColor, fontWeight: '600' }}>{item.title}</Text>
               </TouchableOpacity>
@@ -181,17 +190,18 @@ const Buttons = () => {
       </View>
 
       <View style={{marginTop: 20, marginHorizontal: 10}}>
-        <Carousel
-        containerCustomStyle={{overflow: 'visible'}}
-        data={buttonItems}
-        renderItem={({item}) => <ProductCardDesign item={item} />}
-        firstItem={1}
-        inactiveSlideOpacity={0.75}
-        inactiveSlideScale={0.77}
-        sliderWidth={400}
-        itemWidth={400}
-       
-         />
+      <Carousel
+          ref={carouselRef}
+          containerCustomStyle={{ overflow: 'visible' }}
+          data={buttonItems}
+          renderItem={({ item }) => <ProductCardDesign item={item} />}
+          firstItem={1}
+          inactiveSlideOpacity={0.75}
+          inactiveSlideScale={0.77}
+          sliderWidth={400}
+          itemWidth={400}
+          onSnapToItem={handleSnapToItem}
+        />
       </View>
 
 
