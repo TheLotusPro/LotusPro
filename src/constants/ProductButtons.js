@@ -20,20 +20,20 @@ export const catagories = [
 export const buttonItems = [
     {
         id: 1,
-        Description: "This is a test 1",
+        Description: "This will be the item Description",
         
     },
     {
         id: 2,
-        Description: "This is a test 2",
+        Description: "This will be the item Specs",
     },
     {
         id: 3,
-        Description: "This is a test 3",
+        Description: "This will be the order details",
     },
     {
         id: 4,
-        Description: "This is a test 4",
+        Description: "This will be the policy",
 
     }
 ]

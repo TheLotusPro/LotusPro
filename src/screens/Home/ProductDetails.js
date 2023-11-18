@@ -18,10 +18,12 @@ import {
   AvatarFallbackText,
   AvatarImage,
   Text,
+  Progress,
+  ProgressFilledTrack,
 } from "@gluestack-ui/themed";
-import { buttonItems, catagories} from "../../constants/ProductButtons";
+import { buttonItems, catagories } from "../../constants/ProductButtons";
 import ProductCardDesign from "../../components/Products/ProductCardDesign";
-
+import Footer from '../../components/Products/Footer'
 const { width } = Dimensions.get("window");
 
 const data = [
@@ -32,11 +34,15 @@ const data = [
 
 const ProductDetails = () => {
   return (
-    <ScrollView>
-      <Header />
-      <Info />
-      <Buttons />
-    </ScrollView>
+    <View style={{flex: 1}}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Header />
+        <Info />
+        <Buttons />
+        <Reviews />
+      </ScrollView>
+      <Footer/>
+    </View>
   );
 };
 
@@ -77,11 +83,11 @@ const Header = () => {
         inactiveDotScale={0.8}
       />
 
-      {/* <View style={styles.imageCountContainer}>
+      <View style={styles.imageCountContainer}>
         <Text style={styles.imageCountText}>
           {activeSlide + 1}/{data.length}
         </Text>
-      </View> */}
+      </View>
 
       {/* Add the Go Back button at the top left */}
     </View>
@@ -130,7 +136,7 @@ const Info = () => {
 
       {/* Reviews */}
       <TouchableOpacity style={styles.reviewContainer}>
-        <View style={{ margin: 20 }}>
+        <View style={{ margin: 12 }}>
           <View style={{ flexDirection: "row" }}>
             <Icon.StarIcon size={25} color={"gold"} />
             <Icon.StarIcon size={25} color={"gold"} />
@@ -142,8 +148,8 @@ const Info = () => {
             </View>
           </View>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Text style={[{ color: colors.text }]}>20 Reviews</Text>
-            <Icon.ChevronRightIcon size={20} color={"black"} />
+            <Text style={[{ color: "gray", fontSize: 14 }]}>20 Reviews</Text>
+            <Icon.ChevronRightIcon size={15} color={"gray"} />
           </View>
         </View>
 
@@ -156,7 +162,7 @@ const Info = () => {
 };
 
 const Buttons = () => {
-  const [activeCategory, setActiveCategory] = useState(1)
+  const [activeCategory, setActiveCategory] = useState(1);
   const carouselRef = useRef(null);
 
   const handleSnapToItem = (index) => {
@@ -165,15 +171,15 @@ const Buttons = () => {
 
   return (
     <View style={styles.buttonContainer}>
-      <View>
-      <FlatList
+      <View style={{ marginHorizontal: 20 }}>
+        <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
           data={catagories}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => {
             let isActive = item.id === activeCategory;
-            let textColor = isActive ? 'white' : 'gray';
+            let textColor = isActive ? "white" : "gray";
 
             return (
               <TouchableOpacity
@@ -181,18 +187,24 @@ const Buttons = () => {
                   setActiveCategory(item.id);
                   carouselRef.current?.snapToItem(catagories.indexOf(item));
                 }}
-                style={[styles.button, { backgroundColor: isActive ? '#fa8072' : '#fa807250' }]}>
-                <Text style={{ color: textColor, fontWeight: '600' }}>{item.title}</Text>
+                style={[
+                  styles.button,
+                  { backgroundColor: isActive ? "#fa8072" : "#fa807250" },
+                ]}
+              >
+                <Text style={{ color: textColor, fontWeight: "600" }}>
+                  {item.title}
+                </Text>
               </TouchableOpacity>
             );
           }}
         />
       </View>
 
-      <View style={{marginTop: 20, marginHorizontal: 10}}>
-      <Carousel
+      <View style={{ marginTop: 20, marginHorizontal: 20 }}>
+        <Carousel
           ref={carouselRef}
-          containerCustomStyle={{ overflow: 'visible' }}
+          containerCustomStyle={{ overflow: "visible" }}
           data={buttonItems}
           renderItem={({ item }) => <ProductCardDesign item={item} />}
           firstItem={1}
@@ -203,12 +215,127 @@ const Buttons = () => {
           onSnapToItem={handleSnapToItem}
         />
       </View>
-
-
-      
     </View>
   );
 };
+
+const Reviews = () => {
+  const { colors } = useTheme();
+
+  return (
+    <View style={styles.bottomReviewContainer}>
+      <View
+        style={{
+          padding: 10,
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          marginHorizontal: 10,
+        }}
+      >
+        <Text style={{ color: "black", fontWeight: "bold" }}>Reviews</Text>
+        <Text style={{ color: "black", fontWeight: "400", fontSize: 14 }}>
+          50 Reviews
+        </Text>
+      </View>
+
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <View
+          style={{
+            backgroundColor: "black",
+            width: 100,
+            height: 100,
+            justifyContent: "center",
+            borderRadius: 10,
+            marginHorizontal: 20,
+          }}
+        >
+          <View style={{ alignItems: "center" }}>
+            <Text style={{ color: "white", fontSize: 23 }}>4.98</Text>
+            <Text style={{ color: "white" }}>out of 5</Text>
+          </View>
+        </View>
+
+        <View style={{ marginHorizontal: 10 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text style={[styles.ratingsText, { color: colors.text }]}>
+              Excellent
+            </Text>
+            <View style={{ marginHorizontal: 5 }}>
+              <Progress value={100} w={120} size="md">
+                <ProgressFilledTrack bg="#fa8072" />
+              </Progress>
+            </View>
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text style={[styles.ratingsText, { color: colors.text }]}>
+              Very Good
+            </Text>
+            <View style={{ marginHorizontal: 5 }}>
+              <Progress value={70} w={120} size="md">
+                <ProgressFilledTrack bg="#fa8072" />
+              </Progress>
+            </View>
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text style={[styles.ratingsText, { color: colors.text }]}>
+              Average
+            </Text>
+            <View style={{ marginHorizontal: 5 }}>
+              <Progress value={50} w={120} size="md">
+                <ProgressFilledTrack bg="#fa8072" />
+              </Progress>
+            </View>
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <Text style={[styles.ratingsText, { color: colors.text }]}>
+              Poor
+            </Text>
+            <View style={{ marginHorizontal: 5 }}>
+              <Progress value={20} w={120} size="md">
+                <ProgressFilledTrack bg="#fa8072" />
+              </Progress>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  );
+};
+
 
 export default ProductDetails;
 
@@ -290,16 +417,27 @@ const styles = StyleSheet.create({
     borderColor: "white",
     borderRadius: 30,
   },
-  buttonContainer: {
- 
-
-  },
   button: {
     padding: 10,
     borderRadius: 10,
-    margin: 5
-
-    
-    
-  }
+    margin: 5,
+  },
+  bottomReviewContainer: {
+    margin: 20,
+    backgroundColor: "#d3d3d350",
+    borderRadius: 10,
+    marginHorizontal: 12,
+    paddingBottom: 20,
+  },
+  ratingsText: {
+    fontSize: 13,
+    fontWeight: 300,
+  },
+  footer: {
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    marginBottom: 10,
+    flex: 1,
+    backgroundColor: 'red'
+  },
 });
