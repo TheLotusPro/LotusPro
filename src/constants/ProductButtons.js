@@ -11,6 +11,10 @@ export const catagories = [
         id: 3,
         title: "Order Details"
     },
+    {
+        id: 4,
+        title: "Policy"
+    }
 ]
 
 export const buttonItems = [
@@ -25,6 +29,11 @@ export const buttonItems = [
     },
     {
         id: 3,
-        Description: "This is a test 3"
+        Description: "This is a test 3",
+    },
+    {
+        id: 4,
+        Description: "This is a test 4",
+
     }
 ]

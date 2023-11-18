@@ -20,6 +20,7 @@ import {
   Text,
 } from "@gluestack-ui/themed";
 import { buttonItems, catagories} from "../../constants/ProductButtons";
+import ProductCardDesign from "../../components/Products/ProductCardDesign";
 
 const { width } = Dimensions.get("window");
 
@@ -158,16 +159,15 @@ const Buttons = () => {
   const [activeCategory, setActiveCategory] = useState(1)
   return (
     <View style={styles.buttonContainer}>
-      <Text>hi</Text>
       <View>
         <FlatList
           horizontal
-          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
           data={catagories}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => {
             let isActive = item.id === activeCategory;
-            let textColor = isActive ? 'white' : 'black'; // Change text color prop
+            let textColor = isActive ? 'white' : 'gray'; // Change text color prop
 
             return (
               <TouchableOpacity
@@ -179,6 +179,23 @@ const Buttons = () => {
           }}
         />
       </View>
+
+      <View style={{marginTop: 20, marginHorizontal: 10}}>
+        <Carousel
+        containerCustomStyle={{overflow: 'visible'}}
+        data={buttonItems}
+        renderItem={({item}) => <ProductCardDesign item={item} />}
+        firstItem={1}
+        inactiveSlideOpacity={0.75}
+        inactiveSlideScale={0.77}
+        sliderWidth={400}
+        itemWidth={400}
+       
+         />
+      </View>
+
+
+      
     </View>
   );
 };
@@ -264,7 +281,8 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   buttonContainer: {
-    margin: 20,
+ 
+
   },
   button: {
     padding: 10,
