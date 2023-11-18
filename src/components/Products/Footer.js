@@ -20,7 +20,7 @@ const Footer = () => {
   return (
     <View style={styles.root}>
       <TouchableOpacity style={styles.button}>
-        <Icons.DevicePhoneMobileIcon size={15} color={"gray"} style={{marginRight: 5}}/>
+        <Icons.DevicePhoneMobileIcon size={15} color={"white"} style={{marginRight: 5}}/>
         <Text style={styles.buttonText}>Try with AR</Text>
       </TouchableOpacity>
 

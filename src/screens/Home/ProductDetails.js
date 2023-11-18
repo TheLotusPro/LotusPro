@@ -23,7 +23,7 @@ import {
 } from "@gluestack-ui/themed";
 import { buttonItems, catagories } from "../../constants/ProductButtons";
 import ProductCardDesign from "../../components/Products/ProductCardDesign";
-import Footer from '../../components/Products/Footer'
+import Footer from "../../components/Products/Footer";
 const { width } = Dimensions.get("window");
 
 const data = [
@@ -34,14 +34,14 @@ const data = [
 
 const ProductDetails = () => {
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Header />
         <Info />
         <Buttons />
         <Reviews />
       </ScrollView>
-      <Footer/>
+      <Footer />
     </View>
   );
 };
@@ -336,7 +336,6 @@ const Reviews = () => {
   );
 };
 
-
 export default ProductDetails;
 
 const styles = StyleSheet.create({
@@ -438,6 +437,6 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     marginBottom: 10,
     flex: 1,
-    backgroundColor: 'red'
+    backgroundColor: "red",
   },
 });
