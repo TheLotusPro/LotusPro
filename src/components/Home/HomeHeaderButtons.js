@@ -1,12 +1,14 @@
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import React from "react";
-import { useTheme } from "@react-navigation/native";
+import { useNavigation, useTheme } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/solid";
 import { Text } from "@gluestack-ui/themed";
 import HeaderSearch from "./HeaderSearch";
 
 const HomeHeaderButtons = () => {
   const { colors } = useTheme();
+  const navigation = useNavigation();
+
 
   return (
     <View>
@@ -22,7 +24,9 @@ const HomeHeaderButtons = () => {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.options}>
+        <TouchableOpacity 
+        onPress={() => navigation.navigate('Professionals')}
+        style={styles.options}>
           <View style={styles.background}>
             <Icons.BriefcaseIcon size={25} color={"#fa8072"} />
           </View>

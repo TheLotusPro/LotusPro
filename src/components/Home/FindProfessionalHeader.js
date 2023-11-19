@@ -1,12 +1,13 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import * as Icons from "react-native-heroicons/solid";
-import { useTheme } from '@react-navigation/native';
+import { useNavigation, useTheme,  } from '@react-navigation/native';
 import { Text } from "@gluestack-ui/themed";
 
 
 const FindProfessionalHeader = () => {
   const { colors } = useTheme();
+  const navigation = useNavigation();
 
   return (
     <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 15  }}>
@@ -14,7 +15,9 @@ const FindProfessionalHeader = () => {
         <Text style={[styles.title, {color: colors.text}]}>Find Professionals</Text>
       </View>
 
-      <TouchableOpacity style={{ flexDirection: "row", alignItems: "center" }}>
+      <TouchableOpacity 
+      onPress={() => navigation.navigate('Professionals')}
+      style={{ flexDirection: "row", alignItems: "center" }}>
         <Text style={styles.seeAll}>See all</Text>
         <Icons.ArrowLongRightIcon size={25} color={"#fa8072"} />
       </TouchableOpacity>
