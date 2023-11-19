@@ -21,13 +21,6 @@ const HomeDesignCard = () => {
             <Text style={styles.title}>Architects & Building Designs</Text>
           </View>
         </TouchableOpacity>
-
-        <TouchableOpacity style={styles.container}>
-          <Image style={styles.image} source={PlaceHolder} />
-          <View style={styles.textContainer}>
-            <Text style={styles.title}>Architects & Building Designs</Text>
-          </View>
-        </TouchableOpacity>
       </View>
     </View>
   );

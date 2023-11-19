@@ -46,7 +46,7 @@ const Header = () => {
           onPress={() => navigation.navigate('EditClientProfile')}
           style={{ marginHorizontal: 10, marginTop: 50 }}>
             <Text style={[styles.username, {color: colors.text}]}>Sam Atwell</Text>
-            <Icons.CogIcon size={35} color={colors.text} style={styles.icon}/>
+            <Icons.CogIcon size={30} color={colors.text} style={styles.icon}/>
 
 
           </TouchableOpacity>
