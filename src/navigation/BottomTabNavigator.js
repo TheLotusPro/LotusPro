@@ -46,7 +46,7 @@ const BottomTabNavigator = () => {
         }}
       />
          <BottomTab.Screen
-        name="Ideabooks"
+        name="Ideas"
         component={IdeaStackNavigator}
         options={{
           unmountOnBlur: true,

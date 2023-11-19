@@ -1,14 +1,14 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const IdeaBook = () => {
+const Ideas = () => {
   return (
     <View>
-      <Text>IdeaBook</Text>
+      <Text>Ideas</Text>
     </View>
   );
 };
 
-export default IdeaBook;
+export default Ideas;
 
 const styles = StyleSheet.create({});

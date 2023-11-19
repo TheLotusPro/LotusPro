@@ -208,7 +208,7 @@ const Buttons = () => {
           containerCustomStyle={{ overflow: "visible" }}
           data={buttonItems}
           renderItem={({ item }) => <ProductCardDesign item={item} />}
-          firstItem={1}
+          firstItem={0}
           inactiveSlideOpacity={0.75}
           inactiveSlideScale={0.77}
           sliderWidth={400}

@@ -5,6 +5,7 @@ import BottomTabNavigator from "./BottomTabNavigator";
 import ProductDetails from "../screens/Home/ProductDetails";
 import ProductHeaderLeft from '../components/Products/ProductHeaderLeft'
 import ProductHeaderRight from "../components/Products/ProductHeaderRight";
+import EditClientProfile from "../screens/Profile/EditClientProfile";
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +31,22 @@ const RootNavigator = () => {
           headerRight: () => <ProductHeaderRight />,
       }}
     />
+       <Stack.Group
+        screenOptions={{
+          presentation: 'modal',
+        }}>
+     <Stack.Screen
+      name="EditClientProfile"
+      component={EditClientProfile}
+      options={{
+        headerShown: true,
+        headerShadowVisible: false,
+         headerTitle: 'Edit Profile',
+          // headerLeft: () => <ProductHeaderLeft />,
+          // headerRight: () => <ProductHeaderRight />,
+      }}
+    />
+    </Stack.Group>
   </Stack.Navigator>
   );
 };
