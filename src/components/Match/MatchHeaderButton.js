@@ -19,7 +19,7 @@ const MatchHeaderButton = () => {
     <View style={styles.container}>
       <View style={{ margin: 20 }}>
         <Text style={{ color: "black", fontWeight: "bold", fontSize: 16 }}>
-          Match with qualifed Local professionals{" "}
+          Match with qualifed local professionals{" "}
         </Text>
         <Text style={{ color: "black", fontSize: 13, marginTop: 5 }}>
           Search below and follow the prompts to match with a verified <Badge />
