@@ -33,7 +33,7 @@ const RootNavigator = () => {
     />
        <Stack.Group
         screenOptions={{
-          presentation: 'modal',
+          presentation: 'fullScreenModal',
         }}>
      <Stack.Screen
       name="EditClientProfile"
