@@ -14,7 +14,7 @@ const HomeDesignCard = (props) => {
           flexDirection: "row",
           justifyContent: "space-between",
           marginHorizontal: 10,
-          marginBottom: 10
+          marginBottom: 10,
         }}
       >
         <TouchableOpacity style={styles.container}>
@@ -33,7 +33,7 @@ export default HomeDesignCard;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#e0ffff",
-    width: "48%",
+    width: 200,
     borderRadius: 10,
     height: 200,
     shadowColor: "gray",

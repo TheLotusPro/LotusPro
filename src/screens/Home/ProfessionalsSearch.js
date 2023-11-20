@@ -32,55 +32,59 @@ const ProfessionalsSearch = ({ navigation }) => {
   }, [navigation]);
 
   return (
-    <View>
+    <ScrollView>
+      <MatchHeaderButton />
       <HomeDesign />
-    </View>
+    </ScrollView>
   );
 };
 
 const HomeDesign = () => {
   const { colors } = useTheme();
 
-  const Header = () => {
-    return (
-      <View>
-        <MatchHeaderButton />
-        <View style={{ marginHorizontal: 10, marginTop: 10 }}>
-          <Text style={[styles.title, { color: colors.text }]}>
-            Home Design & Remodeling
-          </Text>
-        </View>
-      </View>
-    );
-  };
-
   return (
     <View style={{ marginTop: 10 }}>
       <View style={{ marginTop: 10, marginBottom: 20 }}>
+        <View
+          style={{
+            marginHorizontal: 10,
+            marginTop: 10,
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
+        >
+          <Text style={[styles.title, { color: colors.text }]}>
+            Home Design & Remodeling
+          </Text>
+          <Text style={{ fontSize: 13, color: "#fa807290" }}>
+            Swift to see more
+          </Text>
+        </View>
         <FlatList
-          // horizontal={true}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
           data={homeDesign}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => <HomeDesignCard homeDesign={item} />}
-          ListHeaderComponent={Header}
+          // ListHeaderComponent={Header}
         />
       </View>
     </View>
   );
 };
 
-// const HomeImprovement = () => {
-//   return (
-//     <View style={{ marginTop: 10 }}>
-//     <View style={{ marginHorizontal: 10, marginTop: 10 }}>
-//       <Text style={styles.title}>Home Improvement</Text>
-//     </View>
-//     <View style={{ marginTop: 10, marginBottom: 20 }}>
-//       <HomeDesignCard />
-//     </View>
-//   </View>
-//   );
-// };
+const HomeImprovement = () => {
+  return (
+    <View style={{ marginTop: 10 }}>
+      <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+        <Text style={styles.title}>Home Improvement</Text>
+      </View>
+      <View style={{ marginTop: 10, marginBottom: 20 }}>
+        <HomeDesignCard />
+      </View>
+    </View>
+  );
+};
 
 // const HomeServices = () => {
 //     return (
