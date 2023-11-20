@@ -1,5 +1,5 @@
 import { ScrollView, StyleSheet, View, TouchableOpacity } from "react-native";
-import React, {useEffect }from "react";
+import React, { useEffect } from "react";
 import {
   Avatar,
   AvatarBadge,
@@ -9,8 +9,11 @@ import {
 } from "@gluestack-ui/themed";
 import * as Icons from "react-native-heroicons/solid";
 import StoriesHeaderCarousel from "../../components/Stories/StoriesHeaderCarousel";
+import { useTheme } from "@react-navigation/native";
 
-const Stories = ({navigation}) => {
+const Stories = ({ navigation }) => {
+  const { colors } = useTheme();
+
   useEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
@@ -24,17 +27,27 @@ const Stories = ({navigation}) => {
     });
   }, [navigation]);
 
-
   return (
     <View>
-  <ScrollView>
-   <StoriesHeaderCarousel />
-    </ScrollView>
+      <ScrollView>
+        <View style={styles.headerContainer}>
+          <Text style={[styles.header, { color: colors.text }]}>
+            Latest Stories
+          </Text>
+        </View>
+        <StoriesHeaderCarousel />
+      </ScrollView>
     </View>
-  
   );
 };
 
 export default Stories;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  header: {
+    fontWeight: "bold",
+  },
+  headerContainer: {
+    margin: 10
+  }
+});
