@@ -10,6 +10,7 @@ import * as Icons from 'react-native-heroicons/solid';
 import { useNavigation, useTheme } from "@react-navigation/native";
 import ProfessionalsSearch from "../screens/Home/ProfessionalsSearch";
 import ProfessionalsHeaderRight from "../components/Professionals/ProfessionalsHeaderRight";
+import ShoppingCart from "../screens/Shop/ShoppingCart";
 
 const Stack = createNativeStackNavigator();
 
@@ -61,6 +62,18 @@ const RootNavigator = () => {
         headerShown: true,
         headerShadowVisible: false,
          headerTitle: 'Edit Profile',
+         headerLeft: () => (
+          <Button title="Cancel"   onPress={() => navigation.goBack()} />
+          ),
+      }}
+    />
+      <Stack.Screen
+      name="ShoppingCart"
+      component={ShoppingCart}
+      options={{
+        headerShown: true,
+        headerShadowVisible: false,
+         headerTitle: 'Cart',
          headerLeft: () => (
           <Button title="Cancel"   onPress={() => navigation.goBack()} />
           ),

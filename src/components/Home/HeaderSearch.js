@@ -6,11 +6,12 @@ import {
   View,
 } from "react-native";
 import React from "react";
-import { useTheme } from "@react-navigation/native";
+import { useTheme, useNavigation } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/solid";
 
 const HeaderSearch = () => {
   const { colors } = useTheme();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -28,8 +29,8 @@ const HeaderSearch = () => {
           <Icons.CameraIcon size={20} color={"gray"} />
         </TouchableOpacity>
       </View>
-      <TouchableOpacity >
-        <Icons.ShoppingCartIcon size={20} color={"gray"} />
+      <TouchableOpacity onPress={() => navigation.navigate("ShoppingCart")}>
+        <Icons.ShoppingCartIcon size={25} color={ "#fa8072"} />
       </TouchableOpacity>
     </View>
   );

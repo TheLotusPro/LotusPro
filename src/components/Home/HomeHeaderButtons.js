@@ -35,7 +35,9 @@ const HomeHeaderButtons = () => {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.options}>
+        <TouchableOpacity 
+        onPress={() => navigation.navigate('ShopHome')}
+        style={styles.options}>
           <View style={styles.background}>
             <Icons.ShoppingBagIcon size={25} color={"#fa8072"} />
           </View>
