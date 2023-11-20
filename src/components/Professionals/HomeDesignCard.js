@@ -8,6 +8,7 @@ const HomeDesignCard = (props) => {
 
   return (
     <View>
+    
       <View
         style={{
           flexDirection: "row",

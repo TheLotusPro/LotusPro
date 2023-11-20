@@ -7,9 +7,9 @@ export default [
         image: ArchitecturalDrawing,
         name: "Architects & Building Designs",
     },
-    // {
-    //     id: '2',
-    //     image: Building,
-    //     name: "Design Build Firms"
-    // },
+    {
+        id: '2',
+        image: Building,
+        name: "Design Build Firms"
+    },
 ]

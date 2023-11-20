@@ -33,10 +33,7 @@ const ProfessionalsSearch = ({ navigation }) => {
 
   return (
     <View>
-      <MatchHeaderButton />
       <HomeDesign />
-      {/* <HomeImprovement />  */}
-      {/* <HomeServices />  */}
     </View>
   );
 };
@@ -44,19 +41,28 @@ const ProfessionalsSearch = ({ navigation }) => {
 const HomeDesign = () => {
   const { colors } = useTheme();
 
+  const Header = () => {
+    return (
+      <View>
+        <MatchHeaderButton />
+        <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+          <Text style={[styles.title, { color: colors.text }]}>
+            Home Design & Remodeling
+          </Text>
+        </View>
+      </View>
+    );
+  };
+
   return (
     <View style={{ marginTop: 10 }}>
-      <View style={{ marginHorizontal: 10, marginTop: 10 }}>
-        <Text style={[styles.title, { color: colors.text }]}>
-          Home Design & Remodeling
-        </Text>
-      </View>
-      <View style={{ marginTop: 10, marginBottom: 20, }}>
+      <View style={{ marginTop: 10, marginBottom: 20 }}>
         <FlatList
-        // horizontal={true}
+          // horizontal={true}
           data={homeDesign}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => <HomeDesignCard homeDesign={item} />}
+          ListHeaderComponent={Header}
         />
       </View>
     </View>
@@ -96,10 +102,9 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
     fontSize: 18,
+    marginBottom: 10,
   },
   listContainer: {
-    flexDirection: 'row',
- 
-
+    flexDirection: "row",
   },
 });
