@@ -45,7 +45,7 @@ const EditClientProfile = ({ navigation }) => {
             setTimeout(() => {
               setLoading(false);
               navigation.goBack();
-            }, 1000); // 10 seconds
+            }, 2000); // 10 seconds
           }}
         />
       ),
@@ -287,7 +287,7 @@ const EditClientProfile = ({ navigation }) => {
 
           {loading && (
             <View style={styles.overlay}>
-              <ActivityIndicator size="small" color={"#fa807290"} />
+              <ActivityIndicator size="large" color={"#fa807290"} />
             </View>
           )}
         </View>
@@ -321,9 +321,8 @@ const styles = StyleSheet.create({
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: "#fa807220",
-    justifyContent: "center",
-    alignItems: "center",
+  
+    marginTop: 100
   },
   avatarContainer: {
     alignItems: "center",

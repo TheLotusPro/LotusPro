@@ -3,7 +3,7 @@ import React from "react";
 import { useTheme } from "@react-navigation/native";
 import PlaceHolder from "../../assets/images/HomeReno.jpeg";
 
-const HomeDesignCard = () => {
+const HomeDesignCard = (props) => {
   const { colors } = useTheme();
 
   return (
@@ -13,12 +13,13 @@ const HomeDesignCard = () => {
           flexDirection: "row",
           justifyContent: "space-between",
           marginHorizontal: 10,
+          marginBottom: 10
         }}
       >
         <TouchableOpacity style={styles.container}>
-          <Image style={styles.image} source={PlaceHolder} />
+          <Image style={styles.image} source={props?.homeDesign?.image} />
           <View style={styles.textContainer}>
-            <Text style={styles.title}>Architects & Building Designs</Text>
+            <Text style={styles.title}>{props?.homeDesign?.name}</Text>
           </View>
         </TouchableOpacity>
       </View>

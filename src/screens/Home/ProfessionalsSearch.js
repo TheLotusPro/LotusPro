@@ -4,6 +4,7 @@ import {
   View,
   TouchableOpacity,
   ScrollView,
+  FlatList,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import { useTheme } from "@react-navigation/native";
@@ -11,6 +12,7 @@ import * as Icons from "react-native-heroicons/solid";
 import { Text } from "@gluestack-ui/themed";
 import MatchHeaderButton from "../../components/Match/MatchHeaderButton";
 import HomeDesignCard from "../../components/Professionals/HomeDesignCard";
+import homeDesign from "../../assets/data/homeDesign";
 
 const ProfessionalsSearch = ({ navigation }) => {
   const { colors } = useTheme();
@@ -30,12 +32,12 @@ const ProfessionalsSearch = ({ navigation }) => {
   }, [navigation]);
 
   return (
-    <ScrollView>
+    <View>
       <MatchHeaderButton />
       <HomeDesign />
       {/* <HomeImprovement />  */}
       {/* <HomeServices />  */}
-    </ScrollView>
+    </View>
   );
 };
 
@@ -49,8 +51,13 @@ const HomeDesign = () => {
           Home Design & Remodeling
         </Text>
       </View>
-      <View style={{ marginTop: 10, marginBottom: 20 }}>
-        <HomeDesignCard />
+      <View style={{ marginTop: 10, marginBottom: 20, }}>
+        <FlatList
+        // horizontal={true}
+          data={homeDesign}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={({ item }) => <HomeDesignCard homeDesign={item} />}
+        />
       </View>
     </View>
   );
@@ -89,5 +96,10 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
     fontSize: 18,
+  },
+  listContainer: {
+    flexDirection: 'row',
+ 
+
   },
 });
