@@ -39,36 +39,34 @@ const ProfessionalsSearch = ({ navigation }) => {
   );
 };
 
+
 const HomeDesign = () => {
   const { colors } = useTheme();
 
   return (
-    <View style={{ marginTop: 10 }}>
-      <View style={{ marginTop: 10, marginBottom: 20 }}>
+    <View style={{ marginTop: 10, flexDirection: "row", flexWrap: "wrap" }}>
+      <View
+        style={{
+          width: "100%", // Set the width of the container to 100%
+          marginHorizontal: 15,
+          marginTop: 10,
+        }}
+      >
+        <Text style={[styles.title, { color: colors.text }]}>
+          Home Design & Remodeling
+        </Text>
+      </View>
+      {homeDesign.map((item, index) => (
         <View
+          key={index}
           style={{
-            marginHorizontal: 10,
-            marginTop: 10,
-            flexDirection: "row",
-            justifyContent: "space-between",
+            width: "48%", // Set the width of each HomeDesignCard
+            margin: "1%", // Adjust margin as needed
           }}
         >
-          <Text style={[styles.title, { color: colors.text }]}>
-            Home Design & Remodeling
-          </Text>
-          <Text style={{ fontSize: 13, color: "#fa807290" }}>
-            Swift to see more
-          </Text>
+          <HomeDesignCard homeDesign={item} />
         </View>
-        <FlatList
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          data={homeDesign}
-          keyExtractor={(item, index) => index.toString()}
-          renderItem={({ item }) => <HomeDesignCard homeDesign={item} />}
-          // ListHeaderComponent={Header}
-        />
-      </View>
+      ))}
     </View>
   );
 };

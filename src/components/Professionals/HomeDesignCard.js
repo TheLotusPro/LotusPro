@@ -13,7 +13,7 @@ const HomeDesignCard = (props) => {
         style={{
           flexDirection: "row",
           justifyContent: "space-between",
-          marginHorizontal: 10,
+          marginHorizontal: 5,
           marginBottom: 10,
         }}
       >
@@ -33,8 +33,8 @@ export default HomeDesignCard;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#e0ffff",
-    width: 200,
-    borderRadius: 10,
+    width: "100%",
+    borderRadius: 5,
     height: 200,
     shadowColor: "gray",
     shadowOpacity: 1.8,
@@ -47,8 +47,8 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: 140,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
   },
   textContainer: {
     marginTop: 10,
@@ -57,6 +57,6 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "500",
     color: "black",
-    fontSize: 14,
+    fontSize: 13,
   },
 });
