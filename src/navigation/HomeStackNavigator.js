@@ -7,6 +7,8 @@ import HomeHeaderRight from "../components/Home/HomeHeaderRight";
 import ShopHome from "../screens/Shop/ShopHome";
 import ShopHeaderLeft from "../components/Shop/ShopHeaderLeft";
 import ShopHeaderRight from "../components/Shop/ShopHeaderRight";
+import Stories from "../screens/Stories/Stories";
+import Ideas from "../screens/Ideas/Ideas";
 
 const HomeStack = createNativeStackNavigator();
 
@@ -38,6 +40,30 @@ const HomeStackNavigator = () => {
           headerTitle: 'Shop',
           headerLeft: () => <ShopHeaderLeft />,
           headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+          <HomeStack.Screen
+        name="StoryHome"
+        component={Stories}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerBackVisible: false,
+          headerTitle: 'Stories',
+          // headerLeft: () => <ShopHeaderLeft />,
+          // headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+         <HomeStack.Screen
+        name="Ideas"
+        component={Ideas}
+        options={{
+          headerShown: true,
+          headerBackVisible: false,
+          headerShadowVisible: false,
+          headerTitle: 'Ideas',
+          // headerLeft: () => <ShopHeaderLeft />,
+          // headerRight: () => <ShopHeaderRight />,
         }}
       />
     </HomeStack.Navigator>

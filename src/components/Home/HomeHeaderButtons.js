@@ -15,7 +15,9 @@ const HomeHeaderButtons = () => {
       <HeaderSearch />
 
       <View style={styles.containerOptions}>
-        <TouchableOpacity style={styles.options}>
+        <TouchableOpacity 
+        onPress={() => navigation.navigate('Ideas')}
+        style={styles.options}>
           <View style={styles.background}>
             <Icons.LightBulbIcon size={25} color={"#fa8072"} />
           </View>
@@ -24,7 +26,9 @@ const HomeHeaderButtons = () => {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.options}>
+        <TouchableOpacity 
+         onPress={() => navigation.navigate('StoryHome')}
+        style={styles.options}>
           <View style={styles.background}>
             <Icons.UserGroupIcon size={25} color={"#fa8072"} />
           </View>
@@ -52,15 +56,6 @@ const HomeHeaderButtons = () => {
           </View>
           <View>
             <Text style={styles.title}>Shop</Text>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.options}>
-          <View style={styles.background}>
-            <Icons.AcademicCapIcon size={25} color={"#fa8072"} />
-          </View>
-          <View>
-            <Text style={styles.title}>Advice</Text>
           </View>
         </TouchableOpacity>
       </View>
