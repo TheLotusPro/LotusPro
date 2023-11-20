@@ -8,13 +8,12 @@ const HomeDesignCard = (props) => {
 
   return (
     <View>
-    
       <View
         style={{
           flexDirection: "row",
           justifyContent: "space-between",
           marginHorizontal: 5,
-          marginBottom: 10,
+          marginBottom: 5,
         }}
       >
         <TouchableOpacity style={styles.container}>
@@ -36,12 +35,12 @@ const styles = StyleSheet.create({
     width: "100%",
     borderRadius: 5,
     height: 200,
-    shadowColor: "gray",
-    shadowOpacity: 1.8,
+    shadowColor: "#2f4f4f",
+    shadowOpacity: 0.5,
     shadowRadius: 2,
     shadowOffset: {
-      height: 2,
-      width: 1,
+      height: 1,
+      width: 2,
     },
   },
   image: {

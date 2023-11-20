@@ -13,6 +13,8 @@ import { Text } from "@gluestack-ui/themed";
 import MatchHeaderButton from "../../components/Match/MatchHeaderButton";
 import HomeDesignCard from "../../components/Professionals/HomeDesignCard";
 import homeDesign from "../../assets/data/homeDesign";
+import homeImprovement from "../../assets/data/homeImprovement";
+import HomeImprovementCard from "../../components/Professionals/HomeImprovementCard";
 
 const ProfessionalsSearch = ({ navigation }) => {
   const { colors } = useTheme();
@@ -32,9 +34,10 @@ const ProfessionalsSearch = ({ navigation }) => {
   }, [navigation]);
 
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <MatchHeaderButton />
       <HomeDesign />
+      <HomeImprovement />
     </ScrollView>
   );
 };
@@ -44,7 +47,7 @@ const HomeDesign = () => {
   const { colors } = useTheme();
 
   return (
-    <View style={{ marginTop: 10, flexDirection: "row", flexWrap: "wrap" }}>
+    <View style={{ marginTop: 10, flexDirection: "row", flexWrap: "wrap", marginBottom: 10 }}>
       <View
         style={{
           width: "100%", // Set the width of the container to 100%
@@ -78,7 +81,18 @@ const HomeImprovement = () => {
         <Text style={styles.title}>Home Improvement</Text>
       </View>
       <View style={{ marginTop: 10, marginBottom: 20 }}>
-        <HomeDesignCard />
+      {homeImprovement.map((item, index) => (
+        <View
+          key={index}
+          style={{
+            width: "48%", // Set the width of each HomeDesignCard
+            margin: "1%", // Adjust margin as needed
+          }}
+        >
+          <HomeImprovementCard homeImprovement={item} />
+        </View>
+      ))}
+      
       </View>
     </View>
   );
@@ -104,7 +118,7 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
     fontSize: 18,
-    marginBottom: 10,
+    marginBottom: 5,
   },
   listContainer: {
     flexDirection: "row",
