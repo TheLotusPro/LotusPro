@@ -11,6 +11,7 @@ import { useNavigation, useTheme } from "@react-navigation/native";
 import ProfessionalsSearch from "../screens/Home/ProfessionalsSearch";
 import ProfessionalsHeaderRight from "../components/Professionals/ProfessionalsHeaderRight";
 import ShoppingCart from "../screens/Shop/ShoppingCart";
+import ChatScreen from "../screens/Chat/ChatScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -49,6 +50,17 @@ const RootNavigator = () => {
          headerTitle: 'Find Professionals',
          headerBackVisible: false,
          headerRight: () => <ProfessionalsHeaderRight />,
+      }}
+    />
+      <Stack.Screen
+      name="ChatScreen"
+      component={ChatScreen}
+      options={{
+        headerShown: true,
+        headerShadowVisible: false,
+         headerTitle: 'Live Chat',
+         headerBackVisible: false,
+     
       }}
     />
        <Stack.Group

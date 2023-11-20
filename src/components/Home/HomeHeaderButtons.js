@@ -24,6 +24,15 @@ const HomeHeaderButtons = () => {
           </View>
         </TouchableOpacity>
 
+        <TouchableOpacity style={styles.options}>
+          <View style={styles.background}>
+            <Icons.UserGroupIcon size={25} color={"#fa8072"} />
+          </View>
+          <View>
+            <Text style={styles.title}>Stories</Text>
+          </View>
+        </TouchableOpacity>
+
         <TouchableOpacity 
         onPress={() => navigation.navigate('Professionals')}
         style={styles.options}>
