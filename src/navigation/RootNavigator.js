@@ -12,6 +12,7 @@ import ProfessionalsSearch from "../screens/Home/ProfessionalsSearch";
 import ProfessionalsHeaderRight from "../components/Professionals/ProfessionalsHeaderRight";
 import ShoppingCart from "../screens/Shop/ShoppingCart";
 import ChatScreen from "../screens/Chat/ChatScreen";
+import TalksPostScreen from "../screens/Stories/TalksPostScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -59,6 +60,17 @@ const RootNavigator = () => {
         headerShown: true,
         headerShadowVisible: false,
          headerTitle: 'Live Chat',
+         headerBackVisible: false,
+     
+      }}
+    />
+      <Stack.Screen
+      name="TalksPostScreen"
+      component={TalksPostScreen}
+      options={{
+        headerShown: true,
+        headerShadowVisible: false,
+         headerTitle: 'Post',
          headerBackVisible: false,
      
       }}

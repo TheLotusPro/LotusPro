@@ -42,7 +42,7 @@ const StoriesHeaderCarousel = () => {
       const intervalId = setInterval(() => {
         const newIndex = (activeIndex + 1) % mediaData.length;
         carouselRef.current.snapToItem(newIndex);
-      }, 5000);
+      }, 2000);
   
       return () => clearInterval(intervalId);
     }, [activeIndex]);

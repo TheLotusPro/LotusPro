@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 30,
     justifyContent: "center",
+    
   },
   containerOptions: {
     margin: 15,

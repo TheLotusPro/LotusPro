@@ -9,6 +9,7 @@ import ShopHeaderLeft from "../components/Shop/ShopHeaderLeft";
 import ShopHeaderRight from "../components/Shop/ShopHeaderRight";
 import Stories from "../screens/Stories/Stories";
 import Ideas from "../screens/Ideas/Ideas";
+import Talks from "../screens/Stories/Talks";
 
 const HomeStack = createNativeStackNavigator();
 
@@ -62,6 +63,18 @@ const HomeStackNavigator = () => {
           headerBackVisible: false,
           headerShadowVisible: false,
           headerTitle: 'Ideas',
+          // headerLeft: () => <ShopHeaderLeft />,
+          // headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+          <HomeStack.Screen
+        name="Talks"
+        component={Talks}
+        options={{
+          headerShown: true,
+          headerBackVisible: false,
+          headerShadowVisible: false,
+          headerTitle: 'Talks',
           // headerLeft: () => <ShopHeaderLeft />,
           // headerRight: () => <ShopHeaderRight />,
         }}
