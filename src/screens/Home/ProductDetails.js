@@ -12,6 +12,7 @@ import Carousel, { Pagination } from "react-native-snap-carousel";
 import { useNavigation, useTheme } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/outline";
 import * as Icon from "react-native-heroicons/solid";
+import { FontAwesome5 } from '@expo/vector-icons';
 import {
   Avatar,
   AvatarBadge,
@@ -38,6 +39,7 @@ const ProductDetails = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <Header />
         <Info />
+        <Buy />
         <Buttons />
         <Reviews />
         <UserInfo />
@@ -161,6 +163,16 @@ const Info = () => {
     </View>
   );
 };
+
+const Buy = () => {
+  return (
+    <TouchableOpacity style={styles.buyContainer}>
+      <View style={styles.buyButton}>
+      <FontAwesome5 name="apple-pay" size={40} color="white" />
+      </View>
+    </TouchableOpacity>
+  )
+}
 
 const Buttons = () => {
   const [activeCategory, setActiveCategory] = useState(1);
@@ -477,4 +489,14 @@ const styles = StyleSheet.create({
   userInfoText: {
     fontWeight: "bold",
   },
+  buyContainer: {
+    margin: 20,
+  },
+  buyButton: {
+    backgroundColor: 'rgba(52, 52, 52, 0.8)', 
+    borderRadius: 10, 
+    padding: 10,
+    alignItems: 'center'
+  }
+  
 });
