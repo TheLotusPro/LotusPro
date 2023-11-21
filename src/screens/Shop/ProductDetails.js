@@ -12,7 +12,7 @@ import Carousel, { Pagination } from "react-native-snap-carousel";
 import { useNavigation, useTheme } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/outline";
 import * as Icon from "react-native-heroicons/solid";
-import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome5 } from "@expo/vector-icons";
 import {
   Avatar,
   AvatarBadge,
@@ -25,12 +25,13 @@ import {
 import { buttonItems, catagories } from "../../constants/ProductButtons";
 import ProductCardDesign from "../../components/Products/ProductCardDesign";
 import Footer from "../../components/Products/Footer";
+import PopularProducts from "../../components/Products/PopularProducts";
 const { width } = Dimensions.get("window");
 
 const data = [
-  { id: "1", source: require("../../assets/images/ArchitecturalDesigns.jpeg") },
-  { id: "2", source: require("../../assets/images/ArchitecturalDrawing.jpeg") },
-  { id: "3", source: require("../../assets/images/BathroomRemodeling.jpeg") },
+  { id: "1", source: require("../../assets/images/Shop/Couch.jpg") },
+  // { id: "2", source: require("../../assets/images/ArchitecturalDrawing.jpeg") },
+  // { id: "3", source: require("../../assets/images/BathroomRemodeling.jpeg") },
 ];
 
 const ProductDetails = () => {
@@ -43,6 +44,7 @@ const ProductDetails = () => {
         <Buttons />
         <Reviews />
         <UserInfo />
+        <PopularProducts />
       </ScrollView>
       <Footer />
     </View>
@@ -99,6 +101,7 @@ const Header = () => {
 
 const Info = () => {
   const { colors } = useTheme();
+  const navigation = useNavigation();
 
   const UserProfiles = () => {
     return (
@@ -117,13 +120,34 @@ const Info = () => {
     );
   };
 
+  const AfterPlay = () => {
+    return (
+      <TouchableOpacity style={{ flexDirection: "row", alignItems: "center" }}>
+        <Text
+          style={{
+            fontSize: 14,
+            marginTop: 3,
+            fontWeight: "bold",
+            color: "green",
+          }}
+        >
+          AfterPay{" "}
+        </Text>
+        <Icon.InformationCircleIcon
+          style={{ color: "gray", marginTop: 5 }}
+          size={15}
+        />
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <View style={{ margin: 10 }}>
       {/* Header */}
       <View style={styles.infoContainerHeader}>
         <View>
           <Text style={[styles.title, { color: colors.text }]}>
-            Victorian Villa Designs
+          Luxury Louis Vuitton Couch
           </Text>
         </View>
 
@@ -134,11 +158,19 @@ const Info = () => {
       </View>
       {/* Price */}
       <View style={{ marginHorizontal: 10, marginTop: 10 }}>
-        <Text style={styles.price}>$1,599</Text>
+        <Text style={[styles.price, { color: colors.text }]}>$1,599</Text>
+        <View style={{ marginVertical: 10 }}>
+          <Text style={{ fontSize: 12 }}>
+            or 4 interest-free payments of $399.75 with <AfterPlay />{" "}
+          </Text>
+        </View>
       </View>
 
       {/* Reviews */}
-      <TouchableOpacity style={styles.reviewContainer}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("ProductReviews")}
+        style={styles.reviewContainer}
+      >
         <View style={{ margin: 12 }}>
           <View style={{ flexDirection: "row" }}>
             <Icon.StarIcon size={25} color={"gold"} />
@@ -166,13 +198,15 @@ const Info = () => {
 
 const Buy = () => {
   return (
-    <TouchableOpacity style={styles.buyContainer}>
-      <View style={styles.buyButton}>
-      <FontAwesome5 name="apple-pay" size={40} color="white" />
-      </View>
-    </TouchableOpacity>
-  )
-}
+    <View>
+      <TouchableOpacity style={styles.buyContainer}>
+        <View style={styles.buyButton}>
+          <FontAwesome5 name="apple-pay" size={40} color="white" />
+        </View>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 const Buttons = () => {
   const [activeCategory, setActiveCategory] = useState(1);
@@ -357,7 +391,9 @@ const UserInfo = () => {
       <Text style={[styles.userInfoText, { color: "#fa8072" }]}>
         Fulfilled by
       </Text>
-      <View style={{ marginTop: 10, flexDirection: 'row', alignItems: 'center' }}>
+      <View
+        style={{ marginTop: 10, flexDirection: "row", alignItems: "center" }}
+      >
         <Avatar>
           <AvatarFallbackText>SS</AvatarFallbackText>
           <AvatarImage
@@ -366,12 +402,11 @@ const UserInfo = () => {
             }}
           />
         </Avatar>
-        <View style={{marginHorizontal: 10}}>
-        <Text style={[styles.userInfoText, { color: colors.text }]}>
-          James Architecture Group
-        </Text>
+        <View style={{ marginHorizontal: 10 }}>
+          <Text style={[styles.userInfoText, { color: colors.text }]}>
+            James Architecture Group
+          </Text>
         </View>
-       
       </View>
     </View>
   );
@@ -426,6 +461,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     fontWeight: "500",
+    width: 300
   },
   infoContainerHeader: {
     marginHorizontal: 10,
@@ -435,7 +471,6 @@ const styles = StyleSheet.create({
   },
   infoContainer: {},
   price: {
-    color: "#fa8072",
     fontWeight: "bold",
     fontSize: 22,
   },
@@ -484,7 +519,6 @@ const styles = StyleSheet.create({
   },
   userInfo: {
     paddingHorizontal: 20,
-
   },
   userInfoText: {
     fontWeight: "bold",
@@ -493,10 +527,9 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   buyButton: {
-    backgroundColor: 'rgba(52, 52, 52, 0.8)', 
-    borderRadius: 10, 
+    backgroundColor: "rgba(52, 52, 52, 0.8)",
+    borderRadius: 10,
     padding: 10,
-    alignItems: 'center'
-  }
-  
+    alignItems: "center",
+  },
 });

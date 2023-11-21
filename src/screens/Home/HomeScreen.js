@@ -4,22 +4,29 @@ import HomeHeaderButtons from "../../components/Home/HomeHeaderButtons";
 import FindProfessionals from "../../components/Home/FindProfessionals";
 import proData from "../../assets/data/findProfessionals";
 import FindProfessionalHeader from "../../components/Home/FindProfessionalHeader";
-import PopularProducts from "../../components/Home/PopularProducts";
 import PopularProductsHeader from "../../components/Home/PopularProductsHeader";
+import ShopHeaderHome from "../../components/Shop/ShopHeaderHome";
+import SearchProductsHome from "../../components/Shop/SearchProductsHome";
+import shopHomeData from "../../assets/data/shopHomeData";
+import PopularProducts from "../../components/Products/PopularProducts";
 
 const HomeScreen = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <HomeHeaderButtons />
+      <ShopHeaderHome />
+      <Shop />
       <FindProfessionalHeader />
-      <Header />
-      <PopularProductsHeader />
+      <Professionals />
+      
       <PopularProducts />
+      {/* <PopularProductsHeader />
+      <PopularProducts /> */}
     </ScrollView>
   );
 };
 
-const Header = () => {
+const Professionals = () => {
   return (
     <View>
       <FlatList
@@ -32,6 +39,18 @@ const Header = () => {
   );
 };
 
+const Shop = () => {
+  return (
+    <View>
+      <FlatList
+        data={shopHomeData}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        renderItem={({ item }) => <SearchProductsHome shopHomeData={item} />}
+      />
+    </View>
+  );
+};
 export default HomeScreen;
 
 const styles = StyleSheet.create({});

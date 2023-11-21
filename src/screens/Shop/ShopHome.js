@@ -13,6 +13,7 @@ import { Text } from "@gluestack-ui/themed";
 import ShopCategories from "../../components/Shop/ShopCategories";
 import shop from "../../assets/data/shop";
 import ShopHeaderCarousel from "../../components/Shop/ShopHeaderCarousel";
+import PopularProducts from "../../components/Products/PopularProducts";
 
 const ShopHome = ({ navigation }) => {
   const { colors } = useTheme();
@@ -38,6 +39,7 @@ const ShopHome = ({ navigation }) => {
         {shop.map((item, index) => (
           <ShopCategories key={index.toString()} shop={item} />
         ))}
+        <PopularProducts />
       </ScrollView>
     </View>
   );

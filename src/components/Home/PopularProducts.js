@@ -65,7 +65,7 @@ const PopularProducts = () => {
       </View>
 
       <TouchableOpacity
-        onPress={() => navigation.navigate("ProductDetails")}
+        onPress={() => navigation.navigate("DesignProductDetails")}
         style={{ margin: 5, marginTop: 5, padding: 5 }}
       >
         <Text style={[styles.title, { color: "black" }]}>

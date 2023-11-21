@@ -2,7 +2,7 @@ import { View, Text, Button } from "react-native";
 import React from "react";
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import BottomTabNavigator from "./BottomTabNavigator";
-import ProductDetails from "../screens/Home/ProductDetails";
+import ProductDetails from "../screens/Shop/ProductDetails";
 import ProductHeaderLeft from '../components/Products/ProductHeaderLeft'
 import ProductHeaderRight from "../components/Products/ProductHeaderRight";
 import EditClientProfile from "../screens/Profile/EditClientProfile";
@@ -13,6 +13,8 @@ import ProfessionalsHeaderRight from "../components/Professionals/ProfessionalsH
 import ShoppingCart from "../screens/Shop/ShoppingCart";
 import ChatScreen from "../screens/Chat/ChatScreen";
 import TalksPostScreen from "../screens/Stories/TalksPostScreen";
+import ProductReviews from "../screens/Shop/ProductReviews";
+import DesignProductDetails from "../screens/Shop/DesignProductDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -60,6 +62,28 @@ const RootNavigator = () => {
         headerShown: true,
         headerShadowVisible: false,
          headerTitle: 'Live Chat',
+         headerBackVisible: false,
+     
+      }}
+    />
+       <Stack.Screen
+      name="DesignProductDetails"
+      component={DesignProductDetails}
+      options={{
+        headerShown: true,
+        headerShadowVisible: false,
+         headerTitle: 'Design Details',
+         headerBackVisible: false,
+     
+      }}
+    />
+         <Stack.Screen
+      name="ProductReviews"
+      component={ProductReviews}
+      options={{
+        headerShown: true,
+        headerShadowVisible: false,
+         headerTitle: 'Product Review',
          headerBackVisible: false,
      
       }}
