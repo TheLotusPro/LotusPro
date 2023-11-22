@@ -10,6 +10,7 @@ import {
 } from "@gluestack-ui/themed";
 import { useNavigation, useTheme } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/solid";
+import NewMessageButton from "../Chat/NewMessageButton";
 
 const ProfessionalListCard = () => {
   const { colors } = useTheme();
@@ -61,11 +62,7 @@ const ProfessionalListCard = () => {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.messageButton}>
-          <Text style={{ fontWeight: "bold", color: "white" }}>
-            Send Message
-          </Text>
-        </TouchableOpacity>
+       <NewMessageButton />
       </View>
     </TouchableOpacity>
   );
