@@ -50,7 +50,7 @@ const RootNavigator = () => {
         name="ProfessionalDetails"
         component={ProfessionalDetails}
         options={{
-          headerShown: true,
+          headerShown: false,
           headerShadowVisible: false,
           headerTitle: "Professional Details",
           // headerLeft: () => <ProductHeaderLeft />,
