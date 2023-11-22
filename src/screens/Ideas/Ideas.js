@@ -1,9 +1,4 @@
-import {
-  ScrollView,
-  StyleSheet,
-  View,
-  TouchableOpacity,
-} from "react-native";
+import { ScrollView, StyleSheet, View, TouchableOpacity } from "react-native";
 import React, { useEffect } from "react";
 import * as Icons from "react-native-heroicons/solid";
 import IdeasHeader from "../../components/Ideas/IdeasHeader";

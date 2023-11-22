@@ -1,13 +1,15 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
-import { useTheme } from "@react-navigation/native";
+import { useNavigation, useTheme } from "@react-navigation/native";
 import PlaceHolder from "../../assets/images/HomeReno.jpeg";
 
 const HomeDesignCard = (props) => {
   const { colors } = useTheme();
+  const navigation = useNavigation();
+
 
   return (
-    <View>
+    <TouchableOpacity  onPress={() => navigation.navigate("ProfessionalList")}>
       <View
         style={{
           flexDirection: "row",
@@ -16,14 +18,15 @@ const HomeDesignCard = (props) => {
           marginBottom: 5,
         }}
       >
-        <TouchableOpacity style={styles.container}>
+        <View 
+        style={styles.container}>
           <Image style={styles.image} source={props?.homeDesign?.image} />
           <View style={styles.textContainer}>
             <Text style={styles.title}>{props?.homeDesign?.name}</Text>
           </View>
-        </TouchableOpacity>
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -8,13 +8,15 @@ import ProductHeaderRight from "../components/Products/ProductHeaderRight";
 import EditClientProfile from "../screens/Profile/EditClientProfile";
 import * as Icons from 'react-native-heroicons/solid';
 import { useNavigation, useTheme } from "@react-navigation/native";
-import ProfessionalsSearch from "../screens/Home/ProfessionalsSearch";
+import ProfessionalsSearch from "../screens/Professionals/ProfessionalsSearch";
 import ProfessionalsHeaderRight from "../components/Professionals/ProfessionalsHeaderRight";
 import ShoppingCart from "../screens/Shop/ShoppingCart";
 import ChatScreen from "../screens/Chat/ChatScreen";
 import TalksPostScreen from "../screens/Stories/TalksPostScreen";
 import ProductReviews from "../screens/Shop/ProductReviews";
 import DesignProductDetails from "../screens/Shop/DesignProductDetails";
+import ProfessionalDetails from "../screens/Professionals/ProfessionalDetails";
+import ProDetailsHeaderRight from "../components/Professionals/ProDetailsHeaderRight";
 
 const Stack = createNativeStackNavigator();
 
@@ -44,17 +46,18 @@ const RootNavigator = () => {
           headerRight: () => <ProductHeaderRight />,
       }}
     />
-     <Stack.Screen
-      name="Professionals"
-      component={ProfessionalsSearch}
+      <Stack.Screen
+      name="ProfessionalDetails"
+      component={ProfessionalDetails}
       options={{
         headerShown: true,
         headerShadowVisible: false,
-         headerTitle: 'Find Professionals',
-         headerBackVisible: false,
-         headerRight: () => <ProfessionalsHeaderRight />,
+         headerTitle: 'Professional Details',
+          // headerLeft: () => <ProductHeaderLeft />,
+          headerRight: () => <ProDetailsHeaderRight />,
       }}
     />
+    
       <Stack.Screen
       name="ChatScreen"
       component={ChatScreen}

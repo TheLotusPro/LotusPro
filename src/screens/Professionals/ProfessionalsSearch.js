@@ -7,7 +7,7 @@ import {
   FlatList,
 } from "react-native";
 import React, { useState, useEffect } from "react";
-import { useTheme } from "@react-navigation/native";
+import { useNavigation, useTheme } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/solid";
 import { Text } from "@gluestack-ui/themed";
 import MatchHeaderButton from "../../components/Match/MatchHeaderButton";
@@ -19,6 +19,7 @@ import HomeImprovementCard from "../../components/Professionals/HomeImprovementC
 const ProfessionalsSearch = ({ navigation }) => {
   const { colors } = useTheme();
   const [loading, setLoading] = useState(false);
+  
 
   useEffect(() => {
     navigation.setOptions({
@@ -75,6 +76,8 @@ const HomeDesign = () => {
 };
 
 const HomeImprovement = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={{ marginTop: 10 }}>
       <View style={{ marginHorizontal: 10, marginTop: 10 }}>

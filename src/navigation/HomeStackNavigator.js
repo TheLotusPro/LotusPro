@@ -10,6 +10,9 @@ import ShopHeaderRight from "../components/Shop/ShopHeaderRight";
 import Stories from "../screens/Stories/Stories";
 import Ideas from "../screens/Ideas/Ideas";
 import Talks from "../screens/Stories/Talks";
+import ProfessionalsHeaderRight from "../components/Professionals/ProfessionalsHeaderRight";
+import ProfessionalsSearch from "../screens/Professionals/ProfessionalsSearch";
+import ProfessionalList from "../screens/Professionals/ProfessionalList";
 
 const HomeStack = createNativeStackNavigator();
 
@@ -79,6 +82,29 @@ const HomeStackNavigator = () => {
           // headerRight: () => <ShopHeaderRight />,
         }}
       />
+            <HomeStack.Screen
+        name="ProfessionalList"
+        component={ProfessionalList}
+        options={{
+          headerShown: true,
+          headerBackVisible: false,
+          headerShadowVisible: false,
+          headerTitle: 'Professionals',
+          // headerLeft: () => <ShopHeaderLeft />,
+          // headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+       <HomeStack.Screen
+      name="Professionals"
+      component={ProfessionalsSearch}
+      options={{
+        headerShown: true,
+        headerShadowVisible: false,
+         headerTitle: 'Find Professionals',
+         headerBackVisible: false,
+         headerRight: () => <ProfessionalsHeaderRight />,
+      }}
+    />
       
     </HomeStack.Navigator>
   );
