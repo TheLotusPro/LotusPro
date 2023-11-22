@@ -79,6 +79,7 @@ const HomeStackNavigator = () => {
           // headerRight: () => <ShopHeaderRight />,
         }}
       />
+      
     </HomeStack.Navigator>
   );
 };

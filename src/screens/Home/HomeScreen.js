@@ -18,7 +18,6 @@ const HomeScreen = () => {
       <Shop />
       <FindProfessionalHeader />
       <Professionals />
-      
       <PopularProducts />
       {/* <PopularProductsHeader />
       <PopularProducts /> */}

@@ -2,13 +2,10 @@ import { ScrollView, StyleSheet, View, TouchableOpacity } from "react-native";
 import React, {useEffect }from "react";
 import ChatInput from "../../components/Chat/ChatInput";
 import {
-  Avatar,
-  AvatarBadge,
-  AvatarFallbackText,
-  AvatarImage,
   Text,
 } from "@gluestack-ui/themed";
 import * as Icons from "react-native-heroicons/solid";
+import IdeasHeader from "../../components/Ideas/IdeasHeader";
 
 const Ideas = ({navigation}) => {
 
@@ -28,6 +25,8 @@ const Ideas = ({navigation}) => {
 
   return (
     <View>
+    <IdeasHeader />
+
       <Text>Ideas</Text>
     </View>
   );
