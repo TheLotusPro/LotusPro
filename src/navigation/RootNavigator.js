@@ -24,6 +24,8 @@ import Followers from "../screens/Profile/Followers";
 import Updates from "../screens/Profile/Updates";
 import History from "../screens/Profile/History";
 import PublicProfile from "../screens/Profile/PublicProfile";
+import SearchIdeas from "../screens/Ideas/SearchIdeas";
+import NewIdea from "../screens/Ideas/NewIdea";
 
 const Stack = createNativeStackNavigator();
 
@@ -190,6 +192,18 @@ const RootNavigator = () => {
             ),
           }}
         />
+         <Stack.Screen
+          name="NewIdea"
+          component={NewIdea}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "New Idea",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
       </Stack.Group>
 
       <Stack.Group
@@ -205,6 +219,18 @@ const RootNavigator = () => {
             headerShadowVisible: false,
             headerTitle: "Edit Profile",
             headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+         <Stack.Screen
+          name="SearchIdeas"
+          component={SearchIdeas}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Search",
+            headerRight: () => (
               <Button title="Cancel" onPress={() => navigation.goBack()} />
             ),
           }}

@@ -2,6 +2,7 @@ import { ScrollView, StyleSheet, View, TouchableOpacity } from "react-native";
 import React, { useEffect } from "react";
 import * as Icons from "react-native-heroicons/solid";
 import { Text } from "@gluestack-ui/themed";
+import FollowersCard from "../../components/Follow/FollowersCard";
 
 const Followers = ({ navigation }) => {
   useEffect(() => {
@@ -18,7 +19,7 @@ const Followers = ({ navigation }) => {
   }, [navigation]);
   return (
     <View>
-      <Text>Followers</Text>
+     <FollowersCard />
     </View>
   )
 }
