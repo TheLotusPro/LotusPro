@@ -26,6 +26,7 @@ import History from "../screens/Profile/History";
 import PublicProfile from "../screens/Profile/PublicProfile";
 import SearchIdeas from "../screens/Ideas/SearchIdeas";
 import NewIdea from "../screens/Ideas/NewIdea";
+import Notifications from "../screens/Notifications/Notifications";
 
 const Stack = createNativeStackNavigator();
 
@@ -136,6 +137,17 @@ const RootNavigator = () => {
           headerBackVisible: false,
         }}
       />
+         <Stack.Screen
+        name="Notifications"
+        component={Notifications}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Notifications",
+          headerBackVisible: false,
+        }}
+      />
+
 
 <Stack.Screen
         name="Updates"
