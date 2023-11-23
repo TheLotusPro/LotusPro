@@ -19,7 +19,7 @@ export default NewMessageButton;
 
 const styles = StyleSheet.create({
   messageButton: {
-    backgroundColor: "dodgerblue",
+    backgroundColor: "#fa8072",
     padding: 10,
     alignItems: "center",
     borderRadius: 10,

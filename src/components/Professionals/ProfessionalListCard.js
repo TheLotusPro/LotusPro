@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: 200,
+    height: 160,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
   },
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     borderColor: "white",
   },
   userContainer: {
-    marginTop: 10,
+    marginTop: 1,
     flexDirection: "row",
     justifyContent: "space-between",
   },

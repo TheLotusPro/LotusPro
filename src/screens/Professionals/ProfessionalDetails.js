@@ -22,21 +22,31 @@ import MyProjects from "../../components/Professionals/MyProjects";
 import myProjects from "../../assets/data/myProjects";
 import BusinessDetails from "../../components/Professionals/BusinessDetails";
 import NewMessageButton from "../../components/Chat/NewMessageButton";
+import Reviews from "../../components/Professionals/Reviews";
+import reviews from "../../assets/data/reviews";
+import Faq from "../../components/Professionals/Faq";
 
 const ProfessionalDetails = () => {
   return (
-    <View style={{flex: 1}}>
-    <ScrollView>
-    <Header />
-      <AboutUs />
-      <Projects />
-      
-      <BusinessDetails />
-    </ScrollView>
-    <View style={{marginBottom: 40, width: "90%", justifyContent: 'center', alignSelf: 'center'}}>
-    <NewMessageButton />
-    </View>
-   
+    <View style={{ flex: 1 }}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Header />
+        <AboutUs />
+        <Projects />
+        <BusinessDetails />
+        <Review />
+        <Faq />
+      </ScrollView>
+      <View
+        style={{
+          marginBottom: 40,
+          width: "90%",
+          justifyContent: "center",
+          alignSelf: "center",
+        }}
+      >
+        <NewMessageButton />
+      </View>
     </View>
   );
 };
@@ -175,19 +185,32 @@ const Projects = () => {
 
   return (
     <View style={styles.projectsContainer}>
-      <Text style={[styles.title, {color: colors.text}]}>Projects</Text>
+      <Text style={[styles.title, { color: colors.text }]}>Projects</Text>
       <FlatList
         data={myProjects}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => <MyProjects myProjects={item} />}
       />
-
     </View>
-  )
-}
+  );
+};
 
+const Review = () => {
+  const { colors } = useTheme();
 
+  return (
+    <View style={styles.projectsContainer}>
+      <Text style={[styles.title, { color: colors.text }]}>Reviews</Text>
+      <FlatList
+        data={reviews}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        renderItem={({ item }) => <Reviews reviews={item} />}
+      />
+    </View>
+  );
+};
 
 export default ProfessionalDetails;
 
@@ -211,7 +234,7 @@ const styles = StyleSheet.create({
   userContainer: {
     padding: 30,
     backgroundColor: "#e0ffff",
-    bottom: 50,
+    bottom: 30,
 
     alignSelf: "center",
     borderRadius: 25,
@@ -240,6 +263,7 @@ const styles = StyleSheet.create({
   },
   aboutContainer: {
     marginHorizontal: 20,
+    marginBottom: 20,
   },
   title: {
     fontWeight: "bold",
@@ -249,6 +273,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   projectsContainer: {
-    margin: 20
-  }
+    marginHorizontal: 20,
+  },
 });
