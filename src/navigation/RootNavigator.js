@@ -18,6 +18,12 @@ import DesignProductDetails from "../screens/Shop/DesignProductDetails";
 import ProfessionalDetails from "../screens/Professionals/ProfessionalDetails";
 import ProDetailsHeaderRight from "../components/Professionals/ProDetailsHeaderRight";
 import NewMessageModel from "../screens/Chat/NewMessageModel";
+import Activity from "../screens/Profile/Activity";
+import Following from "../screens/Profile/Following";
+import Followers from "../screens/Profile/Followers";
+import Updates from "../screens/Profile/Updates";
+import History from "../screens/Profile/History";
+import PublicProfile from "../screens/Profile/PublicProfile";
 
 const Stack = createNativeStackNavigator();
 
@@ -98,6 +104,74 @@ const RootNavigator = () => {
           headerBackVisible: false,
         }}
       />
+        <Stack.Screen
+        name="Activity"
+        component={Activity}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Activity",
+          headerBackVisible: false,
+        }}
+      />
+        <Stack.Screen
+        name="Following"
+        component={Following}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Following",
+          headerBackVisible: false,
+        }}
+      />
+       <Stack.Screen
+        name="Followers"
+        component={Followers}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Followers",
+          headerBackVisible: false,
+        }}
+      />
+
+<Stack.Screen
+        name="Updates"
+        component={Updates}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Updates",
+          headerBackVisible: false,
+        }}
+      />
+
+<Stack.Screen
+        name="History"
+        component={History}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "History",
+          headerBackVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="PublicProfile"
+        component={PublicProfile}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Profile",
+          headerBackVisible: false,
+        }}
+      />
+      
+      
+      
+      
+      
+
 
       <Stack.Group
         screenOptions={{
