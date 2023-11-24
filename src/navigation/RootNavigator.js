@@ -27,6 +27,7 @@ import PublicProfile from "../screens/Profile/PublicProfile";
 import SearchIdeas from "../screens/Ideas/SearchIdeas";
 import NewIdea from "../screens/Ideas/NewIdea";
 import Notifications from "../screens/Notifications/Notifications";
+import NewReview from "../screens/Shop/NewReview";
 
 const Stack = createNativeStackNavigator();
 
@@ -107,7 +108,7 @@ const RootNavigator = () => {
           headerBackVisible: false,
         }}
       />
-        <Stack.Screen
+      <Stack.Screen
         name="Activity"
         component={Activity}
         options={{
@@ -117,7 +118,7 @@ const RootNavigator = () => {
           headerBackVisible: false,
         }}
       />
-        <Stack.Screen
+      <Stack.Screen
         name="Following"
         component={Following}
         options={{
@@ -127,7 +128,7 @@ const RootNavigator = () => {
           headerBackVisible: false,
         }}
       />
-       <Stack.Screen
+      <Stack.Screen
         name="Followers"
         component={Followers}
         options={{
@@ -137,7 +138,7 @@ const RootNavigator = () => {
           headerBackVisible: false,
         }}
       />
-         <Stack.Screen
+      <Stack.Screen
         name="Notifications"
         component={Notifications}
         options={{
@@ -148,8 +149,7 @@ const RootNavigator = () => {
         }}
       />
 
-
-<Stack.Screen
+      <Stack.Screen
         name="Updates"
         component={Updates}
         options={{
@@ -160,7 +160,7 @@ const RootNavigator = () => {
         }}
       />
 
-<Stack.Screen
+      <Stack.Screen
         name="History"
         component={History}
         options={{
@@ -180,16 +180,10 @@ const RootNavigator = () => {
           headerBackVisible: false,
         }}
       />
-      
-      
-      
-      
-      
-
 
       <Stack.Group
         screenOptions={{
-          presentation: 'modal',
+          presentation: "modal",
         }}
       >
         <Stack.Screen
@@ -204,7 +198,19 @@ const RootNavigator = () => {
             ),
           }}
         />
-         <Stack.Screen
+        <Stack.Screen
+          name="NewReview"
+          component={NewReview}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "New Review",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+        <Stack.Screen
           name="NewIdea"
           component={NewIdea}
           options={{
@@ -235,7 +241,7 @@ const RootNavigator = () => {
             ),
           }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="SearchIdeas"
           component={SearchIdeas}
           options={{
