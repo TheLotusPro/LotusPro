@@ -8,6 +8,8 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 import React, { useEffect, useState } from "react";
+import ImagePicker from 'react-native-image-crop-picker';
+
 import ChatInput from "../../components/Chat/ChatInput";
 import {
   Avatar,
@@ -82,13 +84,36 @@ const Header = () => {
 
 const Attachments = () => {
   const { colors } = useTheme();
+  const [images, setImages] = useState([]);
+
+  const handleImagePicker = async () => {
+    try {
+      const result = await ImagePicker.openPicker({
+        multiple: true,
+        mediaType: 'photo',
+      });
+
+      // Update state with selected images
+      setImages(result);
+    } catch (error) {
+      console.log('Error picking images:', error);
+    }
+  };
+
 
   return (
     <View style={styles.attachmentsContainer}>
-      <TouchableOpacity style={{ flexDirection: "row" }}>
+      <TouchableOpacity 
+      onPress={handleImagePicker}
+      style={{ flexDirection: "row" }}>
         <Icons.PaperClipIcon size={20} color={colors.text} />
         <Text style={[styles.addMedia, { color: colors.text }]}>Add Media</Text>
       </TouchableOpacity>
+      <View style={styles.imageContainer}>
+        {images.map((image) => (
+          <Image key={image.path} source={{ uri: image.path }} style={styles.image} />
+        ))}
+      </View>
     </View>
   );
 };
@@ -184,5 +209,15 @@ const styles = StyleSheet.create({
   disclaimer: {
     fontSize: 13,
     color: 'gray'
-  }
+  },
+  imageContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
+  image: {
+    width: 50,
+    height: 50,
+    margin: 5,
+  },
 });

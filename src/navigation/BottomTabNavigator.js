@@ -8,6 +8,7 @@ import TestScreen from "../screens/TestScreen";
 import ChatStackNavigator from "./ChatStackNavigator";
 import ProfileStackNavigator from "./ProfileStackNavigator";
 import IdeaStackNavigator from "./IdeaStackNavigator";
+import ProNavigator from "./ProNavigator";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -54,6 +55,18 @@ const BottomTabNavigator = () => {
           headerShadowVisible: false,
           tabBarIcon: ({color, style}) => (
             <Icons.HeartIcon size={25} color={color} />
+          ),
+        }}
+      />
+       <BottomTab.Screen
+        name="Pro"
+        component={ProNavigator}
+        options={{
+          unmountOnBlur: true,
+          headerShown: false,
+          headerShadowVisible: false,
+          tabBarIcon: ({color, style}) => (
+            <Icons.BuildingOffice2Icon size={25} color={color} />
           ),
         }}
       />

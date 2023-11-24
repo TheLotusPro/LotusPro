@@ -50,7 +50,7 @@ const ProductReviews = ({ navigation }) => {
           alignSelf: "center",
         }}
       >
-      <WriteReviewButton />
+        <WriteReviewButton />
       </View>
     </View>
   );
