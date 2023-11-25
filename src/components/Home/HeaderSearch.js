@@ -30,7 +30,7 @@ const HeaderSearch = () => {
         </TouchableOpacity>
       </View>
       <TouchableOpacity onPress={() => navigation.navigate("ShoppingCart")}>
-        <Icons.ShoppingCartIcon size={25} color={ "#fa8072"} />
+        <Icons.ShoppingCartIcon size={25} color={ "#33AB5F"} />
       </TouchableOpacity>
     </View>
   );

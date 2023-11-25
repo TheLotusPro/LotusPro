@@ -33,7 +33,7 @@ export default MyIdeas;
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "dodgerblue",
+    backgroundColor: "#33AB5F",
     padding: 10,
     flexDirection: "row",
     alignItems: "center",

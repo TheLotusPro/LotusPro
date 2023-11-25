@@ -30,7 +30,7 @@ const ProductReviews = ({ navigation }) => {
           onPress={() => navigation.goBack()}
           style={{ width: 50 }}
         >
-          <Icons.ArrowLongLeftIcon style={{ color: "#fa8072" }} size={30} />
+          <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
         </TouchableOpacity>
       ),
     });
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   reviewContainer: {
-    backgroundColor: "#fa807220",
+    backgroundColor: "#33AB5F20",
     bottom: 10,
     borderRadius: 10,
   },

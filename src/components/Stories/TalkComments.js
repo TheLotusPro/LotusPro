@@ -37,7 +37,7 @@ const TalkComments = () => {
           <View>
             <Text style={styles.time}>20 min ago</Text>
             <View style={styles.commentContainer}>
-              <Text style={[{ color: colors.text }]}>
+              <Text style={[ styles.comment, { color: colors.text }]}>
                 Wow that looks amazing. Glad to have worked with you and the
                 team.{" "}
               </Text>
@@ -94,4 +94,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: "gray",
   },
+  comment: {
+    width: 300
+  }
 });

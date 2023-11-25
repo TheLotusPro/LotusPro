@@ -309,10 +309,17 @@ const styles = StyleSheet.create({
   },
   borderContainer: {
     padding: 20,
-    backgroundColor: "rgba(52, 52, 52, 0.2)",
+    backgroundColor: "rgba(42, 42, 42, 0.1)",
     borderRadius: 10,
     flexDirection: "row",
     justifyContent: "space-between",
+    // shadowColor: "#2f4f4f",
+    // shadowOpacity: 0.5,
+    // shadowRadius: 2,
+    // shadowOffset: {
+    //   height: 1,
+    //   width: 2,
+    // },
   },
   optionTitle: {
     fontWeight: "bold",
@@ -323,7 +330,7 @@ const styles = StyleSheet.create({
   },
   borderContainerLarge: {
     padding: 20,
-    backgroundColor: "rgba(52, 52, 52, 0.2)",
+    backgroundColor: "rgba(42, 42, 42, 0.1)",
     borderRadius: 10,
     height: 200,
   },
@@ -333,13 +340,13 @@ const styles = StyleSheet.create({
   },
   borderContainerMed: {
     padding: 20,
-    backgroundColor: "rgba(52, 52, 52, 0.2)",
+    backgroundColor: "rgba(42, 42, 42, 0.1)",
     borderRadius: 10,
     height: 100,
   },
   borderContainerEstimate: {
     padding: 20,
-    backgroundColor: "rgba(52, 52, 52, 0.2)",
+    backgroundColor: "rgba(42, 42, 42, 0.1)",
     borderRadius: 10,
   },
 });

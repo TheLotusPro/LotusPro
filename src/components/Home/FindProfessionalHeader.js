@@ -19,7 +19,7 @@ const FindProfessionalHeader = () => {
       onPress={() => navigation.navigate('Professionals')}
       style={{ flexDirection: "row", alignItems: "center" }}>
         <Text style={styles.seeAll}>See all</Text>
-        <Icons.ArrowLongRightIcon size={25} color={"#fa8072"} />
+        <Icons.ArrowLongRightIcon size={25} color={"#33AB5F"} />
       </TouchableOpacity>
     </View>
   )
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
       },
       seeAll: {
-        color: "#fa8072",
+        color: "#33AB5F",
         fontSize: 14,
         marginRight: 5,
       },

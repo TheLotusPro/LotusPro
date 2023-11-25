@@ -13,7 +13,7 @@ const Faq = () => {
 
       <View style={styles.container}>
         <View style={styles.faq}>
-          <Text style={[styles.question, { color: colors.text }]}>
+          <Text style={[styles.question, { color: 'black' }]}>
             How is Outsider Interior Design rated?
           </Text>
           <Text style={styles.answer}>
@@ -22,7 +22,7 @@ const Faq = () => {
         </View>
 
         <View style={styles.faq}>
-          <Text style={[styles.question, { color: colors.text }]}>
+          <Text style={[styles.question, { color: 'black' }]}>
             What services does Outsider Interior Design provide?
           </Text>
           <Text style={styles.answer}>

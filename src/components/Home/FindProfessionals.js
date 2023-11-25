@@ -30,10 +30,10 @@ const styles = StyleSheet.create({
     height: 135,
     marginBottom: 20,
     shadowColor: "gray",
-    shadowOpacity: 1.8,
+    shadowOpacity: 0.3,
     shadowRadius: 2,
     shadowOffset: {
-      height: 2,
+      height: 1,
       width: 1
     }
 

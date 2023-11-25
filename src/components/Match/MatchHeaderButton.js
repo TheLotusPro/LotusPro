@@ -52,7 +52,7 @@ export default MatchHeaderButton;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fa807090",
+    backgroundColor: "#33AB5F90",
     height: 190,
   },
 });

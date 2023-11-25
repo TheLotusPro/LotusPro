@@ -6,7 +6,7 @@ import * as Icons from "react-native-heroicons/solid";
 const ProHeaderRight = () => {
   return (
     <TouchableOpacity>
-       <Icons.InboxIcon size={30} color={"#fa8072"} />
+       <Icons.InboxIcon size={30} color={"#33AB5F"} />
     </TouchableOpacity>
   );
 };

@@ -26,7 +26,7 @@ const ProjectsFeedWidget = () => {
             onPress={() => navigation.navigate("Projects")}
             style={{ flexDirection: "row", alignItems: "center" }}
           >
-            <Text style={styles.seeAll}>See All</Text>
+            <Text style={[styles.seeAll, {color: colors.text}]}>See All</Text>
             <Icons.ChevronRightIcon size={20} color={colors.text} />
           </TouchableOpacity>
         </View>
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   project: {
-    backgroundColor: "rgba(52, 52, 52, 0.2)",
+    backgroundColor: "rgba(42, 42, 42, 0.1)",
     padding: 20,
     borderRadius: 10,
   },

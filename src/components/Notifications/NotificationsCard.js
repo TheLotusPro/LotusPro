@@ -34,7 +34,7 @@ const NotificationsCard = () => {
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
             <Text style={styles.date}>Monday at 1:30PM</Text>
-            <Text style={[styles.date, { color: "red" }]}>New</Text>
+            <Text style={[styles.condition]}>New</Text>
           </View>
         </View>
       </View>
@@ -70,4 +70,8 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: "gray",
   },
+  condition: {
+    fontSize: 13,
+    color: '#33AB5F'
+  }
 });

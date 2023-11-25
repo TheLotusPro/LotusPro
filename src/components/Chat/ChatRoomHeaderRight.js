@@ -5,7 +5,7 @@ import * as Icons from "react-native-heroicons/solid";
 const ChatRoomHeaderRight = () => {
   return (
     <TouchableOpacity style={styles.container}>
-    <Icons.PencilSquareIcon size={30} color={"#fa8072"} />
+    <Icons.PencilSquareIcon size={30} color={"#33AB5F"} />
   </TouchableOpacity>
   );
 };

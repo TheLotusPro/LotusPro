@@ -19,7 +19,7 @@ export default WriteReviewButton;
 
 const styles = StyleSheet.create({
   messageButton: {
-    backgroundColor: "#fa8072",
+    backgroundColor: "#33AB5F",
     padding: 10,
     alignItems: "center",
     borderRadius: 10,

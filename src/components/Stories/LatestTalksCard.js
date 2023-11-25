@@ -37,11 +37,11 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     borderRadius: 10,
     shadowColor: "gray",
-    shadowOpacity: 0.8,
+    shadowOpacity: 0.3,
     shadowRadius: 2,
     shadowOffset: {
-      height: 2,
-      width: 1,
+      height: 1,
+      width: 1
     },
     margin: 5
   },

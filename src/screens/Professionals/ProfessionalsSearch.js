@@ -28,7 +28,7 @@ const ProfessionalsSearch = ({ navigation }) => {
           onPress={() => navigation.goBack()}
           style={{ width: 50 }}
         >
-          <Icons.ArrowLongLeftIcon style={{ color: "#fa8072" }} size={30} />
+          <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
         </TouchableOpacity>
       ),
     });
@@ -77,11 +77,12 @@ const HomeDesign = () => {
 
 const HomeImprovement = () => {
   const navigation = useNavigation();
+  const {colors} = useTheme();
 
   return (
     <View style={{ marginTop: 10 }}>
       <View style={{ marginHorizontal: 10, marginTop: 10 }}>
-        <Text style={styles.title}>Home Improvement</Text>
+        <Text style={[styles.title, {color: colors.text}]}>Home Improvement</Text>
       </View>
       <View style={{ marginTop: 10, marginBottom: 20 }}>
       {homeImprovement.map((item, index) => (

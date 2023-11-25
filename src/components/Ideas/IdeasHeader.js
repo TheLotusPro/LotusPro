@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around'
   },
   button: {
-    backgroundColor: "#fa8072",
+    backgroundColor: "#33AB5F",
     width: 170,
     padding: 10,
     alignItems: "center",

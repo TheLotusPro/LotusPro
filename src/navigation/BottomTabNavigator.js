@@ -18,7 +18,7 @@ const BottomTabNavigator = () => {
       screenOptions={{
         // ...
         style: {borderTopWidth: 0},
-        tabBarActiveTintColor: '#fa8072',
+        tabBarActiveTintColor: '#33AB5F',
         tabBarInactiveTintColor: '#ababab',
         tabBarShowLabel: true,
       }}>

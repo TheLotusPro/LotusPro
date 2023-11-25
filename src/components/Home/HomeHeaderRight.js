@@ -11,7 +11,7 @@ const HomeHeaderRight = () => {
     <TouchableOpacity 
     onPress={() => navigation.navigate('Notifications')}
     style={styles.container}>
-      <Icons.BellAlertIcon size={30} color={"#fa8072"} />
+      <Icons.BellAlertIcon size={30} color={"#33AB5F"} />
     </TouchableOpacity>
   );
 };

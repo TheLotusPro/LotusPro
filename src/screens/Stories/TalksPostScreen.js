@@ -30,7 +30,7 @@ const TalksPostScreen = ({ navigation }) => {
           onPress={() => navigation.goBack()}
           style={{ width: 50 }}
         >
-          <Icons.ArrowLongLeftIcon style={{ color: "#fa8072" }} size={30} />
+          <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
         </TouchableOpacity>
       ),
     });
@@ -261,7 +261,7 @@ const styles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: "#fa8072",
+    backgroundColor: "#33AB5F",
   },
   inactiveDotStyle: {
     // Customize inactive dot style if needed
@@ -269,7 +269,7 @@ const styles = StyleSheet.create({
   footerContainer: {
     marginHorizontal: 20,
     borderBottomWidth: 0.5,
-    borderBottomColor: "#fa807230",
+    borderBottomColor: "#33AB5F30",
 
   },
 });

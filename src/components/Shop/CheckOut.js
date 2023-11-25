@@ -9,13 +9,13 @@ const CheckOut = () => {
   return (
     <View>
      <TouchableOpacity
-      onPress={() => navigation.navigate("NewReview")}
+      // onPress={() => navigation.navigate("NewReview")}
       style={styles.messageButton}
     >
       <Text style={{ fontWeight: "bold", color: "white" }}>Apple Pay</Text>
     </TouchableOpacity>
     <TouchableOpacity
-      onPress={() => navigation.navigate("NewReview")}
+      // onPress={() => navigation.navigate("NewReview")}
       style={styles.messageButton}
     >
       <Text style={{ fontWeight: "bold", color: "white" }}>Proceed to CheckOut</Text>
@@ -30,7 +30,7 @@ export default CheckOut
 
 const styles = StyleSheet.create({
     messageButton: {
-      backgroundColor: "#fa8072",
+      backgroundColor: "#33AB5F",
       padding: 20,
       alignItems: "center",
       borderRadius: 10,

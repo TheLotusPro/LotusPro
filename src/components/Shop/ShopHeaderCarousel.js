@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
       width: 10,
       height: 10,
       borderRadius: 5,
-      backgroundColor: "#fa8072",
+      backgroundColor: "#33AB5F",
     },
     inactiveDotStyle: {
       // Customize inactive dot style if needed

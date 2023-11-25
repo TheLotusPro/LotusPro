@@ -15,7 +15,7 @@ const ProductHeaderRight = () => {
   return (
     <TouchableOpacity style={[styles.backButton]}>
     <View style={{ padding: 3 }}>
-      <Icons.ShoppingCartIcon style={{ color: '#fa8072' }} size={25} />
+      <Icons.ShoppingCartIcon style={{ color: '#33AB5F' }} size={25} />
     </View>
   </TouchableOpacity>
   );

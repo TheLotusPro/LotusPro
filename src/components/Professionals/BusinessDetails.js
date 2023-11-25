@@ -20,7 +20,7 @@ const BusinessDetails = () => {
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <View>
             <View style={styles.row}>
-              <Icons.UserIcon style={{ color: "#fa8072" }} size={18} />
+              <Icons.UserIcon style={{ color: "#33AB5F" }} size={18} />
               <View style={{ marginLeft: 5 }}>
                 <Text style={[styles.business, { color: 'black' }]}>
                   Business Name
@@ -32,7 +32,7 @@ const BusinessDetails = () => {
             </View>
 
             <View style={styles.row}>
-              <Icons.PhoneIcon style={{ color: "#fa8072" }} size={18} />
+              <Icons.PhoneIcon style={{ color: "#33AB5F" }} size={18} />
               <View style={{ marginLeft: 5 }}>
                 <Text style={[styles.business, { color: 'black' }]}>
                   Phone Number
@@ -44,7 +44,7 @@ const BusinessDetails = () => {
             </View>
 
             <View style={styles.row}>
-              <Icons.GlobeAltIcon style={{ color: "#fa8072" }} size={18} />
+              <Icons.GlobeAltIcon style={{ color: "#33AB5F" }} size={18} />
               <View style={{ marginLeft: 5 }}>
                 <Text style={[styles.business, { color: 'black' }]}>
                   Website
@@ -56,7 +56,7 @@ const BusinessDetails = () => {
             </View>
 
             <View style={styles.row}>
-              <Icons.BuildingStorefrontIcon style={{ color: "#fa8072" }} size={18} />
+              <Icons.BuildingStorefrontIcon style={{ color: "#33AB5F" }} size={18} />
               <View style={{ marginLeft: 5 }}>
                 <Text style={[styles.business, { color: 'black' }]}>
                   Address
@@ -73,7 +73,7 @@ const BusinessDetails = () => {
           {/* bottom */}
           <View>
             <View style={styles.row}>
-              <Icons.CurrencyDollarIcon style={{ color: "#fa8072" }} size={18} />
+              <Icons.CurrencyDollarIcon style={{ color: "#33AB5F" }} size={18} />
               <View style={{ marginLeft: 5 }}>
                 <Text style={[styles.business, { color: 'black' }]}>
                   Typical Job Cost
@@ -85,7 +85,7 @@ const BusinessDetails = () => {
             </View>
 
             <View style={styles.row}>
-              <Icons.DocumentCheckIcon style={{ color: "#fa8072" }} size={18} />
+              <Icons.DocumentCheckIcon style={{ color: "#33AB5F" }} size={18} />
               <View style={{ marginLeft: 5 }}>
                 <Text style={[styles.business, { color: 'black' }]}>
                   License Number
@@ -97,7 +97,7 @@ const BusinessDetails = () => {
             </View>
 
             <View style={styles.row}>
-              <Icons.UserGroupIcon style={{ color: "#fa8072" }} size={18} />
+              <Icons.UserGroupIcon style={{ color: "#33AB5F" }} size={18} />
               <View style={{ marginLeft: 5 }}>
                 <Text style={[styles.business, {color: 'black' }]}>
                   Followers

@@ -23,7 +23,7 @@ const Stories = ({ navigation }) => {
           onPress={() => navigation.goBack()}
           style={{ width: 50 }}
         >
-          <Icons.ArrowLongLeftIcon style={{ color: "#fa8072" }} size={30} />
+          <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
         </TouchableOpacity>
       ),
     });
@@ -66,8 +66,8 @@ const Latest = () => {
           onPress={() => navigation.navigate("Talks")}
           style={{ flexDirection: "row", alignItems: "center" }}
         >
-          <Text style={{ color: "#fa8072", fontSize: 13 }}>Sell All</Text>
-          <Icons.ArrowLongRightIcon style={{ color: "#fa8072" }} size={30} />
+          <Text style={{ color: "#33AB5F", fontSize: 13 }}>Sell All</Text>
+          <Icons.ArrowLongRightIcon style={{ color: "#33AB5F" }} size={30} />
         </TouchableOpacity>
       </View>
 

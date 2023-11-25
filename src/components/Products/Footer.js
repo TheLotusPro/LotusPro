@@ -24,7 +24,7 @@ const Footer = () => {
         <Text style={styles.buttonText}>Try with AR</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={[styles.button, {backgroundColor: "#fa8072"}]}>
+      <TouchableOpacity style={[styles.button, {backgroundColor: "#33AB5F"}]}>
       <Text style={styles.buttonText}>Add to cart</Text>
       </TouchableOpacity>
     </View>

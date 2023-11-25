@@ -25,7 +25,7 @@ export default ShopCategories;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fa807290",
+    backgroundColor: "#33AB5F90",
     margin: 15,
     borderRadius: 10,
     marginBottom: 1

@@ -24,7 +24,7 @@ const ProfessionalList = () => {
               onPress={() => navigation.goBack()}
               style={{ width: 50 }}
             >
-              <Icons.ArrowLongLeftIcon style={{ color: "#fa8072" }} size={30} />
+              <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
             </TouchableOpacity>
           ),
         });

@@ -29,7 +29,7 @@ const Talks = ({ navigation }) => {
           onPress={() => navigation.goBack()}
           style={{ width: 50 }}
         >
-          <Icons.ArrowLongLeftIcon style={{ color: "#fa8072" }} size={30} />
+          <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
         </TouchableOpacity>
       ),
     });
@@ -51,8 +51,8 @@ const Header = () => {
     <TouchableOpacity 
     style={styles.topicButton}>
    <View style={{flexDirection: 'row', alignItems: 'center'}}>
-   <Text style={{color:  "#fa8072", fontWeight: 'bold'}}>Topic</Text>
-   <Icons.ChevronDownIcon style={{ color:  "#fa8072",}} size={15} />
+   <Text style={{color:  "#33AB5F", fontWeight: 'bold'}}>Topic</Text>
+   <Icons.ChevronDownIcon style={{ color:  "#33AB5F",}} size={15} />
    </View>
       
 
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 10,
 
-    backgroundColor: "#fa807210",
+    backgroundColor: "#33AB5F10",
     borderRadius: 10,
   },
   inputContainer: {
@@ -127,12 +127,12 @@ const styles = StyleSheet.create({
   },
   topicButton: {
     marginHorizontal: 20,
-    backgroundColor: "#fa807210",
+    backgroundColor: "#33AB5F10",
     width: "25%", 
     alignItems: 'center', 
     padding: 5, 
     borderRadius: 5,
-    borderColor: "#fa8072",
+    borderColor: "#33AB5F",
     borderWidth: 0.5
   }
 });

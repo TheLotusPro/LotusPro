@@ -19,22 +19,20 @@ const ShoppingCart = ({ navigation }) => {
     navigation.setOptions({
       headerTitle: () => (
         <TouchableOpacity style={{ width: 50, marginLeft: 20 }}>
-          <Icons.ShoppingBagIcon style={{ color: "#fa8072" }} size={30} />
+          <Icons.ShoppingBagIcon style={{ color: "#33AB5F" }} size={30} />
         </TouchableOpacity>
       ),
     });
   }, [navigation]);
 
   return (
-    <View style={{flex: 1}}>
-
-   
-    <ScrollView>
-      <Items />
-      <GiftCode />
-      <Summery />
-    </ScrollView>
-    <CheckOut />
+    <View style={{ flex: 1 }}>
+      <ScrollView>
+        <Items />
+        <GiftCode />
+        <Summery />
+      </ScrollView>
+      <CheckOut />
     </View>
   );
 };
@@ -87,7 +85,7 @@ const Items = () => {
         <View style={{ marginTop: 10, flexDirection: "row" }}>
           <TouchableOpacity
             style={{
-              borderColor: "#fa807250",
+              borderColor: "#33AB5F50",
               width: 80,
               borderWidth: 1,
               flexDirection: "row",
@@ -95,7 +93,7 @@ const Items = () => {
               alignItems: "center",
             }}
           >
-            <Text>1</Text>
+            <Text style={[{ color: colors.text }]}>1</Text>
             <Icons.ChevronDownIcon size={20} color={colors.text} />
           </TouchableOpacity>
 
@@ -118,17 +116,14 @@ const GiftCode = () => {
   const { colors } = useTheme();
   return (
     <View style={styles.giftContainer}>
-     <Text style={[styles.boldText, { color: colors.text }]}>Gift Code</Text>
+      <Text style={[styles.boldText, { color: colors.text }]}>Gift Code</Text>
 
-     <TouchableOpacity>
-     <Text style={{ color: colors.text }}>Add</Text>
-     </TouchableOpacity>
-
-
-
+      <TouchableOpacity>
+        <Text style={{ color: colors.text }}>Add</Text>
+      </TouchableOpacity>
     </View>
-  )
-}
+  );
+};
 
 const Summery = () => {
   const { colors } = useTheme();
@@ -153,45 +148,74 @@ const Summery = () => {
     );
   };
 
-
   return (
     <View style={styles.summeryContainer}>
-    <View style={{borderBottomWidth: 1, borderBottomColor: 'gray'}}>
-       <Text style={[styles.boldText, { color: colors.text }]}>Order Summery</Text>
-
-       <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 25}}>
-       <Text style={[styles.text, { color: colors.text }]}>Subtotal:</Text>
-        <Text style={[styles.boldText, { color: colors.text }]}>$2,784.00</Text>
-       </View>
-
-       <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 15}}>
-       <Text style={[styles.text, { color: colors.text }]}>Shipping:</Text>
-        <Text style={[styles.boldText, { color: colors.text }]}>Free</Text>
-       </View>
-
-       <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 15, marginBottom: 10}}>
-       <Text style={[styles.text, { color: colors.text }]}>Promo or Gift Code:</Text>
-
-<TouchableOpacity>
-<Icons.ChevronDownIcon size={25} color={colors.text} />
-</TouchableOpacity>
-       </View>
-
-       </View>
-
-       <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 15}}>
-       <Text style={[styles.text, { color: colors.text }]}>Total:</Text>
-        <Text style={[styles.boldText, { color: colors.text }]}>$2,784.00</Text>
-       </View>
-
-       <View style={{marginTop: 5}}>
-        <Text style={{fontSize: 14, color: 'gray'}}>
-        or 4 interest-free payments of $399.75 with <AfterPlay />{" "}
+      <View style={{ borderBottomWidth: 1, borderBottomColor: "gray" }}>
+        <Text style={[styles.boldText, { color: colors.text }]}>
+          Order Summery
         </Text>
-       </View>
+
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            marginTop: 25,
+          }}
+        >
+          <Text style={[styles.text, { color: colors.text }]}>Subtotal:</Text>
+          <Text style={[styles.boldText, { color: colors.text }]}>
+            $2,784.00
+          </Text>
+        </View>
+
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            marginTop: 15,
+          }}
+        >
+          <Text style={[styles.text, { color: colors.text }]}>Shipping:</Text>
+          <Text style={[styles.boldText, { color: colors.text }]}>Free</Text>
+        </View>
+
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            marginTop: 15,
+            marginBottom: 10,
+          }}
+        >
+          <Text style={[styles.text, { color: colors.text }]}>
+            Promo or Gift Code:
+          </Text>
+
+          <TouchableOpacity>
+            <Icons.ChevronDownIcon size={25} color={colors.text} />
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          marginTop: 15,
+        }}
+      >
+        <Text style={[styles.text, { color: colors.text }]}>Total:</Text>
+        <Text style={[styles.boldText, { color: colors.text }]}>$2,784.00</Text>
+      </View>
+
+      <View style={{ marginTop: 5 }}>
+        <Text style={{ fontSize: 14, color: "gray" }}>
+          or 4 interest-free payments of $399.75 with <AfterPlay />{" "}
+        </Text>
+      </View>
     </View>
-  )
-}
+  );
+};
 
 export default ShoppingCart;
 
@@ -220,16 +244,15 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   giftContainer: {
-  
-    backgroundColor: "#fa807230",
+    backgroundColor: "#33AB5F30",
     padding: 25,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 20
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 20,
   },
   summeryContainer: {
-    backgroundColor: "#fa807230",
+    backgroundColor: "#33AB5F30",
     marginTop: 20,
-    padding: 20
+    padding: 20,
   },
 });

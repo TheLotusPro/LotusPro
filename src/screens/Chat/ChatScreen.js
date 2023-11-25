@@ -20,7 +20,7 @@ const ChatScreen = ({navigation}) => {
               onPress={() => navigation.goBack()}
               style={{ width: 50 }}
             >
-              <Icons.ArrowLongLeftIcon style={{ color: "#fa8072" }} size={30} />
+              <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
             </TouchableOpacity>
           ),
         });
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     height: 80,
   },
   info: {
-    color: "#fa8072",
+    color: "#33AB5F",
     fontSize: 13,
     fontWeight: "bold",
   },

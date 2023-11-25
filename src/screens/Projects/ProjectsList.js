@@ -9,6 +9,7 @@ import { useNavigation } from "@react-navigation/native";
 import {
     Text,
   } from "@gluestack-ui/themed";
+import ProjectListItems from "../../components/Projects/ProjectListItems";
 
 const ProjectsList = () => {
     const navigation = useNavigation();
@@ -41,7 +42,7 @@ const ProjectsList = () => {
 
   return (
     <View>
-      <Text>ProjectsList</Text>
+     <ProjectListItems />
     </View>
   )
 }

@@ -32,7 +32,7 @@ const NewReview = ({ navigation }) => {
           onPress={() => navigation.goBack()}
           style={{ width: 50 }}
         >
-          <Text style={{ fontWeight: "bold", color: "#fa8072", fontSize: 18 }}>
+          <Text style={{ fontWeight: "bold", color: "#33AB5F", fontSize: 18 }}>
             Post
           </Text>
         </TouchableOpacity>
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     width: "90%",
     borderRadius: 5,
     padding: 30,
-    backgroundColor: "#fa807220",
+    backgroundColor: "#33AB5F20",
     height: 400,
   },
   attachmentsContainer: {

@@ -6,7 +6,7 @@ import {
   ActivityIndicator,
 } from "react-native";
 import { useNavigation, useTheme } from "@react-navigation/native";
-import { Text, Avatar, AvatarFallbackText } from "@gluestack-ui/themed";
+import { Text, Avatar, AvatarFallbackText, ScrollView } from "@gluestack-ui/themed";
 import * as Icons from "react-native-heroicons/solid";
 import * as Icon from "react-native-heroicons/outline";
 
@@ -41,7 +41,7 @@ const AddTeamMember = () => {
   }, [navigation, isLoading]);
 
   return (
-    <View>
+    <ScrollView>
     <View style={{ marginHorizontal: 15, marginBottom: 15}}>
     <TouchableOpacity 
       onPress={() => navigation.navigate('InviteTeamMember')}
@@ -70,7 +70,7 @@ const AddTeamMember = () => {
       </TouchableOpacity>
     </View>
 
-    </View>
+    </ScrollView>
    
   );
 };
@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     flexDirection: "row",
     justifyContent: "center",
+    marginTop: 5
   },
   options: {
     fontWeight: 'bold'

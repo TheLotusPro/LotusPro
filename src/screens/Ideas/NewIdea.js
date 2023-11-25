@@ -28,7 +28,7 @@ const NewIdea = () => {
           onPress={() => navigation.goBack()}
           style={{ width: 50 }}
         >
-          <Text style={{ fontWeight: "bold", color: "#fa8072", fontSize: 18 }}>
+          <Text style={{ fontWeight: "bold", color: "#33AB5F", fontSize: 18 }}>
             Done
           </Text>
         </TouchableOpacity>
@@ -47,7 +47,7 @@ const NewIdea = () => {
 
     <View style={styles.titleContainer}>
 
-      <Text style={[styles.title, {color: "#fa8072"}]}>Idea Name</Text>
+      <Text style={[styles.title, {color: "#33AB5F"}]}>Idea Name</Text>
       </View>
       <View style={styles.container}>
       <TextInput
@@ -68,7 +68,7 @@ const NewIdea = () => {
 
       <View style={styles.titleContainer}>
 
-<Text style={[styles.title, {color: "#fa8072"}]}>Add a Brief Description</Text>
+<Text style={[styles.title, {color: "#33AB5F"}]}>Add a Brief Description</Text>
 </View>
 <View style={styles.container}>
 <TextInput

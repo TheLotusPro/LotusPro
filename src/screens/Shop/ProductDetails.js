@@ -236,7 +236,7 @@ const Buttons = () => {
                 }}
                 style={[
                   styles.button,
-                  { backgroundColor: isActive ? "#fa8072" : "#fa807250" },
+                  { backgroundColor: isActive ? "#33AB5F" : "#33AB5F50" },
                 ]}
               >
                 <Text style={{ color: textColor, fontWeight: "600" }}>
@@ -322,7 +322,7 @@ const Reviews = () => {
             </Text>
             <View style={{ marginHorizontal: 5 }}>
               <Progress value={100} w={120} size="md">
-                <ProgressFilledTrack bg="#fa8072" />
+                <ProgressFilledTrack bg="#33AB5F" />
               </Progress>
             </View>
           </View>
@@ -339,7 +339,7 @@ const Reviews = () => {
             </Text>
             <View style={{ marginHorizontal: 5 }}>
               <Progress value={70} w={120} size="md">
-                <ProgressFilledTrack bg="#fa8072" />
+                <ProgressFilledTrack bg="#33AB5F" />
               </Progress>
             </View>
           </View>
@@ -356,7 +356,7 @@ const Reviews = () => {
             </Text>
             <View style={{ marginHorizontal: 5 }}>
               <Progress value={50} w={120} size="md">
-                <ProgressFilledTrack bg="#fa8072" />
+                <ProgressFilledTrack bg="#33AB5F" />
               </Progress>
             </View>
           </View>
@@ -373,7 +373,7 @@ const Reviews = () => {
             </Text>
             <View style={{ marginHorizontal: 5 }}>
               <Progress value={20} w={120} size="md">
-                <ProgressFilledTrack bg="#fa8072" />
+                <ProgressFilledTrack bg="#33AB5F" />
               </Progress>
             </View>
           </View>
@@ -388,7 +388,7 @@ const UserInfo = () => {
 
   return (
     <View style={styles.userInfo}>
-      <Text style={[styles.userInfoText, { color: "#fa8072" }]}>
+      <Text style={[styles.userInfoText, { color: "#33AB5F" }]}>
         Fulfilled by
       </Text>
       <View

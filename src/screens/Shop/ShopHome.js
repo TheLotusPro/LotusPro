@@ -25,7 +25,7 @@ const ShopHome = ({ navigation }) => {
           onPress={() => navigation.goBack()}
           style={{ width: 50 }}
         >
-          <Icons.ArrowLongLeftIcon style={{ color: "#fa8072" }} size={30} />
+          <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
         </TouchableOpacity>
       ),
     });
@@ -64,6 +64,6 @@ export default ShopHome;
 const styles = StyleSheet.create({
   headerSaleContainer: {
     alignItems: "center",
-    backgroundColor: "#fa807290",
+    backgroundColor: "#33AB5F90",
   },
 });

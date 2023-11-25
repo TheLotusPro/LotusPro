@@ -19,7 +19,7 @@ const HomeHeaderButtons = () => {
         onPress={() => navigation.navigate('Ideas')}
         style={styles.options}>
           <View style={styles.background}>
-            <Icons.LightBulbIcon size={25} color={"#fa8072"} />
+            <Icons.LightBulbIcon size={25} color={"#33AB5F"} />
           </View>
           <View>
             <Text style={styles.title}>Ideas</Text>
@@ -30,7 +30,7 @@ const HomeHeaderButtons = () => {
          onPress={() => navigation.navigate('StoryHome')}
         style={styles.options}>
           <View style={styles.background}>
-            <Icons.UserGroupIcon size={25} color={"#fa8072"} />
+            <Icons.UserGroupIcon size={25} color={"#33AB5F"} />
           </View>
           <View>
             <Text style={styles.title}>Stories</Text>
@@ -41,7 +41,7 @@ const HomeHeaderButtons = () => {
         onPress={() => navigation.navigate('Professionals')}
         style={styles.options}>
           <View style={styles.background}>
-            <Icons.BriefcaseIcon size={25} color={"#fa8072"} />
+            <Icons.BriefcaseIcon size={25} color={"#33AB5F"} />
           </View>
           <View>
             <Text style={styles.title}>Pros</Text>
@@ -52,7 +52,7 @@ const HomeHeaderButtons = () => {
         onPress={() => navigation.navigate('ShopHome')}
         style={styles.options}>
           <View style={styles.background}>
-            <Icons.ShoppingBagIcon size={25} color={"#fa8072"} />
+            <Icons.ShoppingBagIcon size={25} color={"#33AB5F"} />
           </View>
           <View>
             <Text style={styles.title}>Shop</Text>
@@ -67,7 +67,7 @@ export default HomeHeaderButtons;
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: "#fa807250",
+    backgroundColor: "#33AB5F50",
     width: 25,
     height: 25,
     padding: 25,
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
   },
   title: {
-    color: "#fa8072",
+    color: "#33AB5F",
     marginTop: 10,
     fontSize: 14,
   },

@@ -14,7 +14,7 @@ const ProductHeaderLeft = () => {
   return (
     <TouchableOpacity onPress={goBack} style={[styles.backButton]}>
       <View style={{ padding: 3 }}>
-        <Icons.ArrowLongLeftIcon style={{ color: '#fa8072'  }} size={30} />
+        <Icons.ArrowLongLeftIcon style={{ color: '#33AB5F'  }} size={30} />
       </View>
     </TouchableOpacity>
   );

@@ -6,7 +6,7 @@ import ProjectDetailsMenu from './ProjectDetailsMenu'
 const ProjectDetailsHeader = () => {
   return (
     <View style={styles.container}>
-      <Text>Status: Open</Text>
+      <Text style={[{color: 'gray'}]}>Status: Open</Text>
       <ProjectDetailsMenu />
     </View>
   )
