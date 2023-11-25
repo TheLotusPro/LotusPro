@@ -1,6 +1,5 @@
 import {
   StyleSheet,
-  Text,
   View,
   TouchableOpacity,
   ScrollView,
@@ -9,6 +8,9 @@ import React, { useState, useEffect } from "react";
 import { useNavigation, useTheme } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/solid";
 import ProjectDetailsHeader from "../../components/Projects/ProjectDetailsHeader";
+import {
+  Text,
+} from "@gluestack-ui/themed";
 
 const ProjectDetails = () => {
   const navigation = useNavigation();
@@ -49,7 +51,9 @@ const Team = () => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity style={styles.border}>
+    <TouchableOpacity 
+    onPress={() => navigation.navigate('AddTeamMember')}
+    style={styles.border}>
       <View style={styles.borderContainer}>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Icons.UserGroupIcon size={20} color={colors.text} />
@@ -146,7 +150,7 @@ const FloorPlan = () => {
         </View>
 
         <View style={styles.attachments}>
-          <Text>No 3D plans</Text>
+        <Text>No 3D plans</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -255,8 +259,8 @@ const Estimates = () => {
         </View>
 
         <View style={{ marginTop: 10 }}>
-          <Text>Estimate for project</Text>
-          <Text>$0.00</Text>
+        <Text style={[{color: colors.text}]}>Estimate for project</Text>
+          <Text style={[{color: colors.text}]}>$0.00</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -284,8 +288,8 @@ const Invoices = () => {
         </View>
 
         <View style={{ marginTop: 10 }}>
-          <Text>Invoice for project</Text>
-          <Text>$0.00</Text>
+          <Text style={[{color: colors.text}]}>Invoice for project</Text>
+          <Text style={[{color: colors.text}]}>$0.00</Text>
         </View>
       </View>
     </TouchableOpacity>

@@ -30,6 +30,10 @@ import Notifications from "../screens/Notifications/Notifications";
 import NewReview from "../screens/Shop/NewReview";
 import CreateTask from "../screens/Pro/CreateTask";
 import ProjectDetails from "../screens/Projects/ProjectDetails";
+import AddTeamMember from "../screens/Projects/AddTeamMember";
+import GoBackHeaderButton from "../components/GoBackHeaderButton";
+import InviteTeamMember from "../screens/Projects/InviteTeamMember";
+import ProjectsList from "../screens/Projects/ProjectsList";
 
 const Stack = createNativeStackNavigator();
 
@@ -192,6 +196,18 @@ const RootNavigator = () => {
           headerBackVisible: false,
         }}
       />
+        <Stack.Screen
+        name="AddTeamMember"
+        component={AddTeamMember}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Team",
+          headerBackVisible: false,
+          headerLeft: () => <GoBackHeaderButton />,
+
+        }}
+      />
 
       <Stack.Group
         screenOptions={{
@@ -222,6 +238,18 @@ const RootNavigator = () => {
             ),
           }}
         />
+           <Stack.Screen
+          name="InviteTeamMember"
+          component={InviteTeamMember}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Invite Team Member",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
         <Stack.Screen
           name="NewIdea"
           component={NewIdea}
@@ -229,6 +257,19 @@ const RootNavigator = () => {
             headerShown: true,
             headerShadowVisible: false,
             headerTitle: "New Idea",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+
+<Stack.Screen
+          name="ProjectList"
+          component={ProjectsList}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Projects",
             headerLeft: () => (
               <Button title="Cancel" onPress={() => navigation.goBack()} />
             ),

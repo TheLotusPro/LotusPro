@@ -5,6 +5,7 @@ import ProHome from "../screens/Pro/ProHome";
 import ProHeaderLeft from "../components/Pro/ProHeaderLeft";
 import ProHeaderRight from "../components/Pro/ProHeaderRight";
 import ProjectsHome from "../screens/Projects/ProjectsHome";
+import GoBackHeaderButton from "../components/GoBackHeaderButton";
 
 const ProStack = createNativeStackNavigator();
 
@@ -35,6 +36,7 @@ const ProNavigator = () => {
           headerShown: true,
           headerShadowVisible: false,
           headerTitle: 'Projects',
+          headerLeft: () => <GoBackHeaderButton />,
         }}
       />
 
