@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ProHome from "../screens/Pro/ProHome";
 import ProHeaderLeft from "../components/Pro/ProHeaderLeft";
 import ProHeaderRight from "../components/Pro/ProHeaderRight";
+import ProjectsHome from "../screens/Projects/ProjectsHome";
 
 const ProStack = createNativeStackNavigator();
 
@@ -27,6 +28,16 @@ const ProNavigator = () => {
           headerRight: () => <ProHeaderRight />,
         }}
       />
+        <ProStack.Screen
+        name="Projects"
+        component={ProjectsHome}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: 'Projects',
+        }}
+      />
+
 
   </ProStack.Navigator>
   );

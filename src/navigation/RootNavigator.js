@@ -28,6 +28,8 @@ import SearchIdeas from "../screens/Ideas/SearchIdeas";
 import NewIdea from "../screens/Ideas/NewIdea";
 import Notifications from "../screens/Notifications/Notifications";
 import NewReview from "../screens/Shop/NewReview";
+import CreateTask from "../screens/Pro/CreateTask";
+import ProjectDetails from "../screens/Projects/ProjectDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -138,6 +140,16 @@ const RootNavigator = () => {
           headerBackVisible: false,
         }}
       />
+        <Stack.Screen
+        name="ProjectDetails"
+        component={ProjectDetails}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Project Details",
+          headerBackVisible: false,
+        }}
+      />
       <Stack.Screen
         name="Notifications"
         component={Notifications}
@@ -217,6 +229,19 @@ const RootNavigator = () => {
             headerShown: true,
             headerShadowVisible: false,
             headerTitle: "New Idea",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+
+        <Stack.Screen
+          name="CreateTask"
+          component={CreateTask}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "New Task",
             headerLeft: () => (
               <Button title="Cancel" onPress={() => navigation.goBack()} />
             ),
