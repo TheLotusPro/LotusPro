@@ -7,14 +7,17 @@ import {
 } from "react-native";
 import React from "react";
 import { Text } from "@gluestack-ui/themed";
+import { useTheme } from "@react-navigation/native";
 
 const IdeaCard = (props) => {
+
+  const {colors } = useTheme();
   return (
     <View style={styles.container}>
       <TouchableWithoutFeedback style={styles.imageContainer}>
         <View style={{ flexDirection: "column" }}>
           <Image source={props?.ideas?.image} style={styles.image} />
-          <Text style={[styles.imageTitle, { color: "black" }]}>
+          <Text style={[styles.imageTitle, { color: colors.text }]}>
             {props?.ideas?.title}
           </Text>
         </View>
@@ -27,17 +30,17 @@ export default IdeaCard;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#e0ffff",
-    width: "100%",
+    backgroundColor: "#fa807210",
+    width: "90%",
     borderRadius: 5,
     height: 160,
-    shadowColor: "#2f4f4f",
-    shadowOpacity: 0.5,
+    shadowColor: "gray",
+    shadowOpacity: 0.3,
     shadowRadius: 2,
     shadowOffset: {
       height: 1,
-      width: 2,
-    },
+      width: 1
+    }
   },
   image: {
     width: "100%",
@@ -48,14 +51,13 @@ const styles = StyleSheet.create({
   imageContainer: {
     marginTop: 15,
     backgroundColor: "white",
-
     borderRadius: 10,
   },
   imageTitle: {
     fontWeight: "bold",
     fontSize: 13,
     alignSelf: "center",
-    marginTop: 5,
+    marginTop: 10,
     color: "white",
   },
 });

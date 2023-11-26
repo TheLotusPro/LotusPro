@@ -24,7 +24,7 @@ const ExpressCheckout = () => {
     return (
       <View
         style={{
-          backgroundColor: "#33AB5F50",
+          backgroundColor: "#fa807210",
           alignItems: "center",
           marginBottom: 10,
         }}

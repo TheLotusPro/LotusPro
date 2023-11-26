@@ -60,7 +60,7 @@ const RootNavigator = () => {
           headerShown: true,
           headerShadowVisible: false,
           headerTitle: "Details",
-          headerLeft: () => <ProductHeaderLeft />,
+          headerLeft: () => <GoBackHeaderButton />,
           headerRight: () => <ProductHeaderRight />,
         }}
       />
@@ -84,6 +84,7 @@ const RootNavigator = () => {
           headerShadowVisible: false,
           headerTitle: "Live Chat",
           headerBackVisible: false,
+          headerLeft: () => <GoBackHeaderButton />,
         }}
       />
       <Stack.Screen
@@ -104,6 +105,7 @@ const RootNavigator = () => {
           headerShadowVisible: false,
           headerTitle: "Product Review",
           headerBackVisible: false,
+          headerLeft: () => <GoBackHeaderButton />,
         }}
       />
       <Stack.Screen
@@ -114,6 +116,7 @@ const RootNavigator = () => {
           headerShadowVisible: false,
           headerTitle: "Post",
           headerBackVisible: false,
+          headerLeft: () => <GoBackHeaderButton />,
         }}
       />
       <Stack.Screen
@@ -124,6 +127,7 @@ const RootNavigator = () => {
           headerShadowVisible: false,
           headerTitle: "Activity",
           headerBackVisible: false,
+          headerLeft: () => <GoBackHeaderButton />,
         }}
       />
       <Stack.Screen
@@ -134,6 +138,7 @@ const RootNavigator = () => {
           headerShadowVisible: false,
           headerTitle: "Following",
           headerBackVisible: false,
+          headerLeft: () => <GoBackHeaderButton />,
         }}
       />
       <Stack.Screen
@@ -144,9 +149,10 @@ const RootNavigator = () => {
           headerShadowVisible: false,
           headerTitle: "Followers",
           headerBackVisible: false,
+          headerLeft: () => <GoBackHeaderButton />,
         }}
       />
-        <Stack.Screen
+      <Stack.Screen
         name="ProjectDetails"
         component={ProjectDetails}
         options={{
@@ -154,6 +160,7 @@ const RootNavigator = () => {
           headerShadowVisible: false,
           headerTitle: "Project Details",
           headerBackVisible: false,
+          headerLeft: () => <GoBackHeaderButton />,
         }}
       />
       <Stack.Screen
@@ -164,6 +171,7 @@ const RootNavigator = () => {
           headerShadowVisible: false,
           headerTitle: "Notifications",
           headerBackVisible: false,
+          headerLeft: () => <GoBackHeaderButton />,
         }}
       />
 
@@ -175,6 +183,7 @@ const RootNavigator = () => {
           headerShadowVisible: false,
           headerTitle: "Updates",
           headerBackVisible: false,
+          headerLeft: () => <GoBackHeaderButton />,
         }}
       />
 
@@ -186,6 +195,7 @@ const RootNavigator = () => {
           headerShadowVisible: false,
           headerTitle: "History",
           headerBackVisible: false,
+          headerLeft: () => <GoBackHeaderButton />,
         }}
       />
       <Stack.Screen
@@ -196,9 +206,10 @@ const RootNavigator = () => {
           headerShadowVisible: false,
           headerTitle: "Profile",
           headerBackVisible: false,
+          headerLeft: () => <GoBackHeaderButton />,
         }}
       />
-        <Stack.Screen
+      <Stack.Screen
         name="AddTeamMember"
         component={AddTeamMember}
         options={{
@@ -207,7 +218,6 @@ const RootNavigator = () => {
           headerTitle: "Team",
           headerBackVisible: false,
           headerLeft: () => <GoBackHeaderButton />,
-
         }}
       />
 
@@ -240,7 +250,7 @@ const RootNavigator = () => {
             ),
           }}
         />
-           <Stack.Screen
+        <Stack.Screen
           name="InviteTeamMember"
           component={InviteTeamMember}
           options={{
@@ -265,7 +275,7 @@ const RootNavigator = () => {
           }}
         />
 
-<Stack.Screen
+        <Stack.Screen
           name="ProjectList"
           component={ProjectsList}
           options={{
@@ -333,7 +343,7 @@ const RootNavigator = () => {
             ),
           }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="CheckOut"
           component={CheckOut}
           options={{
@@ -345,7 +355,7 @@ const RootNavigator = () => {
             ),
           }}
         />
-           <Stack.Screen
+        <Stack.Screen
           name="CheckOutFinal"
           component={CheckOutFinal}
           options={{

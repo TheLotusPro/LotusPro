@@ -5,19 +5,7 @@ import { Text } from "@gluestack-ui/themed";
 import FollowingCard from "../../components/Follow/FollowingCard";
 
 const Following = ({ navigation }) => {
-  useEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => (
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={{ width: 50 }}
-        >
-          <Icons.ArrowLongLeftIcon style={{ color: "#fa8072" }} size={30} />
-        </TouchableOpacity>
-      ),
-    });
-  }, [navigation]);
-  
+
   return (
     <View>
       <FollowingCard />

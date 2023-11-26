@@ -36,10 +36,10 @@ const Address = () => {
     };
   
     return (
-      <View style={{ backgroundColor: "#33AB5F50", marginBottom: 10 }}>
+      <View style={{   backgroundColor: "#fa807210", marginBottom: 10 }}>
         <View style={{ padding: 20 }}>
           <Text style={[styles.boldText, { color: colors.text }]}>
-            Shopping Address
+            Shipping Address
           </Text>
   
           <View>

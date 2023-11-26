@@ -134,7 +134,6 @@ const Input = () => {
           placeholder="Write a review"
           value={review}
           multiline
-          autoFocus
           numberOfLines={4}
           placeholderTextColor={"#a9a9a9"}
           onChangeText={(text) => setReview(text)}
@@ -161,7 +160,7 @@ const styles = StyleSheet.create({
     width: "90%",
     borderRadius: 5,
     padding: 30,
-    backgroundColor: "#33AB5F20",
+    backgroundColor: "#fa807210",
     height: 400,
   },
   attachmentsContainer: {

@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     borderTopWidth: 0.3,
     paddingTop: 15,
-    backgroundColor: "#33AB5F50",
+    backgroundColor: "#fa807210",
     marginBottom: 20,
   },
   hiddenRow: {

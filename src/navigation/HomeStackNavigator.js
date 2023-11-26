@@ -13,6 +13,8 @@ import Talks from "../screens/Stories/Talks";
 import ProfessionalsHeaderRight from "../components/Professionals/ProfessionalsHeaderRight";
 import ProfessionalsSearch from "../screens/Professionals/ProfessionalsSearch";
 import ProfessionalList from "../screens/Professionals/ProfessionalList";
+import Photos from "../screens/Ideas/Photos";
+import GoBackHeaderButton from "../components/GoBackHeaderButton";
 
 const HomeStack = createNativeStackNavigator();
 
@@ -35,77 +37,89 @@ const HomeStackNavigator = () => {
           headerRight: () => <HomeHeaderRight />,
         }}
       />
-         <HomeStack.Screen
+      <HomeStack.Screen
         name="ShopHome"
         component={ShopHome}
         options={{
           headerShown: true,
           headerShadowVisible: false,
-          headerTitle: 'Shop',
-          headerLeft: () => <ShopHeaderLeft />,
+          headerTitle: "Shop",
+          headerLeft: () => <GoBackHeaderButton />,
           headerRight: () => <ShopHeaderRight />,
         }}
       />
-          <HomeStack.Screen
+      <HomeStack.Screen
         name="StoryHome"
         component={Stories}
         options={{
           headerShown: true,
           headerShadowVisible: false,
           headerBackVisible: false,
-          headerTitle: 'Stories',
-          // headerLeft: () => <ShopHeaderLeft />,
-          // headerRight: () => <ShopHeaderRight />,
+          headerTitle: "Stories",
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
         }}
       />
-         <HomeStack.Screen
+      <HomeStack.Screen
         name="Ideas"
         component={Ideas}
         options={{
           headerShown: true,
           headerBackVisible: false,
           headerShadowVisible: false,
-          headerTitle: 'Ideas',
-          // headerLeft: () => <ShopHeaderLeft />,
-          // headerRight: () => <ShopHeaderRight />,
+          headerTitle: "Ideas",
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
         }}
       />
-          <HomeStack.Screen
+      <HomeStack.Screen
         name="Talks"
         component={Talks}
         options={{
           headerShown: true,
           headerBackVisible: false,
           headerShadowVisible: false,
-          headerTitle: 'Talks',
-          // headerLeft: () => <ShopHeaderLeft />,
+          headerTitle: "Talks",
+          headerLeft: () => <GoBackHeaderButton />,
           // headerRight: () => <ShopHeaderRight />,
         }}
       />
-            <HomeStack.Screen
+      <HomeStack.Screen
         name="ProfessionalList"
         component={ProfessionalList}
         options={{
           headerShown: true,
           headerBackVisible: false,
           headerShadowVisible: false,
-          headerTitle: 'Professionals',
+          headerTitle: "Professionals",
           // headerLeft: () => <ShopHeaderLeft />,
           // headerRight: () => <ShopHeaderRight />,
         }}
       />
-       <HomeStack.Screen
-      name="Professionals"
-      component={ProfessionalsSearch}
-      options={{
-        headerShown: true,
-        headerShadowVisible: false,
-         headerTitle: 'Find Professionals',
-         headerBackVisible: false,
-         headerRight: () => <ProfessionalsHeaderRight />,
-      }}
-    />
-      
+      <HomeStack.Screen
+        name="Professionals"
+        component={ProfessionalsSearch}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Find Professionals",
+          headerBackVisible: false,
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ProfessionalsHeaderRight />,
+        }}
+      />
+
+      <HomeStack.Screen
+        name="AllPhotos"
+        component={Photos}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: " ",
+          headerLeft: () => <GoBackHeaderButton />,
+          // headerRight: () => <IdeaRightHeader />,
+        }}
+      />
     </HomeStack.Navigator>
   );
 };

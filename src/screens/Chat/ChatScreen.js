@@ -13,21 +13,6 @@ import * as Icons from "react-native-heroicons/solid";
 
 const ChatScreen = ({navigation}) => {
 
-    useEffect(() => {
-        navigation.setOptions({
-          headerLeft: () => (
-            <TouchableOpacity
-              onPress={() => navigation.goBack()}
-              style={{ width: 50 }}
-            >
-              <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
-            </TouchableOpacity>
-          ),
-        });
-      }, [navigation]);
-
-
-
   return (
     <View style={{ flex: 1 }}>
       <ScrollView>

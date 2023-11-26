@@ -10,7 +10,7 @@ const IdeaRightHeader = () => {
     <TouchableOpacity
     onPress={() => navigation.navigate('SearchIdeas')}
     >
-      <Icons.MagnifyingGlassIcon style={{ color: "#fa8072" }} size={30} />
+      <Icons.MagnifyingGlassIcon style={{ color: "#33AB5F" }} size={30} />
     </TouchableOpacity>
   );
 };

@@ -57,8 +57,8 @@ const NewIdea = () => {
             ]}
             placeholder="Idea Name"
             value={ideaName}
-            multiline
-            autoFocus
+        
+        
             numberOfLines={4}
             placeholderTextColor={"#a9a9a9"}
             onChangeText={(text) => setIdeaName(text)}
@@ -79,7 +79,7 @@ const NewIdea = () => {
       placeholder="Brief Description"
       value={description}
       multiline
-      autoFocus
+ 
       numberOfLines={4}
       placeholderTextColor={"#a9a9a9"}
       onChangeText={(text) => setDescription(text)}
@@ -96,7 +96,7 @@ const NewIdea = () => {
         props: {
           trackColor: {
             false: "$backgroundLight300",
-            true: "#fa8072",
+            true: "#33AB5F",
           },
         },
       },
@@ -104,7 +104,7 @@ const NewIdea = () => {
         props: {
           trackColor: {
             false: "$backgroundDark700",
-            true: "#fa8072",
+            true: "#33AB5F",
           },
         },
       },
@@ -128,12 +128,11 @@ export default NewIdea;
 
 const styles = StyleSheet.create({
     input: {
-    
         marginBottom: 20,
         paddingHorizontal: 10,
         width: "90%",
         borderRadius: 5,
-        padding: 30,
+        padding: 15,
         backgroundColor:  "#fa807220",
       
       },

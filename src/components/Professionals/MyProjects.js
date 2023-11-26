@@ -21,7 +21,7 @@ const MyProjects = (props) => {
         <View style={styles.container}>
           <Image style={styles.image} source={props?.myProjects?.image} />
           <View style={styles.textContainer}>
-            <Text style={styles.title}>{props?.myProjects?.title}</Text>
+            <Text style={[styles.title, {color: colors.text}]}>{props?.myProjects?.title}</Text>
 
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Icons.MapPinIcon size={14} color={"dodgerblue"} />
@@ -40,17 +40,17 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 10,
     width: 200,
-    backgroundColor: "#e0ffff",
+    backgroundColor: "#fa807210",
     borderRadius: 10,
 
     marginBottom: 20,
     shadowColor: "gray",
-    shadowOpacity: 1.8,
+    shadowOpacity: 0.1,
     shadowRadius: 2,
     shadowOffset: {
-      height: 2,
-      width: 1,
-    },
+      height: 1,
+      width: 1
+    }
   },
   image: {
     width: "100%",

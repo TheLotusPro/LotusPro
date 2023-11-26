@@ -7,14 +7,17 @@ import {
 } from "react-native";
 import React from "react";
 import { Text } from "@gluestack-ui/themed";
+import { Colors } from "react-native/Libraries/NewAppScreen";
+import { useTheme } from "@react-navigation/native";
 
 const SearchProductsHome = (props) => {
+  const {colors} = useTheme();
   return (
     <View style={styles.container}>
       <TouchableWithoutFeedback style={styles.imageContainer}>
         <View style={{ flexDirection: "column" }}>
           <Image source={props?.shopHomeData?.image} style={styles.image} />
-          <Text style={[styles.imageTitle, { color: "black" }]}>
+          <Text style={[styles.imageTitle, { color: colors.text  }]}>
             {props?.shopHomeData?.title}
           </Text>
         </View>
@@ -28,7 +31,7 @@ export default SearchProductsHome;
 const styles = StyleSheet.create({
   container: {
     margin: 10,
-    backgroundColor: "#e0ffff",
+    backgroundColor: "#fa807210",
     borderRadius: 10,
     height: 135,
     marginBottom: 20,

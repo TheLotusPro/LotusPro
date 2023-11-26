@@ -21,20 +21,7 @@ import TalksCard from "../../components/Stories/TalksCard";
 
 const Talks = ({ navigation }) => {
   const { colors } = useTheme();
-
-  useEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => (
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={{ width: 50 }}
-        >
-          <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
-        </TouchableOpacity>
-      ),
-    });
-  }, [navigation]);
-
+  
   return (
     <View>
       <StoriesSearch />
@@ -46,12 +33,14 @@ const Talks = ({ navigation }) => {
 };
 
 const Header = () => {
+  const { colors } = useTheme();
+
   return (
     <View>
     <TouchableOpacity 
     style={styles.topicButton}>
    <View style={{flexDirection: 'row', alignItems: 'center'}}>
-   <Text style={{color:  "#33AB5F", fontWeight: 'bold'}}>Topic</Text>
+   <Text style={{color: colors.text, fontWeight: 'bold'}}>Topic</Text>
    <Icons.ChevronDownIcon style={{ color:  "#33AB5F",}} size={15} />
    </View>
       
@@ -131,7 +120,7 @@ const styles = StyleSheet.create({
     width: "25%", 
     alignItems: 'center', 
     padding: 5, 
-    borderRadius: 5,
+    borderRadius: 10,
     borderColor: "#33AB5F",
     borderWidth: 0.5
   }

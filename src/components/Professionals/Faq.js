@@ -13,7 +13,7 @@ const Faq = () => {
 
       <View style={styles.container}>
         <View style={styles.faq}>
-          <Text style={[styles.question, { color: 'black' }]}>
+          <Text style={[styles.question,{ color: colors.text }]}>
             How is Outsider Interior Design rated?
           </Text>
           <Text style={styles.answer}>
@@ -22,7 +22,7 @@ const Faq = () => {
         </View>
 
         <View style={styles.faq}>
-          <Text style={[styles.question, { color: 'black' }]}>
+          <Text style={[styles.question, { color: colors.text }]}>
             What services does Outsider Interior Design provide?
           </Text>
           <Text style={styles.answer}>
@@ -44,14 +44,14 @@ export default Faq;
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    backgroundColor: "#e0ffff",
+    backgroundColor: "#fa807210",
     marginBottom: 30,
-    shadowColor: "#2f4f4f",
-    shadowOpacity: 0.5,
-    shadowRadius: 3,
+    shadowColor: "gray",
+    shadowOpacity: 0.1,
+    shadowRadius: 1,
     shadowOffset: {
       height: 1,
-      width: 2,
+      width: 1
     },
     borderRadius: 10
   },
@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
   },
   answer: {
     marginTop: 10,
-    color: "gray",
+    color: 'gray'
+ 
   },
   faq: {
     marginBottom: 20,

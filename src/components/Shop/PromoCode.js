@@ -14,7 +14,7 @@ const PromoCode = () => {
     return (
       <View
         style={{
-          backgroundColor: "#33AB5F50",
+          backgroundColor: "#fa807210",
           marginBottom: 10,
         }}
       >

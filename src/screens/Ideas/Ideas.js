@@ -6,21 +6,10 @@ import IdeaCard from "../../components/Ideas/IdeaCard";
 import ideas from "../../assets/data/ideas";
 
 const Ideas = ({ navigation }) => {
-  useEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => (
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={{ width: 50 }}
-        >
-          <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
-        </TouchableOpacity>
-      ),
-    });
-  }, [navigation]);
+ 
 
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <IdeasHeader />
       <View
         style={{
@@ -34,6 +23,7 @@ const Ideas = ({ navigation }) => {
           <View
             key={index}
             style={{
+              alignItems: 'center',
               width: "48%", // Set the width of each HomeDesignCard
               margin: "1%", // Adjust margin as needed
             }}

@@ -17,7 +17,7 @@ const ShopHeaderRight = () => {
   return (
     <TouchableOpacity 
     onPress={() => navigation.navigate("ShoppingCart")} style={styles.container}>
-      <Icons.ShoppingBagIcon style={{ color: "#33AB5F" }} size={30} />
+      <Icons.ShoppingBagIcon style={{ color: "#33AB5F" }} size={25} />
     </TouchableOpacity>
   );
 };

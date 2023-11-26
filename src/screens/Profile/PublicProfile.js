@@ -5,19 +5,7 @@ import { Text } from "@gluestack-ui/themed";
 
 
 const PublicProfile = ({ navigation }) => {
-  useEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => (
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={{ width: 50 }}
-        >
-          <Icons.ArrowLongLeftIcon style={{ color: "#fa8072" }} size={30} />
-        </TouchableOpacity>
-      ),
-    });
-  }, [navigation]);
-
+  
   return (
     <View>
       <Text>PublicProfile</Text>

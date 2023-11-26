@@ -244,14 +244,14 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   giftContainer: {
-    backgroundColor: "#33AB5F30",
+    backgroundColor: "#fa807210",
     padding: 25,
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 20,
   },
   summeryContainer: {
-    backgroundColor: "#33AB5F30",
+    backgroundColor: "#fa807210",
     marginTop: 20,
     padding: 20,
   },

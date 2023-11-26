@@ -8,8 +8,10 @@ import {
   Text,
 } from "@gluestack-ui/themed";
 import * as Icons from "react-native-heroicons/solid";
+import { useTheme } from "@react-navigation/native";
 
 const Reviews = (props) => {
+  const {colors} = useTheme();
   return (
     <Pressable style={styles.container}>
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
@@ -19,7 +21,7 @@ const Reviews = (props) => {
             <AvatarImage size="xl" source={props?.reviews?.image} />
           </Avatar>
           <View>
-            <Text style={styles.username}>{props?.reviews?.name}</Text>
+            <Text style={[styles.username, {color: colors.text}]}>{props?.reviews?.name}</Text>
             <View style={{ marginHorizontal: 5, flexDirection: "row" }}>
               <Icons.StarIcon size={14} color={"gold"} />
               <Icons.StarIcon size={14} color={"gold"} />
@@ -35,7 +37,7 @@ const Reviews = (props) => {
         </View>
       </View>
 
-      <Text style={styles.review}>{props?.reviews?.review} </Text>
+      <Text style={[styles.review, {color: colors.text}]}>{props?.reviews?.review} </Text>
     </Pressable>
   );
 };
@@ -47,11 +49,11 @@ const styles = StyleSheet.create({
     margin: 10,
     borderRadius: 10,
     padding: 10,
-    backgroundColor: "#e0ffff",
+    backgroundColor: "#fa807210",
     alignSelf: "center",
 
     shadowColor: "#2f4f4f",
-    shadowOpacity: 0.5,
+    shadowOpacity: 0.2,
     shadowRadius: 2,
     shadowOffset: {
       height: 1,
@@ -66,7 +68,6 @@ const styles = StyleSheet.create({
   },
   review: {
     fontSize: 14,
-    color: "black",
     width: 300,
   },
   userImage: {

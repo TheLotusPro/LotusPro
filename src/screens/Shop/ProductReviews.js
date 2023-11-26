@@ -23,18 +23,7 @@ import Review3 from "../../assets/images/StoriesCarousel/Stories3.jpg";
 import WriteReviewButton from "../../components/Shop/WriteReviewButton";
 
 const ProductReviews = ({ navigation }) => {
-  useEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => (
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={{ width: 50 }}
-        >
-          <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
-        </TouchableOpacity>
-      ),
-    });
-  }, [navigation]);
+ 
 
   return (
     <View style={{ flex: 1 }}>
@@ -181,7 +170,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   reviewContainer: {
-    backgroundColor: "#33AB5F20",
+    backgroundColor: "#fa807210",
     bottom: 10,
     borderRadius: 10,
   },

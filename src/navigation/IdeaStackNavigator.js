@@ -1,7 +1,9 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from 'react'
+import GoBackHeaderButton from "../components/GoBackHeaderButton";
 import IdeaRightHeader from "../components/Ideas/IdeaRightHeader";
 import MyIdeas from "../screens/Ideas/MyIdeas";
+import Photos from "../screens/Ideas/Photos";
 
 const IdeaStack = createNativeStackNavigator();
 
@@ -24,6 +26,9 @@ const IdeaStackNavigator = () => {
           headerRight: () => <IdeaRightHeader />,
         }}
       />
+  
+     
+
 
     </IdeaStack.Navigator>
   )

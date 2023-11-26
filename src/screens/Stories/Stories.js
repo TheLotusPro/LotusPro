@@ -16,19 +16,6 @@ import latestTalk from "../../assets/data/latestTalk";
 const Stories = ({ navigation }) => {
   const { colors } = useTheme();
 
-  useEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => (
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={{ width: 50 }}
-        >
-          <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
-        </TouchableOpacity>
-      ),
-    });
-  }, [navigation]);
-
   return (
     <View style={{ flex: 1 }}>
       <ScrollView>

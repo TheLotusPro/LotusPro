@@ -39,13 +39,13 @@ const ProfessionalListCard = () => {
             <View
               style={{ flexDirection: "row", alignItems: "center", width: 230 }}
             >
-              <Text style={[styles.username]}>James General Contractors </Text>
+              <Text style={[styles.username, {color: colors.text}]}>James General Contractors </Text>
               <Icons.CheckBadgeIcon size={14} color={"dodgerblue"} />
             </View>
 
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Icons.GlobeAmericasIcon size={14} color={"dodgerblue"} />
-              <Text style={[styles.location]}> Park City, Utah</Text>
+              <Text style={[styles.location, {color: colors.text}]}> Park City, Utah</Text>
             </View>
           </View>
 
@@ -58,7 +58,7 @@ const ProfessionalListCard = () => {
               <Icons.StarIcon size={14} color={"gold"} />
             </View>
 
-            <Text style={styles.reviewText}>(20) Reviews</Text>
+            <Text style={[styles.reviewText, {color: colors.text}]}>(20) Reviews</Text>
           </View>
         </View>
 
@@ -74,14 +74,14 @@ const styles = StyleSheet.create({
   container: {
     margin: 15,
     borderRadius: 10,
-    backgroundColor: "#e0ffff",
-    shadowColor: "#2f4f4f",
-    shadowOpacity: 0.5,
+    backgroundColor: "#33AB5F10",
+    shadowColor: "gray",
+    shadowOpacity: 0.1,
     shadowRadius: 2,
     shadowOffset: {
       height: 1,
-      width: 2,
-    },
+      width: 1
+    }
   },
   image: {
     width: "100%",

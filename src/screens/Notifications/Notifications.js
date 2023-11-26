@@ -5,18 +5,7 @@ import { Text } from "@gluestack-ui/themed";
 import NotificationsCard from "../../components/Notifications/NotificationsCard";
 
 const Notifications = ({ navigation }) => {
-    useEffect(() => {
-        navigation.setOptions({
-          headerLeft: () => (
-            <TouchableOpacity
-              onPress={() => navigation.goBack()}
-              style={{ width: 50 }}
-            >
-              <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
-            </TouchableOpacity>
-          ),
-        });
-      }, [navigation]);
+ 
 
       
   return (

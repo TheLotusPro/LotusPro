@@ -23,18 +23,7 @@ import TalkCommentInput from "../../components/Stories/TalkCommentInput";
 import TalkComments from "../../components/Stories/TalkComments";
 
 const TalksPostScreen = ({ navigation }) => {
-  useEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => (
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={{ width: 50 }}
-        >
-          <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
-        </TouchableOpacity>
-      ),
-    });
-  }, [navigation]);
+
   return (
     <View style={{flex: 1}}>
     <ScrollView showsVerticalScrollIndicator={false}>

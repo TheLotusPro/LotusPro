@@ -4,6 +4,7 @@ import {
   View,
   Image,
   TouchableOpacity,
+  Pressable,
   FlatList,
 } from "react-native";
 import React from "react";
@@ -38,7 +39,7 @@ const Item = (props) => {
 
 
   return (
-    <TouchableOpacity 
+    <Pressable 
     onPress={() => navigation.navigate('ProductDetails')}
     style={styles.container}>
       <View>
@@ -66,7 +67,7 @@ const Item = (props) => {
           </Text>
         </View>
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 

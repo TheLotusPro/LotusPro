@@ -17,7 +17,7 @@ const GoBackHeaderButton = () => {
           onPress={() => navigation.goBack()}
           style={{ width: 50 }}
         >
-          <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
+          <Icons.ChevronLeftIcon style={{ color: "#33AB5F" }} size={28} />
         </TouchableOpacity>
   )
 }

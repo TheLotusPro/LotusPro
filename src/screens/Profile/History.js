@@ -6,18 +6,7 @@ import HistoryCard from "../../components/History/HistoryCard";
 import { useTheme } from "@react-navigation/native";
 
 const History = ({ navigation }) => {
-  useEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => (
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={{ width: 50 }}
-        >
-          <Icons.ArrowLongLeftIcon style={{ color: "#fa8072" }} size={30} />
-        </TouchableOpacity>
-      ),
-    });
-  }, [navigation]);
+ 
   
   return (
     <View style={{margin: 15}}>

@@ -29,8 +29,10 @@ const HeaderSearch = () => {
           <Icons.CameraIcon size={20} color={"gray"} />
         </TouchableOpacity>
       </View>
-      <TouchableOpacity onPress={() => navigation.navigate("ShoppingCart")}>
-        <Icons.ShoppingCartIcon size={25} color={ "#33AB5F"} />
+      <TouchableOpacity 
+      style={{marginLeft: 15}}
+      onPress={() => navigation.navigate("ShoppingCart")}>
+        <Icons.ShoppingBagIcon size={25} color={ "#33AB5F"} />
       </TouchableOpacity>
     </View>
   );

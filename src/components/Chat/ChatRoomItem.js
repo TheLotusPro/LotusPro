@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   },
   message: {
     width: width - 90,
-    fontWeight: 'bold',
+    fontWeight: '500',
     fontSize: 14,
   },
   time: {

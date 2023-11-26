@@ -22,7 +22,7 @@ const BusinessDetails = () => {
             <View style={styles.row}>
               <Icons.UserIcon style={{ color: "#33AB5F" }} size={18} />
               <View style={{ marginLeft: 5 }}>
-                <Text style={[styles.business, { color: 'black' }]}>
+                <Text style={[styles.business, { color: colors.text }]}>
                   Business Name
                 </Text>
                 <View style={{ marginTop: 8 }}>
@@ -34,7 +34,7 @@ const BusinessDetails = () => {
             <View style={styles.row}>
               <Icons.PhoneIcon style={{ color: "#33AB5F" }} size={18} />
               <View style={{ marginLeft: 5 }}>
-                <Text style={[styles.business, { color: 'black' }]}>
+                <Text style={[styles.business, {color: colors.text  }]}>
                   Phone Number
                 </Text>
                 <View style={{ marginTop: 8 }}>
@@ -46,7 +46,7 @@ const BusinessDetails = () => {
             <View style={styles.row}>
               <Icons.GlobeAltIcon style={{ color: "#33AB5F" }} size={18} />
               <View style={{ marginLeft: 5 }}>
-                <Text style={[styles.business, { color: 'black' }]}>
+                <Text style={[styles.business, { color: colors.text  }]}>
                   Website
                 </Text>
                 <View style={{ marginTop: 8 }}>
@@ -58,7 +58,7 @@ const BusinessDetails = () => {
             <View style={styles.row}>
               <Icons.BuildingStorefrontIcon style={{ color: "#33AB5F" }} size={18} />
               <View style={{ marginLeft: 5 }}>
-                <Text style={[styles.business, { color: 'black' }]}>
+                <Text style={[styles.business, { color: colors.text  }]}>
                   Address
                 </Text>
                 <View style={{ marginTop: 8 }}>
@@ -75,7 +75,7 @@ const BusinessDetails = () => {
             <View style={styles.row}>
               <Icons.CurrencyDollarIcon style={{ color: "#33AB5F" }} size={18} />
               <View style={{ marginLeft: 5 }}>
-                <Text style={[styles.business, { color: 'black' }]}>
+                <Text style={[styles.business, { color: colors.text  }]}>
                   Typical Job Cost
                 </Text>
                 <View style={{ marginTop: 8 }}>
@@ -87,7 +87,7 @@ const BusinessDetails = () => {
             <View style={styles.row}>
               <Icons.DocumentCheckIcon style={{ color: "#33AB5F" }} size={18} />
               <View style={{ marginLeft: 5 }}>
-                <Text style={[styles.business, { color: 'black' }]}>
+                <Text style={[styles.business, { color: colors.text  }]}>
                   License Number
                 </Text>
                 <View style={{ marginTop: 8 }}>
@@ -99,7 +99,7 @@ const BusinessDetails = () => {
             <View style={styles.row}>
               <Icons.UserGroupIcon style={{ color: "#33AB5F" }} size={18} />
               <View style={{ marginLeft: 5 }}>
-                <Text style={[styles.business, {color: 'black' }]}>
+                <Text style={[styles.business, {color: colors.text }]}>
                   Followers
                 </Text>
                 <View style={{ marginTop: 8 }}>
@@ -121,15 +121,14 @@ const styles = StyleSheet.create({
     margin: 20,
     padding: 20,
     borderRadius: 10,
-    backgroundColor: "#e0ffff",
-    shadowColor: "#2f4f4f",
-    shadowOpacity: 0.5,
-    shadowRadius: 3,
+    backgroundColor: "#fa807210",
+    shadowColor: "gray",
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
     shadowOffset: {
       height: 1,
-      width: 2,
-    },
-
+      width: 1
+    }
 
   },
   mine: {

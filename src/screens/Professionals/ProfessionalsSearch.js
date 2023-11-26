@@ -19,20 +19,7 @@ import HomeImprovementCard from "../../components/Professionals/HomeImprovementC
 const ProfessionalsSearch = ({ navigation }) => {
   const { colors } = useTheme();
   const [loading, setLoading] = useState(false);
-  
 
-  useEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => (
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={{ width: 50 }}
-        >
-          <Icons.ArrowLongLeftIcon style={{ color: "#33AB5F" }} size={30} />
-        </TouchableOpacity>
-      ),
-    });
-  }, [navigation]);
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>

@@ -24,7 +24,7 @@ const Shipping = () => {
   const { colors } = useTheme();
 
   return (
-    <View style={{ backgroundColor: "#33AB5F50", marginBottom: 10 }}>
+    <View style={{ backgroundColor: "#fa807210", marginBottom: 10 }}>
       <View style={{ padding: 20 }}>
         <View
           style={{
@@ -34,7 +34,7 @@ const Shipping = () => {
           }}
         >
           <Text style={[styles.boldText, { color: colors.text }]}>
-            Shopping Address
+            Shipping Address
           </Text>
           <TouchableOpacity>
             <Text style={[styles.boldText, { color: "#33AB5F" }]}>Change</Text>
@@ -62,7 +62,7 @@ const Payment = () => {
   const { colors } = useTheme();
 
   return (
-    <View style={{ backgroundColor: "#33AB5F50", marginBottom: 10 }}>
+    <View style={{ backgroundColor: "#fa807210", marginBottom: 10 }}>
       <View style={{ padding: 20 }}>
         <Text style={[styles.boldText, { color: colors.text }]}>Payment</Text>
 

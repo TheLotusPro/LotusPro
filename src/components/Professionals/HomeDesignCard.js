@@ -22,7 +22,7 @@ const HomeDesignCard = (props) => {
         style={styles.container}>
           <Image style={styles.image} source={props?.homeDesign?.image} />
           <View style={styles.textContainer}>
-            <Text style={styles.title}>{props?.homeDesign?.name}</Text>
+            <Text style={[styles.title, {color: colors.text}]}>{props?.homeDesign?.name}</Text>
           </View>
         </View>
       </View>
@@ -34,17 +34,19 @@ export default HomeDesignCard;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#e0ffff",
+    backgroundColor: "#33AB5F10",
     width: "100%",
     borderRadius: 5,
     height: 200,
     shadowColor: "#2f4f4f",
-    shadowOpacity: 0.5,
+    shadowColor: "gray",
+    shadowOpacity: 0.3,
     shadowRadius: 2,
     shadowOffset: {
       height: 1,
-      width: 2,
-    },
+      width: 1
+    }
+
   },
   image: {
     width: "100%",
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: "500",
-    color: "black",
+
     fontSize: 13,
   },
 });

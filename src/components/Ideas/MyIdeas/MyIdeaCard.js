@@ -13,8 +13,8 @@ const MyIdeaCard = () => {
         <Image source={Design} style={styles.image} />
 
         <View style={{marginTop: 10}}>
-          <Text style={[styles.title, {color: 'gray'}]}>My Furniture Ideas</Text>
-          <Text style={{marginTop: 5, fontWeight: 'bold', fontSize: 19}}>2 Ideas</Text>
+          <Text style={[styles.title, {color: colors.text}]}>My Furniture Ideas</Text>
+          <Text style={[styles.ideas, {color: colors.text}]}>2 Ideas</Text>
         </View>
       </View>
     </View>
@@ -30,20 +30,26 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   container: {
-    backgroundColor: "#e0ffff",
+    backgroundColor: "#33AB5F10",
     width: 170,
     height: 240,
     margin: 15,
     borderRadius: 10,
     shadowColor: "gray",
-    shadowOpacity: 1.8,
-    shadowRadius: 2,
+    shadowOpacity: 0.1,
+    shadowRadius: 1,
     shadowOffset: {
-      height: 2,
-      width: 1,
-    },
+      height: 1,
+      width: 1
+    }
+
   },
   title: {
 fontSize: 14
+  },
+  ideas: {
+    marginTop: 5, 
+    fontWeight: 'bold', 
+    fontSize: 19
   }
 });

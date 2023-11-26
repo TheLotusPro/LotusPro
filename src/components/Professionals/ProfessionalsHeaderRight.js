@@ -9,8 +9,10 @@ const ProfessionalsHeaderRight = () => {
 
   return (
     <View style={{flexDirection: 'row'}}>
-      <TouchableOpacity style={{marginHorizontal: 15}}>
-        <Icons.ShoppingCartIcon size={25} color={"#33AB5F"} />
+      <TouchableOpacity
+      onPress={() => navigation.navigate("ShoppingCart")}
+       style={{marginHorizontal: 5}}>
+        <Icons.ShoppingBagIcon size={25} color={"#33AB5F"} />
       </TouchableOpacity>
 
     </View>
