@@ -34,6 +34,8 @@ import AddTeamMember from "../screens/Projects/AddTeamMember";
 import GoBackHeaderButton from "../components/GoBackHeaderButton";
 import InviteTeamMember from "../screens/Projects/InviteTeamMember";
 import ProjectsList from "../screens/Projects/ProjectsList";
+import CheckOut from "../screens/Shop/CheckOut";
+import CheckOutFinal from "../screens/Shop/CheckOutFinal";
 
 const Stack = createNativeStackNavigator();
 
@@ -326,6 +328,30 @@ const RootNavigator = () => {
             headerShown: true,
             headerShadowVisible: false,
             headerTitle: "Cart",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+         <Stack.Screen
+          name="CheckOut"
+          component={CheckOut}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Checkout",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+           <Stack.Screen
+          name="CheckOutFinal"
+          component={CheckOutFinal}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Checkout",
             headerLeft: () => (
               <Button title="Cancel" onPress={() => navigation.goBack()} />
             ),
