@@ -15,6 +15,7 @@ import ProfessionalsSearch from "../screens/Professionals/ProfessionalsSearch";
 import ProfessionalList from "../screens/Professionals/ProfessionalList";
 import Photos from "../screens/Ideas/Photos";
 import GoBackHeaderButton from "../components/GoBackHeaderButton";
+import SearchHeader from "../components/SearchHeader";
 
 const HomeStack = createNativeStackNavigator();
 
@@ -115,9 +116,9 @@ const HomeStackNavigator = () => {
         options={{
           headerShown: true,
           headerShadowVisible: false,
-          headerTitle: " ",
+          headerTitle: () => <SearchHeader />,
           headerLeft: () => <GoBackHeaderButton />,
-          // headerRight: () => <IdeaRightHeader />,
+          headerRight: () => <ShopHeaderRight />,
         }}
       />
     </HomeStack.Navigator>

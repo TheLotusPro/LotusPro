@@ -36,6 +36,7 @@ import InviteTeamMember from "../screens/Projects/InviteTeamMember";
 import ProjectsList from "../screens/Projects/ProjectsList";
 import CheckOut from "../screens/Shop/CheckOut";
 import CheckOutFinal from "../screens/Shop/CheckOutFinal";
+import Search from "../screens/Search/Search";
 
 const Stack = createNativeStackNavigator();
 
@@ -220,6 +221,25 @@ const RootNavigator = () => {
           headerLeft: () => <GoBackHeaderButton />,
         }}
       />
+      <Stack.Group
+        screenOptions={{
+          presentation: "fullScreenModal",
+          animation: "fade",
+        }}
+      >
+        <Stack.Screen
+          name="Search"
+          component={Search}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Search",
+            headerRight: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+      </Stack.Group>
 
       <Stack.Group
         screenOptions={{
