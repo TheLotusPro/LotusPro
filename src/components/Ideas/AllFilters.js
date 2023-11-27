@@ -1,4 +1,5 @@
 import {
+  FlatList,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -10,6 +11,8 @@ import { useTheme } from "@react-navigation/native";
 import { Text } from "@gluestack-ui/themed";
 import * as Icons from "react-native-heroicons/solid";
 import { BottomSheet } from "react-native-btr";
+import AllFilterOptions from "./FilterOptions/AllFilterOptions";
+import allFilters from "../../assets/data/filterOptions/allFilters";
 
 const AllFilters = () => {
   const { colors } = useTheme();
@@ -35,7 +38,10 @@ const AllFilters = () => {
         onBackdropPress={toggleBottomSheet}
       >
         <View
-          style={[ styles.sheetBackground, {backgroundColor: colors.background}]}
+          style={[
+            styles.sheetBackground,
+            { backgroundColor: colors.background },
+          ]}
         >
           <View>
             <View style={{ marginHorizontal: 10 }}>
@@ -59,6 +65,14 @@ const AllFilters = () => {
                   <Text style={[styles.close, { color: "#33AB5F" }]}>Done</Text>
                 </TouchableOpacity>
               </View>
+
+              <FlatList
+                data={allFilters}
+                showsHorizontalScrollIndicator={false}
+                renderItem={({ item }) => (
+                  <AllFilterOptions allFilters={item} />
+                )}
+              />
             </View>
           </View>
         </View>
@@ -105,5 +119,5 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     paddingHorizontal: 10,
     paddingVertical: 13,
-  }
+  },
 });

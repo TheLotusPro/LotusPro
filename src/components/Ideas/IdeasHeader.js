@@ -25,7 +25,9 @@ const IdeasHeader = () => {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity 
+         onPress={() => navigation.navigate("FromLotus")}
+        style={styles.button}>
           <View style={{ padding: 10 }}>
           <Text style={[styles.buttonText, {color: colors.text}]}>From Lotus</Text>
           </View>
