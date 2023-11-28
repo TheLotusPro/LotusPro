@@ -4,16 +4,23 @@ import * as Icons from "react-native-heroicons/solid";
 import { Text } from "@gluestack-ui/themed";
 import { useTheme, useNavigation } from "@react-navigation/native";
 
-const ShopCategories =  ({ shop }) => {
-  const {colors} = useTheme();
+const ShopCategories = ({ shop }) => {
+  const { colors } = useTheme();
   const navigation = useNavigation();
 
+  console.log('Category:', shop); // Add this line
+
   const handlePress = () => {
-    // Navigate to the ShopCategoryScreen with the corresponding category data
-    navigation.navigate('ShopCategory', { category: shop });
+    // Check if shop exists and has a title property
+    if (shop && shop.title) {
+      // If the category exists and has subcategories, navigate to a new instance of ShopCategoryScreen
+      // with the subcategories as the new data
+      if (shop.subcategories && shop.subcategories.length > 0) {
+        navigation.navigate('ShopCategory', { category: shop });  // Pass the entire category object
+      }
+    }
   };
-
-
+  
   return (
     <TouchableOpacity onPress={handlePress} style={styles.container}>
       <View
@@ -24,8 +31,10 @@ const ShopCategories =  ({ shop }) => {
           alignItems: 'center'
         }}
       >
-        <Text style={[styles.title, {color: colors.text}]}>{shop?.title}</Text>
-        <Icons.ChevronRightIcon style={{ color: colors.text }} size={25} />
+        <Text style={[styles.title, { color: colors.text }]}>{shop?.title}</Text>
+        {shop?.subcategories && shop.subcategories.length > 0 && (
+          <Icons.ChevronRightIcon style={{ color: colors.text }} size={25} />
+        )}
       </View>
     </TouchableOpacity>
   );
@@ -41,6 +50,6 @@ const styles = StyleSheet.create({
     marginBottom: 1
   },
   title: {
-   
+
   },
 });
