@@ -53,7 +53,7 @@ const EditClientProfile = ({ navigation }) => {
   }, [navigation]);
 
   const getBorderColor = (value) => {
-    return value.length > 0 ? "#fa807290" : "#a9a9a950";
+    return value.length > 0 ? "#33AB5F" : "#a9a9a950";
   };
 
   return (

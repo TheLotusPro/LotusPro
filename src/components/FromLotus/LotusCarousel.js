@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState, useRef, useEffect } from "react";
 import {
   StyleSheet,
@@ -20,13 +21,16 @@ const mediaData = [
 const LotusCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const carouselRef = useRef(null);
+  const navigation = useNavigation();
 
   const renderItem = ({ item }) => {
     if (item.type === "image") {
       return <Image style={styles.media} source={item.source} />;
     } else if (item.type === "video") {
       return (
-        <Pressable>
+        <Pressable
+        onPress={() => navigation.navigate('PodcastDetails')}
+        >
         <Video
           source={item.source}
           style={styles.media}

@@ -35,7 +35,9 @@ const IdeasHeader = () => {
       </View>
 
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity 
+         onPress={() => navigation.navigate("VideoHome")}
+        style={styles.button}>
           <View style={{ padding: 10 }}>
           <Text style={[styles.buttonText, {color: colors.text}]}>Videos</Text>
           </View>

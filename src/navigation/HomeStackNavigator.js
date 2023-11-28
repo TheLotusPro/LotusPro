@@ -18,6 +18,7 @@ import GoBackHeaderButton from "../components/GoBackHeaderButton";
 import SearchHeader from "../components/SearchHeader";
 import FromLotusHome from "../screens/FromLotus/FromLotusHome";
 import AllPodcast from "../screens/FromLotus/AllPodcast";
+import VideoHome from "../screens/Videos/VideoHome";
 
 const HomeStack = createNativeStackNavigator();
 
@@ -82,9 +83,9 @@ const HomeStackNavigator = () => {
           headerShown: true,
           headerBackVisible: false,
           headerShadowVisible: false,
-          headerTitle: "Talks",
+          headerTitle: () => <SearchHeader />,
           headerLeft: () => <GoBackHeaderButton />,
-          // headerRight: () => <ShopHeaderRight />,
+          headerRight: () => <ShopHeaderRight />,
         }}
       />
       <HomeStack.Screen
@@ -115,6 +116,17 @@ const HomeStackNavigator = () => {
       <HomeStack.Screen
         name="AllPhotos"
         component={Photos}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: () => <SearchHeader />,
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+        <HomeStack.Screen
+        name="VideoHome"
+        component={VideoHome}
         options={{
           headerShown: true,
           headerShadowVisible: false,

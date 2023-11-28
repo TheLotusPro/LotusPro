@@ -11,33 +11,13 @@ export default [
     title: "Building a home",
     userImage: "",
     date: "1 hour ago",
-    type: 'Audio'
-  },
-  {
-    id: "2",
-    image: P2,
-    user: "Lotus CTO",
-    title: "Tech Stories",
-    userImage: "",
-    date: "2 days ago",
-    type: 'Video'
-  },
-  {
-    id: "3",
-    image: P3,
-    user: "Lotus Marketing",
-    title: "How to brand your business with just 100 Bucks",
-    userImage: "",
-    date: "4 days ago",
-    type: 'Audio'
-  },
-  {
-    id: "4",
-    image: P4,
-    user: "Lotus CEO",
-    title: "Building a Company",
-    userImage: "",
-    date: "10 days ago",
-    type: 'Audio'
+    type: 'Audio',
+    channel: 'Craft Caviar',
+    creator: 'Craft Caviar',
+    joinDate: '12/1/2023',
+    episodes: '10',
+    rating: '4/5',
+    copyright: 'Lotus Pro LLC.',
+
   },
 ];

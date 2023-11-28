@@ -15,7 +15,14 @@ const TalkComments = () => {
 
   return (
     <View style={styles.container}>
-      <View style={{ flexDirection: "row" }}>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <View style={{ flexDirection: "row" }}>
         <Avatar style={styles.userImage}>
           <AvatarFallbackText>SS</AvatarFallbackText>
           <AvatarImage
@@ -25,41 +32,27 @@ const TalkComments = () => {
             }}
           />
         </Avatar>
-
-        <View style={{ marginHorizontal: 10 }}>
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Text style={styles.user}>Black Diamond</Text>
-            <View style={{ marginHorizontal: 5 }}>
-              <Icons.CheckBadgeIcon style={{ color: "dodgerblue" }} size={18} />
-            </View>
-          </View>
-
-          <View>
-            <Text style={styles.time}>20 min ago</Text>
-            <View style={styles.commentContainer}>
-              <Text style={[ styles.comment, { color: colors.text }]}>
-                Wow that looks amazing. Glad to have worked with you and the
-                team.{" "}
-              </Text>
-            </View>
-          </View>
-          <View style={styles.iconContainer}>
+          <View style={{ marginLeft: 5 }}>
             <View style={{ flexDirection: "row" }}>
-              <TouchableOpacity>
-                <Icons.HandThumbUpIcon style={{ color: "gray" }} size={20} />
-              </TouchableOpacity>
-
-              <TouchableOpacity style={{ marginHorizontal: 20 }}>
-                <Icons.FlagIcon style={{ color: "gray" }} size={20} />
-              </TouchableOpacity>
+              <Text style={[styles.username, { color: colors.text }]}>
+                James Win
+              </Text>
+              <Text style={[styles.time, { color: "gray" }]}>2 min go</Text>
             </View>
 
-            <View>
-              <Text style={styles.like}>1 Like</Text>
-            </View>
+            <Text style={[styles.comment, { color: colors.text }]}>
+              This is a test comment. I want to see the width of the comment
+            </Text>
           </View>
         </View>
+
+        <View style={{alignItems: 'center'}}>
+        <Icons.HeartIcon style={{ color: "gray" }} size={20} />
+          <Text style={[{ color: colors.text }]}>0</Text>
+        </View>
       </View>
+
+      {/* <Text style={[{color: colors.text}]}>This is a test comment. I want to see the width of the comment</Text> */}
     </View>
   );
 };
@@ -68,33 +61,21 @@ export default TalkComments;
 
 const styles = StyleSheet.create({
   container: {
-    margin: 20,
+    margin: 10,
+  },
+  comment: {
+    width: 255,
+  },
+  time: {
+    fontSize: 13,
+    marginLeft: 15,
+  },
+  username: {
+    fontWeight: "bold",
   },
   userImage: {
     width: 40,
     height: 40,
     borderRadius: 40,
   },
-  user: {
-    fontWeight: "bold",
-  },
-  time: {
-    color: "gray",
-    fontSize: 12,
-  },
-  commentContainer: {
-    marginTop: 5,
-  },
-  iconContainer: {
-    marginVertical: 5,
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  like: {
-    fontSize: 12,
-    color: "gray",
-  },
-  comment: {
-    width: 300
-  }
 });

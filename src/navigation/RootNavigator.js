@@ -39,6 +39,7 @@ import CheckOutFinal from "../screens/Shop/CheckOutFinal";
 import Search from "../screens/Search/Search";
 import PodcastDetails from "../screens/FromLotus/PodcastDetails";
 import ShopHeaderRight from "../components/Shop/ShopHeaderRight";
+import StartTalk from "../screens/Stories/StartTalk";
 
 const Stack = createNativeStackNavigator();
 
@@ -120,6 +121,7 @@ const RootNavigator = () => {
           headerTitle: "Post",
           headerBackVisible: false,
           headerLeft: () => <GoBackHeaderButton />,
+          headerRight:  () => <ShopHeaderRight />,
         }}
       />
       <Stack.Screen
@@ -219,7 +221,7 @@ const RootNavigator = () => {
           headerShown: true,
           headerShadowVisible: false,
           headerTransparent: true,
-          headerTitle: "Podcast",
+          headerTitle: '',
           headerBackVisible: false,
           headerLeft: () => <GoBackHeaderButton />,
           headerRight: () => <ShopHeaderRight />,
@@ -385,6 +387,18 @@ const RootNavigator = () => {
             headerShown: true,
             headerShadowVisible: false,
             headerTitle: "Checkout",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="StartTalk"
+          component={StartTalk}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Start Discussion",
             headerLeft: () => (
               <Button title="Cancel" onPress={() => navigation.goBack()} />
             ),
