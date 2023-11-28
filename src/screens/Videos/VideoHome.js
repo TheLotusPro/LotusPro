@@ -14,10 +14,10 @@ const VideoHome = () => {
 
 const VideoThumbnail = () => {
   return (
-    <View style={{ marginTop: 10, flexDirection: "row", flexWrap: "wrap", marginBottom: 10, 
-     }}>
+    <View>
+    <VideoCard />
 
-
+{/* 
      {videos.map((item, index) => (
         <View
           key={index}
@@ -31,7 +31,7 @@ const VideoThumbnail = () => {
         >
           <VideoCard videos={item} />
         </View>
-      ))}
+      ))} */}
 
     </View>
   )
