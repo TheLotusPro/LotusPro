@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   project: {
-    backgroundColor: "rgba(42, 42, 42, 0.1)",
+    backgroundColor: "#fa807210",
     padding: 20,
     borderRadius: 10,
   },

@@ -296,7 +296,7 @@ const styles = StyleSheet.create({
   },
   borderContainer: {
     padding: 20,
-    backgroundColor: "rgba(42, 42, 42, 0.1)",
+    backgroundColor: "#fa807210",
     borderRadius: 10,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -317,7 +317,7 @@ const styles = StyleSheet.create({
   },
   borderContainerLarge: {
     padding: 20,
-    backgroundColor: "rgba(42, 42, 42, 0.1)",
+    backgroundColor: "#fa807210",
     borderRadius: 10,
     height: 200,
   },
@@ -327,13 +327,13 @@ const styles = StyleSheet.create({
   },
   borderContainerMed: {
     padding: 20,
-    backgroundColor: "rgba(42, 42, 42, 0.1)",
+    backgroundColor: "#fa807210",
     borderRadius: 10,
     height: 100,
   },
   borderContainerEstimate: {
     padding: 20,
-    backgroundColor: "rgba(42, 42, 42, 0.1)",
+    backgroundColor: "#fa807210",
     borderRadius: 10,
   },
 });

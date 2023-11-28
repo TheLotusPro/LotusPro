@@ -17,6 +17,7 @@ import Photos from "../screens/Ideas/Photos";
 import GoBackHeaderButton from "../components/GoBackHeaderButton";
 import SearchHeader from "../components/SearchHeader";
 import FromLotusHome from "../screens/FromLotus/FromLotusHome";
+import AllPodcast from "../screens/FromLotus/AllPodcast";
 
 const HomeStack = createNativeStackNavigator();
 
@@ -125,6 +126,17 @@ const HomeStackNavigator = () => {
        <HomeStack.Screen
         name="FromLotus"
         component={FromLotusHome}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: () => <SearchHeader />,
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+         <HomeStack.Screen
+        name="AllPodcast"
+        component={AllPodcast}
         options={{
           headerShown: true,
           headerShadowVisible: false,

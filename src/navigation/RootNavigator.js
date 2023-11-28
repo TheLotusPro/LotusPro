@@ -37,6 +37,8 @@ import ProjectsList from "../screens/Projects/ProjectsList";
 import CheckOut from "../screens/Shop/CheckOut";
 import CheckOutFinal from "../screens/Shop/CheckOutFinal";
 import Search from "../screens/Search/Search";
+import PodcastDetails from "../screens/FromLotus/PodcastDetails";
+import ShopHeaderRight from "../components/Shop/ShopHeaderRight";
 
 const Stack = createNativeStackNavigator();
 
@@ -208,6 +210,19 @@ const RootNavigator = () => {
           headerTitle: "Profile",
           headerBackVisible: false,
           headerLeft: () => <GoBackHeaderButton />,
+        }}
+      />
+         <Stack.Screen
+        name="PodcastDetails"
+        component={PodcastDetails}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTransparent: true,
+          headerTitle: "Podcast",
+          headerBackVisible: false,
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
         }}
       />
       <Stack.Screen

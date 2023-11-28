@@ -5,35 +5,33 @@ import * as Icons from "react-native-heroicons/solid";
 import LotusCarousel from "./LotusCarousel";
 
 const FromLotusHeader = () => {
-    const {colors} = useTheme();
+  const { colors } = useTheme();
 
   return (
     <View>
+      <View style={styles.container}>
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <Icons.ArrowTrendingUpIcon size={25} color={"#33AB5F"} />
 
-  
-    <View style={styles.container}>
-    <View style={{ flexDirection: "row", alignItems: "center" }}>
-      <Icons.ArrowTrendingUpIcon size={25} color={"#33AB5F"} />
-
-      <Text style={[styles.trendingTitle, { color: "gray" }]}>
-        Latest from Lotus
-      </Text>
+          <Text style={[styles.trendingTitle, { color: "gray" }]}>
+            Latest from Lotus
+          </Text>
+        </View>
+      </View>
+      <LotusCarousel />
     </View>
-  </View>
-  <LotusCarousel />
-  </View>
   );
 };
 
 export default FromLotusHeader;
 
 const styles = StyleSheet.create({
-    container: {
-        margin: 20,
-      },
-      trendingTitle: {
-        fontWeight: "bold",
-        fontSize: 20,
-        marginLeft: 5,
-      },
+  container: {
+    margin: 20,
+  },
+  trendingTitle: {
+    fontWeight: "bold",
+    fontSize: 20,
+    marginLeft: 5,
+  },
 });
