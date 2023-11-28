@@ -72,11 +72,14 @@ const RootNavigator = () => {
         name="ProfessionalDetails"
         component={ProfessionalDetails}
         options={{
-          headerShown: false,
+          headerShown: true,
+          headerTransparent: true,
+        
           headerShadowVisible: false,
-          headerTitle: "Professional Details",
-          // headerLeft: () => <ProductHeaderLeft />,
-          headerRight: () => <ProDetailsHeaderRight />,
+          headerTitle: " ",
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
+          
         }}
       />
 

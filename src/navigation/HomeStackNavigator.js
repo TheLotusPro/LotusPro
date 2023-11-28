@@ -96,8 +96,8 @@ const HomeStackNavigator = () => {
           headerBackVisible: false,
           headerShadowVisible: false,
           headerTitle: "Professionals",
-          // headerLeft: () => <ShopHeaderLeft />,
-          // headerRight: () => <ShopHeaderRight />,
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
         }}
       />
       <HomeStack.Screen

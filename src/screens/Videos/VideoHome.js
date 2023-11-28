@@ -1,12 +1,38 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import VideoCard from '../../components/Videos/VideoCard'
+import videos from '../../assets/videos'
 
 const VideoHome = () => {
   return (
     <View>
-      <Text>VideoHome</Text>
-      <VideoCard />
+    <VideoThumbnail />
+     
+    </View>
+  )
+}
+
+const VideoThumbnail = () => {
+  return (
+    <View style={{ marginTop: 10, flexDirection: "row", flexWrap: "wrap", marginBottom: 10, 
+     }}>
+
+
+     {videos.map((item, index) => (
+        <View
+          key={index}
+          style={{
+            width: 115, // Set the width
+            // Adjust margin as needed
+            margin: '1%'
+           
+         
+          }}
+        >
+          <VideoCard videos={item} />
+        </View>
+      ))}
+
     </View>
   )
 }

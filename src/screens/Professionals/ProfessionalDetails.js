@@ -150,14 +150,7 @@ const Header = () => {
         </View>
       </View>
 
-      <View style={styles.backButton}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.goBack()}
-        >
-          <Icons.ArrowLongLeftIcon style={{ color: "white" }} size={30} />
-        </TouchableOpacity>
-      </View>
+    
     </View>
   );
 };
