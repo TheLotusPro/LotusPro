@@ -19,6 +19,15 @@ import SearchHeader from "../components/SearchHeader";
 import FromLotusHome from "../screens/FromLotus/FromLotusHome";
 import AllPodcast from "../screens/FromLotus/AllPodcast";
 import VideoHome from "../screens/Videos/VideoHome";
+import Bath from "../screens/Shop/Categories/Bath";
+import Bedroom from "../screens/Shop/Categories/Bedroom";
+import Designs from "../screens/Shop/Categories/Designs";
+import Furniture from "../screens/Shop/Categories/Furniture";
+import HolidayDecor from "../screens/Shop/Categories/HolidayDecor";
+import HomeImprovement from "../screens/Shop/Categories/HomeImprovement";
+import LivingRoom from "../screens/Shop/Categories/LivingRoom";
+import Outdoor from "../screens/Shop/Categories/Outdoor";
+import StorageAndOrganization from "../screens/Shop/Categories/StorageAndOrganization";
 
 const HomeStack = createNativeStackNavigator();
 
@@ -47,7 +56,7 @@ const HomeStackNavigator = () => {
         options={{
           headerShown: true,
           headerShadowVisible: false,
-          headerTitle: "Shop",
+          headerTitle: () => <SearchHeader />,
           headerLeft: () => <GoBackHeaderButton />,
           headerRight: () => <ShopHeaderRight />,
         }}
@@ -130,6 +139,7 @@ const HomeStackNavigator = () => {
         options={{
           headerShown: true,
           headerShadowVisible: false,
+          headerTransparent: true,
           headerTitle: () => <SearchHeader />,
           headerLeft: () => <GoBackHeaderButton />,
           headerRight: () => <ShopHeaderRight />,
@@ -149,6 +159,116 @@ const HomeStackNavigator = () => {
          <HomeStack.Screen
         name="AllPodcast"
         component={AllPodcast}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: () => <SearchHeader />,
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+       <HomeStack.Screen
+        name="Bath"
+        component={Bath}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: () => <SearchHeader />,
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+       <HomeStack.Screen
+        name="Bedroom"
+        component={Bedroom}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: () => <SearchHeader />,
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+       <HomeStack.Screen
+        name="Designs"
+        component={Designs}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: () => <SearchHeader />,
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+       <HomeStack.Screen
+        name="Furniture"
+        component={Furniture}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: () => <SearchHeader />,
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+       <HomeStack.Screen
+        name="HolidayDecor"
+        component={HolidayDecor}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: () => <SearchHeader />,
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+       <HomeStack.Screen
+        name="HomeImprovement"
+        component={HomeImprovement}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: () => <SearchHeader />,
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+       <HomeStack.Screen
+        name="KitchenAndDining"
+        component={AllPodcast}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: () => <SearchHeader />,
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+       <HomeStack.Screen
+        name="LivingRoom"
+        component={LivingRoom}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: () => <SearchHeader />,
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+       <HomeStack.Screen
+        name="Outdoor"
+        component={Outdoor}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: () => <SearchHeader />,
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+       <HomeStack.Screen
+        name="StorageAndOrganization"
+        component={StorageAndOrganization}
         options={{
           headerShown: true,
           headerShadowVisible: false,
