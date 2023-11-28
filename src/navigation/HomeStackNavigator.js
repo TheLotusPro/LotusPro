@@ -28,6 +28,7 @@ import HomeImprovement from "../screens/Shop/Categories/HomeImprovement";
 import LivingRoom from "../screens/Shop/Categories/LivingRoom";
 import Outdoor from "../screens/Shop/Categories/Outdoor";
 import StorageAndOrganization from "../screens/Shop/Categories/StorageAndOrganization";
+import ShopCategoryScreen from "../screens/Shop/Categories/ShopCategoryScreen";
 
 const HomeStack = createNativeStackNavigator();
 
@@ -167,7 +168,18 @@ const HomeStackNavigator = () => {
           headerRight: () => <ShopHeaderRight />,
         }}
       />
-       <HomeStack.Screen
+          <HomeStack.Screen
+        name="ShopCategory"
+        component={ShopCategoryScreen}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: () => <SearchHeader />,
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+       {/* <HomeStack.Screen
         name="Bath"
         component={Bath}
         options={{
@@ -276,7 +288,7 @@ const HomeStackNavigator = () => {
           headerLeft: () => <GoBackHeaderButton />,
           headerRight: () => <ShopHeaderRight />,
         }}
-      />
+      /> */}
     </HomeStack.Navigator>
   );
 };

@@ -1,7 +1,12 @@
 export default [
     {
         id: '1',
-        title: 'Kitchen & Dining'
+        title: 'Kitchen & Dining',
+        subcategories: [
+            { id: '101', title: 'Cookware' },
+            { id: '102', title: 'Dining Sets' },
+            // Add more subcategories as needed
+        ],
     },
     {
         id: '2',
