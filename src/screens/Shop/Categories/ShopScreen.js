@@ -1,8 +1,9 @@
 import React from "react";
 import { useTheme } from "@react-navigation/native";
 import { StyleSheet, Text, View } from "react-native";
+import ShopCategoryHeaderBar from "../../../components/Shop/Categories/ShopCategoryHeaderBar";
 
-const SubcategoryScreen = ({ route }) => {
+const ShopScreen = ({ route }) => {
   const { subcategory } = route.params;
   const { colors } = useTheme();
 
@@ -19,20 +20,26 @@ const Header = ({ route }) => {
 
   return (
     <View style={styles.containerHeader}>
-      <Text style={[styles.title, { color: colors.text }]}>
-        {subcategory.title}
-      </Text>
+      <ShopCategoryHeaderBar />
+      <View style={styles.titleContainer}>
+        <Text style={[styles.title, { color: colors.text }]}>
+          {subcategory.title}
+        </Text>
+      </View>
     </View>
   );
 };
-export default SubcategoryScreen;
+
+const Products = () => {};
+export default ShopScreen;
 
 const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
     fontSize: 20,
   },
-  container: {
+  container: {},
+  titleContainer: {
     margin: 20,
   },
 });

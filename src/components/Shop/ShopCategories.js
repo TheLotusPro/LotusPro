@@ -1,8 +1,9 @@
-import { StyleSheet, View, TouchableOpacity } from "react-native";
+import { StyleSheet, View, TouchableOpacity,Image } from "react-native";
 import React from "react";
 import * as Icons from "react-native-heroicons/solid";
 import { Text } from "@gluestack-ui/themed";
 import { useTheme, useNavigation } from "@react-navigation/native";
+import PlaceHolder from '../../assets/images/HomeDesign&Remodel/KitchenBath.jpeg'
 
 const ShopCategories = ({ shop }) => {
   const { colors } = useTheme();
@@ -23,6 +24,7 @@ const ShopCategories = ({ shop }) => {
   
   return (
     <TouchableOpacity onPress={handlePress} style={styles.container}>
+    <Image source={shop?.image} style={styles.headerImage}/>
       <View
         style={{
           padding: 15,
@@ -52,4 +54,10 @@ const styles = StyleSheet.create({
   title: {
 
   },
+  headerImage: {
+    width: "100%",
+    height: 70,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10
+  }
 });

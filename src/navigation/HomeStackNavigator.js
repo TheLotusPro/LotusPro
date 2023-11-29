@@ -20,7 +20,7 @@ import FromLotusHome from "../screens/FromLotus/FromLotusHome";
 import AllPodcast from "../screens/FromLotus/AllPodcast";
 import VideoHome from "../screens/Videos/VideoHome";
 import ShopCategoryScreen from "../screens/Shop/Categories/ShopCategoryScreen";
-import SubcategoryScreen from "../screens/Shop/Categories/SubcategoryScreen";
+import ShopScreen from "../screens/Shop/Categories/ShopScreen";
 
 const HomeStack = createNativeStackNavigator();
 
@@ -126,7 +126,7 @@ const HomeStackNavigator = () => {
           headerRight: () => <ShopHeaderRight />,
         }}
       />
-        <HomeStack.Screen
+      <HomeStack.Screen
         name="VideoHome"
         component={VideoHome}
         options={{
@@ -138,7 +138,7 @@ const HomeStackNavigator = () => {
           headerRight: () => <ShopHeaderRight />,
         }}
       />
-       <HomeStack.Screen
+      <HomeStack.Screen
         name="FromLotus"
         component={FromLotusHome}
         options={{
@@ -149,7 +149,7 @@ const HomeStackNavigator = () => {
           headerRight: () => <ShopHeaderRight />,
         }}
       />
-         <HomeStack.Screen
+      <HomeStack.Screen
         name="AllPodcast"
         component={AllPodcast}
         options={{
@@ -160,7 +160,7 @@ const HomeStackNavigator = () => {
           headerRight: () => <ShopHeaderRight />,
         }}
       />
-          <HomeStack.Screen
+      <HomeStack.Screen
         name="ShopCategory"
         component={ShopCategoryScreen}
         options={{
@@ -172,9 +172,9 @@ const HomeStackNavigator = () => {
         }}
       />
 
-<HomeStack.Screen
+      <HomeStack.Screen
         name="SubcategoryScreen"
-        component={SubcategoryScreen}
+        component={ShopScreen}
         options={{
           headerShown: true,
           headerShadowVisible: false,
@@ -183,7 +183,6 @@ const HomeStackNavigator = () => {
           headerRight: () => <ShopHeaderRight />,
         }}
       />
-
     </HomeStack.Navigator>
   );
 };
