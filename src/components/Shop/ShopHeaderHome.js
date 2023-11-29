@@ -23,7 +23,7 @@ const ShopHeaderHome = () => {
       </View>
 
       <TouchableOpacity
-        // onPress={() => navigation.navigate('Professionals')}
+        onPress={() => navigation.navigate('ShopHome')}
         style={{ flexDirection: "row", alignItems: "center" }}
       >
         <Text style={styles.seeAll}>See all</Text>
