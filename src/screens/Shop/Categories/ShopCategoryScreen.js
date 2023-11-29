@@ -44,13 +44,17 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 20,
     marginBottom: 10,
+    padding: 10
   },
   container: {
-    margin: 10,
+    margin: 5,
+    flex: 1
   },
   subcategoryItem: {
-    padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#ccc",
+    backgroundColor: "#33AB5F10",
+    margin: 15,
+    borderRadius: 10,
+    marginBottom: 1, 
+    padding: 20
   },
 });
