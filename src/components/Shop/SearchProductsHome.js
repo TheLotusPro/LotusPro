@@ -4,21 +4,42 @@ import {
   View,
   Image,
   TouchableOpacity,
+  Pressable,
 } from "react-native";
 import React from "react";
 import { Text } from "@gluestack-ui/themed";
 import { Colors } from "react-native/Libraries/NewAppScreen";
-import { useTheme } from "@react-navigation/native";
+import { useNavigation, useTheme } from "@react-navigation/native";
 
-const SearchProductsHome = (props) => {
+const SearchProductsHome = ({shop}) => {
+  
+  const navigation = useNavigation();
+
+  const handlePress = () => {
+    // Check if shop exists and has a title property
+    if (shop && shop.title) {
+      // If the category exists and has subcategories, navigate to a new instance of ShopCategoryScreen
+      // with the subcategories as the new data
+      if (shop.subcategories && shop.subcategories.length > 0) {
+        navigation.navigate('ShopCategory', { category: shop });  // Pass the entire category object
+      }
+    }
+  };
+  
+
+
   const {colors} = useTheme();
   return (
-    <View style={styles.container}>
-      <TouchableWithoutFeedback style={styles.imageContainer}>
+    <View 
+
+    style={styles.container}>
+      <TouchableWithoutFeedback
+      onPress={handlePress}
+       style={styles.imageContainer}>
         <View style={{ flexDirection: "column" }}>
-          <Image source={props?.shopHomeData?.image} style={styles.image} />
+          <Image source={shop?.image} style={styles.image} />
           <Text style={[styles.imageTitle, { color: colors.text  }]}>
-            {props?.shopHomeData?.title}
+            {shop?.title}
           </Text>
         </View>
       </TouchableWithoutFeedback>

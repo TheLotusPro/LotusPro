@@ -86,59 +86,59 @@ export default [
         ]
     },
     {
-        id: '5',
+        id: '6',
         title: 'Lighting',
         image: Lighting,
-        subcategories: [
-            { id: '501', title: 'Dining Furniture' },
-        ]
-    },
-    {
-        id: '6',
-        title: 'Bedroom',
-        image: Bedroom,
         subcategories: [
             { id: '601', title: 'Dining Furniture' },
         ]
     },
     {
         id: '7',
-        title: 'Outdoor',
-        image: Outside,
+        title: 'Bedroom',
+        image: Bedroom,
         subcategories: [
             { id: '701', title: 'Dining Furniture' },
         ]
     },
     {
         id: '8',
-        title: 'Home Decor',
-        image: Decor,
+        title: 'Outdoor',
+        image: Outside,
         subcategories: [
             { id: '801', title: 'Dining Furniture' },
         ]
     },
     {
         id: '9',
-        title: 'Home Improvement',
-        image: HomeImprovement,
+        title: 'Home Decor',
+        image: Decor,
         subcategories: [
             { id: '901', title: 'Dining Furniture' },
         ]
     },
     {
         id: '10',
-        title: 'Storage & Organization',
-        image: Storage,
+        title: 'Home Improvement',
+        image: HomeImprovement,
         subcategories: [
             { id: '1001', title: 'Dining Furniture' },
         ]
     },
     {
         id: '11',
+        title: 'Storage & Organization',
+        image: Storage,
+        subcategories: [
+            { id: '1101', title: 'Dining Furniture' },
+        ]
+    },
+    {
+        id: '12',
         title: 'Holiday Decor',
         image: Holiday,
         subcategories: [
-            { id: '1101', title: 'Dining Furniture' },
+            { id: '1201', title: 'Dining Furniture' },
         ]
     }
 ]
