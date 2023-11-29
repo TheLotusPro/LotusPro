@@ -35,14 +35,17 @@ const ShopCategoryScreen = ({ route, navigation }) => {
   };
 
   return (
+    <View style={{flex: 1}}>
+         <HeaderSale />
     <View style={styles.container}>
-     <HeaderSale />
+
     <Image source={category.image} style={styles.headerImage}/>
       <Text style={[styles.headerTitle, { color: colors.text }]}>
         {category.title}
       </Text>
       <FlatList
         data={category.subcategories}
+        showsVerticalScrollIndicator={false}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <TouchableOpacity onPress={() => handleSubcategoryPress(item)}>
@@ -52,6 +55,7 @@ const ShopCategoryScreen = ({ route, navigation }) => {
           </TouchableOpacity>
         )}
       />
+    </View>
     </View>
   );
 };
