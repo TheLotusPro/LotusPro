@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     fontWeight: "300",
   },
   headerTitle: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold'
   },
   headerContainer: {

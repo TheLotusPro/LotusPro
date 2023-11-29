@@ -4,10 +4,8 @@ import HomeHeaderButtons from "../../components/Home/HomeHeaderButtons";
 import FindProfessionals from "../../components/Home/FindProfessionals";
 import proData from "../../assets/data/findProfessionals";
 import FindProfessionalHeader from "../../components/Home/FindProfessionalHeader";
-import PopularProductsHeader from "../../components/Home/PopularProductsHeader";
 import ShopHeaderHome from "../../components/Shop/ShopHeaderHome";
 import SearchProductsHome from "../../components/Shop/SearchProductsHome";
-import shopHomeData from "../../assets/data/shopHomeData";
 import PopularProducts from "../../components/Products/PopularProducts";
 import shop from "../../assets/data/shop";
 import { useNavigation, useTheme } from "@react-navigation/native";
@@ -18,13 +16,10 @@ const HomeScreen = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <HomeHeaderButtons />
-      {/* <ShopHeaderHome /> */}
       <Shop />
       {/* <FindProfessionalHeader /> */}
       {/* <Professionals /> */}
       <PopularProducts />
-      {/* <PopularProductsHeader />
-      <PopularProducts /> */}
     </ScrollView>
   );
 };
@@ -45,6 +40,14 @@ const Professionals = () => {
 const Shop = () => {
   const { colors } = useTheme();
   const navigation = useNavigation();
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
+  
 
   return (
     <View>
@@ -57,7 +60,7 @@ const Shop = () => {
     >
       <View>
         <Text style={[styles.title, { color: colors.text }]}>
-          Search Products
+          Shop Products
         </Text>
       </View>
 
@@ -70,7 +73,7 @@ const Shop = () => {
       </TouchableOpacity>
     </View>
       <FlatList
-        data={shop.slice(0, 4)}
+        data={shuffleArray([...shop]).slice(0, 4)}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => <SearchProductsHome shop={item} />}
@@ -83,7 +86,7 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
-    fontSize: 16,
+    fontSize: 20,
   },
   seeAll: {
     color: "#33AB5F",
