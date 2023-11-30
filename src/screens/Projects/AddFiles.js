@@ -1,9 +1,18 @@
-import { StyleSheet, View, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  FlatList,
+  Image,
+  Alert,
+} from "react-native";
 import React, { useState } from "react";
 import { useNavigation, useTheme } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/solid";
 import { Text } from "@gluestack-ui/themed";
 import DocumentPicker from "react-native-document-picker";
+import ImagePicker from "react-native-image-crop-picker";
+
 import { BottomSheet } from "react-native-btr";
 
 const AddFiles = () => {
@@ -96,12 +105,98 @@ const Filter = () => {
 
 const Files = () => {
   const { colors } = useTheme();
+  const [mediaFiles, setMediaFiles] = useState([]);
+
+  const handlePickDocument = async () => {
+    try {
+      const result = await DocumentPicker.pick({
+        type: [DocumentPicker.types.allFiles],
+      });
+
+      setMediaFiles((prevFiles) => [
+        ...prevFiles,
+        { type: "document", uri: result.uri, name: result.name },
+      ]);
+    } catch (err) {
+      if (DocumentPicker.isCancel(err)) {
+        // User cancelled the picker
+      } else {
+        Alert.alert("Error", "Error picking document");
+      }
+    }
+  };
+
+  const handlePickImage = () => {
+    ImagePicker.openPicker({
+      multiple: true,
+    }).then((images) => {
+      setMediaFiles((prevFiles) => [
+        ...prevFiles,
+        ...images.map((image) => ({
+          type: "image",
+          uri: image.path,
+          name: image.filename,
+        })),
+      ]);
+    });
+  };
+
+  const handleRemoveMedia = (index) => {
+    const updatedMediaFiles = [...mediaFiles];
+    updatedMediaFiles.splice(index, 1);
+    setMediaFiles(updatedMediaFiles);
+  };
+
+  const renderMediaItem = ({ item, index }) => (
+    <View
+      style={{ flexDirection: "row", alignItems: "center", marginVertical: 5 }}
+    >
+      {item.type === "image" ? (
+        <Image
+          source={{ uri: item.uri }}
+          style={{ width: 50, height: 50, marginRight: 10 }}
+        />
+      ) : (
+        <Icons.DocumentTextIcon
+          size={20}
+          color={"gray"}
+          style={{ marginRight: 10 }}
+        />
+      )}
+      <Text>{item.name}</Text>
+      <TouchableOpacity
+        onPress={() => handleRemoveMedia(index)}
+        style={{ marginLeft: "auto" }}
+      >
+        <Icons.TrashIcon size={20} color={"red"} />
+      </TouchableOpacity>
+    </View>
+  );
+
   return (
     <View style={{ margin: 10 }}>
-      <TouchableOpacity style={{ flexDirection: "row" }}>
-        <Icons.PaperClipIcon size={20} color={"gray"} />
-        <Text style={[{ color: "gray" }]}>Add Images, Videos or Files</Text>
-      </TouchableOpacity>
+      <View style={{ flexDirection: "row", justifyContent: "space-evenly" }}>
+        <TouchableOpacity
+          style={{ flexDirection: "row" }}
+          onPress={handlePickDocument}
+        >
+          <Icons.DocumentTextIcon size={20} color={"gray"} />
+          <Text style={[{ color: "gray" }]}>Files</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{ flexDirection: "row" }}
+          onPress={handlePickImage}
+        >
+          <Icons.PaperClipIcon size={20} color={"gray"} />
+          <Text style={[{ color: "gray" }]}>Add Images</Text>
+        </TouchableOpacity>
+      </View>
+
+      <FlatList
+        data={mediaFiles}
+        renderItem={renderMediaItem}
+        keyExtractor={(item, index) => `${item.uri}-${index}`}
+      />
     </View>
   );
 };
