@@ -35,7 +35,8 @@
     "react-native-screens": "^3.27.0",
     "react-native-snap-carousel": "^3.9.1",
     "react-native-svg": "^13.4.0",
-    "react-native-video": "^6.0.0-alpha.11"
+    "react-native-video": "^6.0.0-alpha.11",
+    "react-native-webview": "^13.6.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

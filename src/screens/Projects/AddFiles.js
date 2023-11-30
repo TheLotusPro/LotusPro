@@ -15,6 +15,8 @@ import * as Icons from "react-native-heroicons/solid";
 import { Text } from "@gluestack-ui/themed";
 import DocumentPicker from "react-native-document-picker";
 import ImagePicker from "react-native-image-crop-picker";
+import { WebView } from 'react-native-webview';
+
 
 import { BottomSheet } from "react-native-btr";
 
@@ -117,17 +119,23 @@ const Files = () => {
       const result = await DocumentPicker.pick({
         type: [DocumentPicker.types.allFiles],
       });
-
-      setMediaFiles(prevFiles => [...prevFiles, { type: 'document', uri: result.uri, name: result.name }]);
+  
+      console.log('Picked document:', result);
+  
+      setMediaFiles(prevFiles => [
+        ...prevFiles,
+        { type: 'document', uri: result.uri, name: result.name },
+      ]);
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
-        // User cancelled the picker
+        console.log('Document picking cancelled');
       } else {
+        console.error('Error picking document:', err);
         Alert.alert('Error', 'Error picking document');
       }
     }
   };
-
+  
 
   const handlePickImage = () => {
     ImagePicker.openPicker({
@@ -136,7 +144,7 @@ const Files = () => {
       setMediaFiles((prevFiles) => [
         ...prevFiles,
         ...images.map((image) => ({
-          type: "image",
+          type: 'image',
           uri: image.path,
           name: image.filename,
         })),
@@ -150,7 +158,7 @@ const Files = () => {
     setMediaFiles(updatedMediaFiles);
   };
 
-  const handleViewMedia = media => {
+  const handleViewMedia = (media) => {
     setSelectedMedia(media);
     setModalVisible(true);
   };
@@ -168,8 +176,10 @@ const Files = () => {
       {item.type === 'image' ? (
         <Image source={{ uri: item.uri }} style={{ width: 50, height: 50, marginRight: 10 }} />
       ) : (
-        <Icons.DocumentTextIcon size={50} color={'gray'} style={{ marginRight: 10 }} />
-        
+        <View style={{ width: 50, height: 50, marginRight: 10, backgroundColor: 'gray' }}>
+          {/* You can customize the rendering of the document here */}
+          <Text style={{ color: 'white', textAlign: 'center' }}>Doc</Text>
+        </View>
       )}
       <Text>{item.name}</Text>
       <TouchableOpacity onPress={() => handleRemoveMedia(index)} style={{ marginLeft: 'auto' }}>
@@ -177,7 +187,7 @@ const Files = () => {
       </TouchableOpacity>
     </TouchableOpacity>
   );
-
+  
 
   return (
     <View style={{ margin: 10 }}>
@@ -203,13 +213,13 @@ const Files = () => {
         renderItem={renderMediaItem}
         keyExtractor={(item, index) => `${item.uri}-${index}`}
       />
-        <Modal transparent={false} visible={modalVisible} onRequestClose={closeModal}>
+          <Modal transparent={false} visible={modalVisible} onRequestClose={closeModal}>
         <View style={styles.modalContainer}>
           {selectedMedia && selectedMedia.type === 'image' ? (
             <Image source={{ uri: selectedMedia.uri }} style={styles.modalImage} resizeMode="contain" />
           ) : (
             <View style={styles.documentContainer}>
-            <Icons.XCircleIcon size={50} color={'gray'} />
+              <Icons.XCircleIcon size={50} color={'gray'} />
               <Text style={styles.documentName}>{selectedMedia && selectedMedia.name}</Text>
             </View>
           )}
@@ -283,10 +293,14 @@ const styles = StyleSheet.create({
   documentName: {
     marginTop: 10,
     fontSize: 16,
+    color: 'red'
   },
   closeButton: {
     position: 'absolute',
     top: 60,
     right: 20,
+  },
+  webView: {
+    flex: 1,
   },
 });
