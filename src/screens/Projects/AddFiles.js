@@ -5,6 +5,9 @@ import {
   FlatList,
   Image,
   Alert,
+  Modal,
+  Dimensions,
+  ScrollView,
 } from "react-native";
 import React, { useState } from "react";
 import { useNavigation, useTheme } from "@react-navigation/native";
@@ -106,6 +109,8 @@ const Filter = () => {
 const Files = () => {
   const { colors } = useTheme();
   const [mediaFiles, setMediaFiles] = useState([]);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [selectedMedia, setSelectedMedia] = useState(null);
 
   const handlePickDocument = async () => {
     try {
@@ -147,31 +152,59 @@ const Files = () => {
     setMediaFiles(updatedMediaFiles);
   };
 
+  const handleViewMedia = media => {
+    setSelectedMedia(media);
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setSelectedMedia(null);
+    setModalVisible(false);
+  };
+
+  // const renderMediaItem = ({ item, index }) => (
+  //   <View
+  //     style={{ flexDirection: "row", alignItems: "center", marginVertical: 5 }}
+  //   >
+  //     {item.type === "image" ? (
+  //       <Image
+  //         source={{ uri: item.uri }}
+  //         style={{ width: 50, height: 50, marginRight: 10 }}
+  //       />
+  //     ) : (
+  //       <Icons.DocumentTextIcon
+  //         size={20}
+  //         color={"gray"}
+  //         style={{ marginRight: 10 }}
+  //       />
+  //     )}
+  //     <Text>{item.name}</Text>
+  //     <TouchableOpacity
+  //       onPress={() => handleRemoveMedia(index)}
+  //       style={{ marginLeft: "auto" }}
+  //     >
+  //       <Icons.TrashIcon size={20} color={"red"} />
+  //     </TouchableOpacity>
+  //   </View>
+  // );
+
   const renderMediaItem = ({ item, index }) => (
-    <View
-      style={{ flexDirection: "row", alignItems: "center", marginVertical: 5 }}
+    <TouchableOpacity
+      style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 5 }}
+      onPress={() => handleViewMedia(item)}
     >
-      {item.type === "image" ? (
-        <Image
-          source={{ uri: item.uri }}
-          style={{ width: 50, height: 50, marginRight: 10 }}
-        />
+      {item.type === 'image' ? (
+        <Image source={{ uri: item.uri }} style={{ width: 50, height: 50, marginRight: 10 }} />
       ) : (
-        <Icons.DocumentTextIcon
-          size={20}
-          color={"gray"}
-          style={{ marginRight: 10 }}
-        />
+        <Icons.PaperClipIcon  size={20} color={'gray'} style={{ marginRight: 10 }} />
       )}
       <Text>{item.name}</Text>
-      <TouchableOpacity
-        onPress={() => handleRemoveMedia(index)}
-        style={{ marginLeft: "auto" }}
-      >
-        <Icons.TrashIcon size={20} color={"red"} />
+      <TouchableOpacity onPress={() => handleRemoveMedia(index)} style={{ marginLeft: 'auto' }}>
+        <Icons.XCircleIcon size={20} color={'red'} />
       </TouchableOpacity>
-    </View>
+    </TouchableOpacity>
   );
+
 
   return (
     <View style={{ margin: 10 }}>
@@ -197,6 +230,18 @@ const Files = () => {
         renderItem={renderMediaItem}
         keyExtractor={(item, index) => `${item.uri}-${index}`}
       />
+        <Modal transparent={false} visible={modalVisible} onRequestClose={closeModal}>
+        <View style={styles.modalContainer}>
+          {selectedMedia && selectedMedia.type === 'image' ? (
+            <Image source={{ uri: selectedMedia.uri }} style={styles.modalImage} />
+          ) : (
+            <Text>{selectedMedia && selectedMedia.name}</Text>
+          )}
+          <TouchableOpacity onPress={closeModal} style={styles.closeButton}>
+            <Icons.XCircleIcon size={30} color={'red'} />
+          </TouchableOpacity>
+        </View>
+      </Modal>
     </View>
   );
 };
@@ -243,5 +288,20 @@ const styles = StyleSheet.create({
   scrollViewContainer: {
     flexGrow: 1,
     justifyContent: "space-between",
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalImage: {
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
+    resizeMode: 'contain',
+  },
+  closeButton: {
+    position: 'absolute',
+    top: 60,
+    right: 20,
   },
 });
