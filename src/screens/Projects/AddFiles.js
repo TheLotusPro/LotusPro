@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigation, useTheme } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/solid";
 import { Text } from "@gluestack-ui/themed";
-import Search from "../Search/Search";
+import DocumentPicker from 'react-native-document-picker'
 
 const AddFiles = () => {
   return (

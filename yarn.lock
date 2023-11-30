@@ -7193,6 +7193,13 @@
     "react-native-radio-buttons-group" "^2.2.11"
     "react-native-vector-icons" "^9.2.0"
 
+"react-native-document-picker@^9.0.1":
+  "integrity" "sha512-l2c2xChwsdjzZIV9QJc85buC3vXkM5ZuY4943yMDj3TiszJp1spmHNaRMZKYIh3yVwdD2jENm0DBU5AWa+jhLg=="
+  "resolved" "https://registry.npmjs.org/react-native-document-picker/-/react-native-document-picker-9.0.1.tgz"
+  "version" "9.0.1"
+  dependencies:
+    "invariant" "^2.2.4"
+
 "react-native-gesture-handler@^2.13.4", "react-native-gesture-handler@>= 1.0.0", "react-native-gesture-handler@>=1.10.1":
   "integrity" "sha512-smpYOVbvWABpq2H+lmDnfOLCTH934aUPO1w2/pQXvm1j+M/vmGQmvgRDJOpXcks17HLtNNKXD6tcODf3aPqDfA=="
   "resolved" "https://registry.npmjs.org/react-native-gesture-handler/-/react-native-gesture-handler-2.13.4.tgz"
