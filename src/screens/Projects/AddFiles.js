@@ -118,18 +118,16 @@ const Files = () => {
         type: [DocumentPicker.types.allFiles],
       });
 
-      setMediaFiles((prevFiles) => [
-        ...prevFiles,
-        { type: "document", uri: result.uri, name: result.name },
-      ]);
+      setMediaFiles(prevFiles => [...prevFiles, { type: 'document', uri: result.uri, name: result.name }]);
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
         // User cancelled the picker
       } else {
-        Alert.alert("Error", "Error picking document");
+        Alert.alert('Error', 'Error picking document');
       }
     }
   };
+
 
   const handlePickImage = () => {
     ImagePicker.openPicker({
@@ -162,32 +160,6 @@ const Files = () => {
     setModalVisible(false);
   };
 
-  // const renderMediaItem = ({ item, index }) => (
-  //   <View
-  //     style={{ flexDirection: "row", alignItems: "center", marginVertical: 5 }}
-  //   >
-  //     {item.type === "image" ? (
-  //       <Image
-  //         source={{ uri: item.uri }}
-  //         style={{ width: 50, height: 50, marginRight: 10 }}
-  //       />
-  //     ) : (
-  //       <Icons.DocumentTextIcon
-  //         size={20}
-  //         color={"gray"}
-  //         style={{ marginRight: 10 }}
-  //       />
-  //     )}
-  //     <Text>{item.name}</Text>
-  //     <TouchableOpacity
-  //       onPress={() => handleRemoveMedia(index)}
-  //       style={{ marginLeft: "auto" }}
-  //     >
-  //       <Icons.TrashIcon size={20} color={"red"} />
-  //     </TouchableOpacity>
-  //   </View>
-  // );
-
   const renderMediaItem = ({ item, index }) => (
     <TouchableOpacity
       style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 5 }}
@@ -196,7 +168,8 @@ const Files = () => {
       {item.type === 'image' ? (
         <Image source={{ uri: item.uri }} style={{ width: 50, height: 50, marginRight: 10 }} />
       ) : (
-        <Icons.PaperClipIcon  size={20} color={'gray'} style={{ marginRight: 10 }} />
+        <Icons.DocumentTextIcon size={50} color={'gray'} style={{ marginRight: 10 }} />
+        
       )}
       <Text>{item.name}</Text>
       <TouchableOpacity onPress={() => handleRemoveMedia(index)} style={{ marginLeft: 'auto' }}>
@@ -233,9 +206,12 @@ const Files = () => {
         <Modal transparent={false} visible={modalVisible} onRequestClose={closeModal}>
         <View style={styles.modalContainer}>
           {selectedMedia && selectedMedia.type === 'image' ? (
-            <Image source={{ uri: selectedMedia.uri }} style={styles.modalImage} />
+            <Image source={{ uri: selectedMedia.uri }} style={styles.modalImage} resizeMode="contain" />
           ) : (
-            <Text>{selectedMedia && selectedMedia.name}</Text>
+            <View style={styles.documentContainer}>
+            <Icons.XCircleIcon size={50} color={'gray'} />
+              <Text style={styles.documentName}>{selectedMedia && selectedMedia.name}</Text>
+            </View>
           )}
           <TouchableOpacity onPress={closeModal} style={styles.closeButton}>
             <Icons.XCircleIcon size={30} color={'red'} />
@@ -297,7 +273,16 @@ const styles = StyleSheet.create({
   modalImage: {
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
-    resizeMode: 'contain',
+    flex: 1,
+  },
+  documentContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 50, // Adjust this margin to position the document icon and name properly
+  },
+  documentName: {
+    marginTop: 10,
+    fontSize: 16,
   },
   closeButton: {
     position: 'absolute',
