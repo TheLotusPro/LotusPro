@@ -15,24 +15,23 @@ const HeaderSearch = () => {
 
   return (
     <View style={styles.container}>
-      <View style={[styles.searchContainer]}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Search")}
+        style={[styles.searchContainer]}
+      >
         <View style={{ margin: 8, flexDirection: "row", alignItems: "center" }}>
           <Icons.MagnifyingGlassIcon size={20} color={"gray"} />
-          <TextInput
-            placeholder={"Search"}
-            autoCapitalize="none"
-            placeholderTextColor={"grey"}
-            style={[styles.input, { color: colors.text }]}
-          />
+          <Text style={[{ color: "gray" }]}>Search</Text>
         </View>
         <TouchableOpacity style={{ marginRight: 10 }}>
           <Icons.CameraIcon size={20} color={"gray"} />
         </TouchableOpacity>
-      </View>
-      <TouchableOpacity 
-      style={{marginLeft: 15}}
-      onPress={() => navigation.navigate("ShoppingCart")}>
-        <Icons.ShoppingBagIcon size={25} color={ "#33AB5F"} />
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{ marginLeft: 15 }}
+        onPress={() => navigation.navigate("ShoppingCart")}
+      >
+        <Icons.ShoppingBagIcon size={25} color={"#33AB5F"} />
       </TouchableOpacity>
     </View>
   );

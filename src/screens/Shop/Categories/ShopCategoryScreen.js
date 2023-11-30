@@ -5,11 +5,13 @@ import {
   View,
   FlatList,
   TouchableOpacity,
-  Image
+  Image,
+  Dimensions,
 } from "react-native";
-import {Text} from '@gluestack-ui/themed'
-import PlaceHolder from '../../../assets/images/HomeDesign&Remodel/KitchenBath.jpeg'
+import { Text } from "@gluestack-ui/themed";
+import PlaceHolder from "../../../assets/images/HomeDesign&Remodel/KitchenBath.jpeg";
 
+const ScreenWidth = Dimensions.get("window").width;
 
 const ShopCategoryScreen = ({ route, navigation }) => {
   const { category } = route.params;
@@ -17,7 +19,7 @@ const ShopCategoryScreen = ({ route, navigation }) => {
 
   const HeaderSale = () => {
     const { colors } = useTheme();
-  
+
     return (
       <View>
         <TouchableOpacity style={styles.headerSaleContainer}>
@@ -35,27 +37,29 @@ const ShopCategoryScreen = ({ route, navigation }) => {
   };
 
   return (
-    <View style={{flex: 1}}>
-         <HeaderSale />
-    <View style={styles.container}>
+    <View style={{ flex: 1 }}>
+      <HeaderSale />
+      <Image source={category.image} style={styles.headerImage} />
 
-    <Image source={category.image} style={styles.headerImage}/>
-      <Text style={[styles.headerTitle, { color: colors.text }]}>
-        {category.title}
-      </Text>
-      <FlatList
-        data={category.subcategories}
-        showsVerticalScrollIndicator={false}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => handleSubcategoryPress(item)}>
-            <View style={styles.subcategoryItem}>
-              <Text style={[styles.title, { color: colors.text }]}>{item.title}</Text>
-            </View>
-          </TouchableOpacity>
-        )}
-      />
-    </View>
+      <View style={styles.container}>
+        <Text style={[styles.headerTitle, { color: colors.text }]}>
+          {category.title}
+        </Text>
+        <FlatList
+          data={category.subcategories}
+          showsVerticalScrollIndicator={false}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <TouchableOpacity onPress={() => handleSubcategoryPress(item)}>
+              <View style={styles.subcategoryItem}>
+                <Text style={[styles.title, { color: colors.text }]}>
+                  {item.title}
+                </Text>
+              </View>
+            </TouchableOpacity>
+          )}
+        />
+      </View>
     </View>
   );
 };
@@ -63,34 +67,29 @@ const ShopCategoryScreen = ({ route, navigation }) => {
 export default ShopCategoryScreen;
 
 const styles = StyleSheet.create({
-  title: {
-  
-  
-  },
+  title: {},
   container: {
     margin: 5,
-    flex: 1
+    flex: 1,
   },
   subcategoryItem: {
     backgroundColor: "#33AB5F10",
     margin: 15,
     borderRadius: 10,
-    marginBottom: 1, 
-    padding: 15
+    marginBottom: 1,
+    padding: 15,
   },
   headerTitle: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 18,
-    margin: 20
+    margin: 10,
   },
   headerImage: {
-    width: "100%",
+    width: ScreenWidth,
     height: 100,
-    borderRadius: 10
   },
   headerSaleContainer: {
     alignItems: "center",
     backgroundColor: "#33AB5F90",
-    marginBottom: 5
   },
 });

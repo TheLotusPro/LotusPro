@@ -40,6 +40,12 @@ import Search from "../screens/Search/Search";
 import PodcastDetails from "../screens/FromLotus/PodcastDetails";
 import ShopHeaderRight from "../components/Shop/ShopHeaderRight";
 import StartTalk from "../screens/Stories/StartTalk";
+import MatchPros from "../screens/Match/MatchPros";
+import Zip from "../screens/Match/Zip";
+import AddSubcontractor from "../screens/Projects/AddSubcontractor";
+import DoneGoBackButton from "../components/DoneGoBackButton";
+import InviteSubContractor from "../screens/Projects/InviteSubContractor";
+import AddFiles from "../screens/Projects/AddFiles";
 
 const Stack = createNativeStackNavigator();
 
@@ -66,6 +72,28 @@ const RootNavigator = () => {
           headerTitle: "Details",
           headerLeft: () => <GoBackHeaderButton />,
           headerRight: () => <ProductHeaderRight />,
+        }}
+      />
+      <Stack.Screen
+        name="AddSubcontractor"
+        component={AddSubcontractor}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Subcontractor",
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <DoneGoBackButton />,
+        }}
+      />
+       <Stack.Screen
+        name="AddFiles"
+        component={AddFiles}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Files",
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <DoneGoBackButton />,
         }}
       />
       <Stack.Screen
@@ -217,6 +245,7 @@ const RootNavigator = () => {
           headerLeft: () => <GoBackHeaderButton />,
         }}
       />
+    
          <Stack.Screen
         name="PodcastDetails"
         component={PodcastDetails}
@@ -239,6 +268,8 @@ const RootNavigator = () => {
           headerTitle: "Team",
           headerBackVisible: false,
           headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <DoneGoBackButton />,
+
         }}
       />
       <Stack.Group
@@ -297,6 +328,18 @@ const RootNavigator = () => {
             headerShown: true,
             headerShadowVisible: false,
             headerTitle: "Invite Team Member",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+           <Stack.Screen
+          name="InviteSubContractor"
+          component={InviteSubContractor}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Invite SubContractor",
             headerLeft: () => (
               <Button title="Cancel" onPress={() => navigation.goBack()} />
             ),
@@ -419,6 +462,34 @@ const RootNavigator = () => {
             ),
           }}
         />
+      </Stack.Group>
+
+      <Stack.Group>
+      <Stack.Screen
+        name="MatchPros"
+        component={MatchPros}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Describe Your Project",
+          headerBackVisible: false,
+          headerLeft: () => <GoBackHeaderButton />,
+        }}
+      />
+
+      <Stack.Screen
+        name="Zip"
+        component={Zip}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: " ",
+          headerBackVisible: false,
+          headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.navigate('Professionals')} />
+            ),
+        }}
+      />
       </Stack.Group>
     </Stack.Navigator>
   );

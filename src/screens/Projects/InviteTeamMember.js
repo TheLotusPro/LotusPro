@@ -8,9 +8,7 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 import { useNavigation, useTheme } from "@react-navigation/native";
-import {
-  Text,
-} from "@gluestack-ui/themed";
+import { Text } from "@gluestack-ui/themed";
 
 const InviteTeamMember = () => {
   const navigation = useNavigation();
@@ -84,10 +82,10 @@ const InviteTeamMember = () => {
               <Text style={[{ color: "gray", fontSize: 13 }]}>
                 Timeline, Takeoff, 3D Floor Plans etc....
               </Text>
-              <View style={{ marginTop: 30, }}>
+              <View style={{ marginTop: 30 }}>
                 <Text style={[{ color: colors.text }]}>Project</Text>
                 <TouchableOpacity
-                 onPress={() => navigation.navigate('ProjectList')}
+                  onPress={() => navigation.navigate("ProjectList")}
                   style={{
                     marginTop: 10,
                     borderBottomWidth: 1,
@@ -96,14 +94,11 @@ const InviteTeamMember = () => {
                 >
                   <Text style={{ marginBottom: 10 }}>Select Projects</Text>
                 </TouchableOpacity>
-                
               </View>
             </View>
           </View>
         </View>
-    
       </View>
-      
     </KeyboardAvoidingView>
   );
 };
@@ -127,7 +122,7 @@ const styles = StyleSheet.create({
   permissionContainer: {
     alignSelf: "flex-start",
     margin: 20,
-    backgroundColor: "rgba(52, 52, 52, 0.2)",
+    backgroundColor: "#33AB5F10",
     width: "90%",
     padding: 20,
     borderRadius: 10,
@@ -136,16 +131,15 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   modalContainer: {
-
-   flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
   },
   modalContent: {
     padding: 20,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
-    width: '100%',
-    height: 500
+    width: "100%",
+    height: 500,
   },
 });

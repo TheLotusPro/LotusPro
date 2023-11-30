@@ -63,7 +63,9 @@ const SubContractor = () => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity style={styles.border}>
+    <TouchableOpacity 
+    onPress={() => navigation.navigate('AddSubcontractor')}
+    style={styles.border}>
       <View style={styles.borderContainer}>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Icons.UserGroupIcon size={20} color={colors.text} />
@@ -86,8 +88,10 @@ const Files = () => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity style={styles.borderLarge}>
-      <View style={styles.borderContainerLarge}>
+    <TouchableOpacity 
+    onPress={() => navigation.navigate('AddFiles')}
+    style={styles.border}>
+      <View style={styles.borderContainer}>
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Icons.DocumentIcon size={20} color={colors.text} />
@@ -100,14 +104,10 @@ const Files = () => {
             </View>
           </View>
 
-          <TouchableOpacity>
-            <Icons.PlusCircleIcon size={20} color={colors.text} />
-          </TouchableOpacity>
+  
         </View>
 
-        <View style={styles.attachments}>
-          <Text>Add files here</Text>
-        </View>
+       
       </View>
     </TouchableOpacity>
   );
