@@ -1,8 +1,10 @@
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/solid";
 import { BottomSheet } from "react-native-btr";
+import { Calendar } from "react-native-calendars";
+import moment from "moment";
 
 const EditTask = () => {
   const { colors } = useTheme();
@@ -19,17 +21,38 @@ const EditTask = () => {
 
 const Date = () => {
   const { colors } = useTheme();
-  const [selectedDate, setSelectedDate] = useState("All");
+  const [selectedDate, setSelectedDate] = useState("Date");
   const [visible, setVisible] = useState(false);
 
-  const handleRoleSelection = (date) => {
-    setSelectedDate(date);
+  useEffect(() => {
+    // Set selectedDate to the current date in the format "Dec 1, 2023" on component mount
+    setSelectedDate(moment().format("MMM D, YYYY"));
+  }, []);
+
+  const handleDateSelection = (day) => {
+    const selectedDateString = moment(day.dateString).format("MMM D, YYYY");
+    setSelectedDate(selectedDateString);
     toggleBottomSheet();
   };
 
   const toggleBottomSheet = () => {
     setVisible((_visible) => !_visible);
   };
+
+  const calendarTheme = {
+    backgroundColor: colors.background, // Set your desired background color here
+    calendarBackground: colors.background, // Set your desired background color here
+    textSectionTitleColor: colors.text,
+    dayTextColor: colors.text,
+    todayTextColor: '#33AB5F',
+    selectedDayTextColor: "#ffffff", // Set the text color for selected days
+    arrowColor: '#33AB5F',
+    monthTextColor: colors.text,
+    textDayFontSize: 16,
+    textMonthFontSize: 16,
+    textDayHeaderFontSize: 16,
+  };
+
   return (
     <View style={styles.dateContainer}>
       <TouchableOpacity
@@ -37,9 +60,9 @@ const Date = () => {
         style={{ flexDirection: "row", alignItems: "center", marginBottom: 15 }}
       >
         <Icons.CalendarDaysIcon size={25} color={colors.text} />
-        <TouchableOpacity style={{ marginLeft: 10 }}>
-          <Text style={[{ color: colors.text }]}>Dec 1, 2023</Text>
-        </TouchableOpacity>
+        <View style={{ marginLeft: 10 }}>
+          <Text style={[{ color: colors.text }]}>{selectedDate}</Text>
+        </View>
       </TouchableOpacity>
 
       <BottomSheet
@@ -52,7 +75,18 @@ const Date = () => {
             styles.bottomSheetContainer,
             { backgroundColor: colors.background },
           ]}
-        ></View>
+        >
+          <Calendar
+            onDayPress={(day) => handleDateSelection(day)}
+            theme={calendarTheme}
+            markedDates={{
+              [moment(selectedDate, "MMM D, YYYY").format("YYYY-MM-DD")]: {
+                selected: true,
+                selectedColor: '#33AB5F',
+              },
+            }}
+          />
+        </View>
       </BottomSheet>
     </View>
   );
@@ -75,7 +109,7 @@ const styles = StyleSheet.create({
     borderColor: "gray",
   },
   bottomSheetContainer: {
-    height: 250,
+    height: 400,
     borderRadius: 20,
     paddingHorizontal: 10,
     paddingVertical: 13,
