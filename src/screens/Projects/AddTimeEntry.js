@@ -32,7 +32,9 @@ const AddTimeEntry = ({ route }) => {
   useEffect(() => {
     // Update the state when route params change
     setSelectedProject(route.params?.selectedProject || "Select Project");
-    setSelectedTeamMember(route.params?.selectedTeamMember || "Select Team Member");
+    setSelectedTeamMember(
+      route.params?.selectedTeamMember || "Select Team Member"
+    );
   }, [route.params]);
 
   useEffect(() => {
@@ -42,7 +44,9 @@ const AddTimeEntry = ({ route }) => {
           {isLoading ? (
             <ActivityIndicator size="small" color="#33AB5F" />
           ) : (
-            <Text style={{ fontWeight: "bold", fontSize: 18, color: "#33AB5F" }}>
+            <Text
+              style={{ fontWeight: "bold", fontSize: 18, color: "#33AB5F" }}
+            >
               Done
             </Text>
           )}
