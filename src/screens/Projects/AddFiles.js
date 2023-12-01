@@ -214,7 +214,7 @@ const Files = () => {
         keyExtractor={(item, index) => `${item.uri}-${index}`}
       />
           <Modal transparent={false} visible={modalVisible} onRequestClose={closeModal}>
-        <View style={styles.modalContainer}>
+        <View style={[styles.modalContainer, {backgroundColor: colors.background}]}>
           {selectedMedia && selectedMedia.type === 'image' ? (
             <Image source={{ uri: selectedMedia.uri }} style={styles.modalImage} resizeMode="contain" />
           ) : (

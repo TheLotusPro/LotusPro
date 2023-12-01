@@ -46,6 +46,8 @@ import AddSubcontractor from "../screens/Projects/AddSubcontractor";
 import DoneGoBackButton from "../components/DoneGoBackButton";
 import InviteSubContractor from "../screens/Projects/InviteSubContractor";
 import AddFiles from "../screens/Projects/AddFiles";
+import AddTask from "../screens/Projects/AddTask";
+import EditTask from "../screens/Projects/EditTask";
 
 const Stack = createNativeStackNavigator();
 
@@ -81,6 +83,17 @@ const RootNavigator = () => {
           headerShown: true,
           headerShadowVisible: false,
           headerTitle: "Subcontractor",
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <DoneGoBackButton />,
+        }}
+      />
+      <Stack.Screen
+        name="AddTask"
+        component={AddTask}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Tasks",
           headerLeft: () => <GoBackHeaderButton />,
           headerRight: () => <DoneGoBackButton />,
         }}
@@ -297,6 +310,18 @@ const RootNavigator = () => {
           presentation: "modal",
         }}
       >
+        <Stack.Screen
+          name="EditTask"
+          component={EditTask}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Edit Task",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
         <Stack.Screen
           name="NewMessage"
           component={NewMessageModel}

@@ -117,7 +117,9 @@ const FloorPlan = () => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity style={styles.borderLarge}>
+    <TouchableOpacity 
+    
+    style={styles.borderLarge}>
       <View style={styles.borderContainerMed}>
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -149,7 +151,9 @@ const Task = () => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity style={styles.border}>
+    <TouchableOpacity 
+    onPress={() => navigation.navigate('AddTask')}
+    style={styles.border}>
       <View style={styles.borderContainer}>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Icons.DocumentPlusIcon size={20} color={colors.text} />

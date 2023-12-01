@@ -1,14 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { useTheme } from "@react-navigation/native";
+import TaskCard from "../../components/Projects/TaskCard";
 
 const AddTask = () => {
   return (
     <View>
-      <Text>AddTask</Text>
+      <TaskCard />
     </View>
-  )
-}
+  );
+};
 
-export default AddTask
+export default AddTask;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
