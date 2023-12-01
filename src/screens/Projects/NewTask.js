@@ -5,9 +5,10 @@ import {
   TextInput,
   Image,
   ScrollView,
+  ActivityIndicator,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import { useTheme } from "@react-navigation/native";
+import { useNavigation, useTheme } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/solid";
 import { BottomSheet } from "react-native-btr";
 import { Calendar } from "react-native-calendars";
@@ -20,19 +21,65 @@ import {
   Text,
 } from "@gluestack-ui/themed";
 
-const EditTask = () => {
+const NewTask = () => {
   const { colors } = useTheme();
+  const navigation = useNavigation();
+  const [isLoading, setIsLoading] = useState(false);
+
+
+  const handleDonePress = async () => {
+    setIsLoading(true);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    setIsLoading(false);
+    navigation.goBack();
+  };
+  useEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <TouchableOpacity onPress={handleDonePress} style={{ marginRight: 5 }}>
+          {isLoading ? (
+            <ActivityIndicator size="small" color="#33AB5F" />
+          ) : (
+            <Text
+              style={{ fontWeight: "bold", fontSize: 18, color: "#33AB5F" }}
+            >
+              Done
+            </Text>
+          )}
+        </TouchableOpacity>
+      ),
+    });
+  }, [navigation, isLoading]);
+
+
 
   return (
     <ScrollView style={styles.container}>
-      <Text style={[styles.title, { color: colors.text }]}>
-        Send invoice to client
-      </Text>
+      <Title />
       <Date />
       <Assign />
       <TaskDescription />
       <Attachments />
     </ScrollView>
+  );
+};
+
+const Title = () => {
+  const { colors } = useTheme();
+
+  return (
+    <View>
+      <View>
+        <TextInput
+          placeholder={"Start Typing a Task"}
+          autoCapitalize="none"
+          autoFocus
+          placeholderTextColor={"grey"}
+          numberOfLines={4}
+          style={[styles.titleHeader, { color: colors.text }]}
+        />
+      </View>
+    </View>
   );
 };
 
@@ -162,7 +209,7 @@ const Assign = () => {
               Cancel
             </Text>
             <Text style={[styles.titleSheet, { color: colors.text }]}>
-              Edit Assignees
+              Add Assignees
             </Text>
             <Text style={[{ color: "dodgerblue" }]}>Select</Text>
           </View>
@@ -268,10 +315,14 @@ const Attachments = () => {
   );
 };
 
-export default EditTask;
+export default NewTask;
 
 const styles = StyleSheet.create({
   title: {
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  titleHeader: {
     fontSize: 18,
     fontWeight: "bold",
   },

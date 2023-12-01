@@ -87,9 +87,7 @@ const EditClientProfile = ({ navigation }) => {
             ]}
             placeholder="Firm Name"
             value={firmName}
-            multiline
-            autoFocus
-            numberOfLines={4}
+        
             placeholderTextColor={"#a9a9a980"}
             onChangeText={(text) => setFirmName(text)}
           />
@@ -101,9 +99,6 @@ const EditClientProfile = ({ navigation }) => {
             ]}
             placeholder="Full Name"
             value={fullName}
-            multiline
-            autoFocus
-            numberOfLines={4}
             placeholderTextColor={"#a9a9a980"}
             onChangeText={(text) => setFullName(text)}
           />
@@ -115,10 +110,7 @@ const EditClientProfile = ({ navigation }) => {
             ]}
             placeholder="Website"
             value={website}
-            multiline
-            autoFocus
             keyboardType="url"
-            numberOfLines={4}
             placeholderTextColor={"#a9a9a980"}
             onChangeText={(text) => setWebsite(text)}
           />
@@ -130,10 +122,7 @@ const EditClientProfile = ({ navigation }) => {
             ]}
             placeholder="Email"
             value={email}
-            multiline
-            autoFocus
             placeholderTextColor={"#a9a9a980"}
-            numberOfLines={4}
             onChangeText={(text) => setEmail(text)}
           />
           <TextInput
@@ -145,9 +134,7 @@ const EditClientProfile = ({ navigation }) => {
             placeholder="Business Description"
             value={businessDescription}
             multiline
-            autoFocus
             placeholderTextColor={"#a9a9a980"}
-            numberOfLines={4}
             onChangeText={(text) => setBusinessDescription(text)}
           />
           <TextInput
@@ -158,10 +145,7 @@ const EditClientProfile = ({ navigation }) => {
             ]}
             placeholder="Business License Number"
             value={licenseNumber}
-            multiline
-            autoFocus
             placeholderTextColor={"#a9a9a980"}
-            numberOfLines={4}
             onChangeText={(text) => setLicenseNumber(text)}
           />
           <TextInput
@@ -173,7 +157,6 @@ const EditClientProfile = ({ navigation }) => {
             placeholder="Services Provided"
             value={servicesProvided}
             multiline
-            autoFocus
             placeholderTextColor={"#a9a9a980"}
             numberOfLines={4}
             onChangeText={(text) => setServicesProvided(text)}
@@ -188,7 +171,6 @@ const EditClientProfile = ({ navigation }) => {
             placeholderTextColor={"#a9a9a980"}
             value={areasServiced}
             multiline
-            autoFocus
             numberOfLines={4}
             onChangeText={(text) => setAreasServiced(text)}
           />
@@ -208,9 +190,6 @@ const EditClientProfile = ({ navigation }) => {
             placeholder="Address 1"
             placeholderTextColor={"#a9a9a980"}
             value={addressOne}
-            multiline
-            autoFocus
-            numberOfLines={4}
             onChangeText={(text) => setAddressOne(text)}
           />
           <TextInput
@@ -222,9 +201,6 @@ const EditClientProfile = ({ navigation }) => {
             placeholder="Address 2"
             placeholderTextColor={"#a9a9a980"}
             value={addressTwo}
-            multiline
-            autoFocus
-            numberOfLines={4}
             onChangeText={(text) => setAddressTwo(text)}
           />
           <TextInput
@@ -236,9 +212,6 @@ const EditClientProfile = ({ navigation }) => {
             placeholder="City"
             placeholderTextColor={"#a9a9a980"}
             value={city}
-            multiline
-            autoFocus
-            numberOfLines={4}
             onChangeText={(text) => setCity(text)}
           />
           <TextInput
@@ -250,9 +223,6 @@ const EditClientProfile = ({ navigation }) => {
             placeholder="State"
             placeholderTextColor={"#a9a9a980"}
             value={state}
-            multiline
-            autoFocus
-            numberOfLines={4}
             onChangeText={(text) => setState(text)}
           />
           <TextInput
@@ -264,13 +234,10 @@ const EditClientProfile = ({ navigation }) => {
             placeholder="Zip Code"
             placeholderTextColor={"#a9a9a980"}
             value={zip}
-            multiline
-            autoFocus
             keyboardType="numeric"
-            numberOfLines={4}
             onChangeText={(text) => setZip(text)}
           />
-          {/* <TextInput
+          <TextInput
             style={[
               styles.input,
               { color: colors.text },
@@ -280,14 +247,12 @@ const EditClientProfile = ({ navigation }) => {
             placeholderTextColor={"#a9a9a980"}
             value={phone}
             keyboardType="phone-pad"
-            autoFocus
-            numberOfLines={4}
             onChangeText={(text) => setPhone(text)}
-          /> */}
+          />
 
           {loading && (
             <View style={styles.overlay}>
-              <ActivityIndicator size="large" color={"#fa807290"} />
+              <ActivityIndicator size="small" color={"#33AB5F"} />
             </View>
           )}
         </View>
@@ -303,26 +268,26 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   input: {
-    borderWidth: 3,
+    borderWidth: 1,
     marginBottom: 20,
     paddingHorizontal: 10,
     width: "90%",
     borderRadius: 5,
-    padding: 20,
+    padding: 15,
   },
   inputExtended: {
-    borderWidth: 3,
+    borderWidth: 1,
     marginBottom: 20,
     paddingHorizontal: 10,
     width: "90%",
     borderRadius: 5,
-    padding: 20,
+    padding: 15,
     height: 80,
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
-  
-    marginTop: 100
+
+    marginTop: 100,
   },
   avatarContainer: {
     alignItems: "center",

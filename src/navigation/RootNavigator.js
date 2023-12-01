@@ -33,7 +33,6 @@ import ProjectDetails from "../screens/Projects/ProjectDetails";
 import AddTeamMember from "../screens/Projects/AddTeamMember";
 import GoBackHeaderButton from "../components/GoBackHeaderButton";
 import InviteTeamMember from "../screens/Projects/InviteTeamMember";
-import ProjectsList from "../screens/Projects/ProjectsList";
 import CheckOut from "../screens/Shop/CheckOut";
 import CheckOutFinal from "../screens/Shop/CheckOutFinal";
 import Search from "../screens/Search/Search";
@@ -48,6 +47,12 @@ import InviteSubContractor from "../screens/Projects/InviteSubContractor";
 import AddFiles from "../screens/Projects/AddFiles";
 import AddTask from "../screens/Projects/AddTask";
 import EditTask from "../screens/Projects/EditTask";
+import NewTask from "../screens/Projects/NewTask";
+import AddTimeEntry from "../screens/Projects/AddTimeEntry";
+import AddExpense from "../screens/Projects/AddExpense";
+import TimeAndExpense from "../screens/Projects/TimeAndExpense";
+import ProjectList from "../screens/Projects/ProjectList";
+import TeamMemberList from "../screens/Projects/TeamMemberList";
 
 const Stack = createNativeStackNavigator();
 
@@ -98,7 +103,18 @@ const RootNavigator = () => {
           headerRight: () => <DoneGoBackButton />,
         }}
       />
-       <Stack.Screen
+      <Stack.Screen
+        name="TimeAndExpense"
+        component={TimeAndExpense}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Time & Expense",
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <DoneGoBackButton />,
+        }}
+      />
+      <Stack.Screen
         name="AddFiles"
         component={AddFiles}
         options={{
@@ -115,12 +131,11 @@ const RootNavigator = () => {
         options={{
           headerShown: true,
           headerTransparent: true,
-        
+
           headerShadowVisible: false,
           headerTitle: " ",
           headerLeft: () => <GoBackHeaderButton />,
           headerRight: () => <ShopHeaderRight />,
-          
         }}
       />
 
@@ -165,7 +180,7 @@ const RootNavigator = () => {
           headerTitle: "Post",
           headerBackVisible: false,
           headerLeft: () => <GoBackHeaderButton />,
-          headerRight:  () => <ShopHeaderRight />,
+          headerRight: () => <ShopHeaderRight />,
         }}
       />
       <Stack.Screen
@@ -258,15 +273,15 @@ const RootNavigator = () => {
           headerLeft: () => <GoBackHeaderButton />,
         }}
       />
-    
-         <Stack.Screen
+
+      <Stack.Screen
         name="PodcastDetails"
         component={PodcastDetails}
         options={{
           headerShown: true,
           headerShadowVisible: false,
           headerTransparent: true,
-          headerTitle: '',
+          headerTitle: "",
           headerBackVisible: false,
           headerLeft: () => <GoBackHeaderButton />,
           headerRight: () => <ShopHeaderRight />,
@@ -282,7 +297,6 @@ const RootNavigator = () => {
           headerBackVisible: false,
           headerLeft: () => <GoBackHeaderButton />,
           headerRight: () => <DoneGoBackButton />,
-
         }}
       />
       <Stack.Group
@@ -310,6 +324,54 @@ const RootNavigator = () => {
           presentation: "modal",
         }}
       >
+          <Stack.Screen
+          name="ProjectList"
+          component={ProjectList}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Projects",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+         <Stack.Screen
+          name="TeamMemberList"
+          component={TeamMemberList}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Team Member *",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="AddTimeEntry"
+          component={AddTimeEntry}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "New Time Entry",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="AddExpense"
+          component={AddExpense}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "New Expense",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
         <Stack.Screen
           name="EditTask"
           component={EditTask}
@@ -358,7 +420,7 @@ const RootNavigator = () => {
             ),
           }}
         />
-           <Stack.Screen
+        <Stack.Screen
           name="InviteSubContractor"
           component={InviteSubContractor}
           options={{
@@ -383,18 +445,6 @@ const RootNavigator = () => {
           }}
         />
 
-        <Stack.Screen
-          name="ProjectList"
-          component={ProjectsList}
-          options={{
-            headerShown: true,
-            headerShadowVisible: false,
-            headerTitle: "Projects",
-            headerLeft: () => (
-              <Button title="Cancel" onPress={() => navigation.goBack()} />
-            ),
-          }}
-        />
 
         <Stack.Screen
           name="CreateTask"
@@ -487,34 +537,49 @@ const RootNavigator = () => {
             ),
           }}
         />
+        <Stack.Screen
+          name="NewTask"
+          component={NewTask}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "New Task",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
       </Stack.Group>
 
       <Stack.Group>
-      <Stack.Screen
-        name="MatchPros"
-        component={MatchPros}
-        options={{
-          headerShown: true,
-          headerShadowVisible: false,
-          headerTitle: "Describe Your Project",
-          headerBackVisible: false,
-          headerLeft: () => <GoBackHeaderButton />,
-        }}
-      />
+        <Stack.Screen
+          name="MatchPros"
+          component={MatchPros}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Describe Your Project",
+            headerBackVisible: false,
+            headerLeft: () => <GoBackHeaderButton />,
+          }}
+        />
 
-      <Stack.Screen
-        name="Zip"
-        component={Zip}
-        options={{
-          headerShown: true,
-          headerShadowVisible: false,
-          headerTitle: " ",
-          headerBackVisible: false,
-          headerLeft: () => (
-              <Button title="Cancel" onPress={() => navigation.navigate('Professionals')} />
+        <Stack.Screen
+          name="Zip"
+          component={Zip}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: " ",
+            headerBackVisible: false,
+            headerLeft: () => (
+              <Button
+                title="Cancel"
+                onPress={() => navigation.navigate("Professionals")}
+              />
             ),
-        }}
-      />
+          }}
+        />
       </Stack.Group>
     </Stack.Navigator>
   );

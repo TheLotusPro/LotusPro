@@ -54,7 +54,7 @@ const TaskCard = () => {
         }}
       >
         {/* task */}
-        <Text style={[styles.task, { color: colors.text }]}>
+        <Text style={[styles.task, { color: "gray" }]}>
           {sliceTaskText(taskText)}{" "}
         </Text>
         {/* task */}
@@ -86,5 +86,6 @@ const styles = StyleSheet.create({
   },
   task: {
     width: 290,
+    fontSize: 14,
   },
 });
