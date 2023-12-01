@@ -15,7 +15,12 @@ const AddTimeEntry = ({ route }) => {
   const navigation = useNavigation();
   const [isLoading, setIsLoading] = useState(false);
   const { colors } = useTheme();
-  const [description, setDescription] = useState("");
+  const [selectedProject, setSelectedProject] = useState(
+    route.params?.selectedProject || "Select Project"
+  );
+  const [selectedTeamMember, setSelectedTeamMember] = useState(
+    route.params?.selectedTeamMember || "Select Team Member"
+  );
 
   const handleDonePress = async () => {
     setIsLoading(true);
@@ -23,6 +28,13 @@ const AddTimeEntry = ({ route }) => {
     setIsLoading(false);
     navigation.goBack();
   };
+
+  useEffect(() => {
+    // Update the state when route params change
+    setSelectedProject(route.params?.selectedProject || "Select Project");
+    setSelectedTeamMember(route.params?.selectedTeamMember || "Select Team Member");
+  }, [route.params]);
+
   useEffect(() => {
     navigation.setOptions({
       headerRight: () => (
@@ -30,9 +42,7 @@ const AddTimeEntry = ({ route }) => {
           {isLoading ? (
             <ActivityIndicator size="small" color="#33AB5F" />
           ) : (
-            <Text
-              style={{ fontWeight: "bold", fontSize: 18, color: "#33AB5F" }}
-            >
+            <Text style={{ fontWeight: "bold", fontSize: 18, color: "#33AB5F" }}>
               Done
             </Text>
           )}
@@ -42,11 +52,17 @@ const AddTimeEntry = ({ route }) => {
   }, [navigation, isLoading]);
 
   const handleProjectPress = () => {
-    navigation.navigate("ProjectList");
+    navigation.navigate("ProjectList", {
+      selectedProject,
+      selectedTeamMember,
+    });
   };
 
   const handleTeamMemberPress = () => {
-    navigation.navigate("TeamMemberList");
+    navigation.navigate("TeamMemberList", {
+      selectedProject,
+      selectedTeamMember,
+    });
   };
 
   return (
@@ -54,7 +70,7 @@ const AddTimeEntry = ({ route }) => {
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={{ flex: 1 }}
       keyboardVerticalOffset={120}
-      keyboardShouldPersistTaps="handled" // Add this line
+      keyboardShouldPersistTaps="handled"
     >
       <View style={{ flex: 1, marginHorizontal: 30 }}>
         {/* option */}
@@ -63,9 +79,7 @@ const AddTimeEntry = ({ route }) => {
 
           <TouchableOpacity onPress={handleProjectPress} style={styles.option}>
             <View style={styles.optionContainer}>
-              <Text style={[{ color: colors.text }]}>
-                {route.params?.selectedProject || "Select Project"}
-              </Text>
+              <Text style={[{ color: colors.text }]}>{selectedProject}</Text>
 
               <Icons.ChevronDownIcon size={20} color={"gray"} />
             </View>
@@ -82,9 +96,7 @@ const AddTimeEntry = ({ route }) => {
             style={styles.option}
           >
             <View style={styles.optionContainer}>
-              <Text style={[{ color: colors.text }]}>
-                {route.params?.selectedTeamMember || "Select Team Member"}
-              </Text>
+              <Text style={[{ color: colors.text }]}>{selectedTeamMember}</Text>
 
               <Icons.ChevronDownIcon size={20} color={"gray"} />
             </View>

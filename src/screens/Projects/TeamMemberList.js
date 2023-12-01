@@ -17,11 +17,11 @@ const TeamMemberList = ({ navigation }) => {
   const { colors } = useTheme();
   const teamMembers = ['John Doe', 'Jane Doe', 'Alice Doe'];
   const route = useRoute() 
-
+  
   const handleTeamSelection = (selectedTeamMember) => {
     navigation.navigate("AddTimeEntry", {
       selectedTeamMember,
-      selectedProject: route.params?.selectedProject,
+      selectedProject: route.params?.selectedProject || null,
     });
   };
 
