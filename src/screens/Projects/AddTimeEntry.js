@@ -57,9 +57,7 @@ const AddTimeEntry = ({ route }) => {
 
   const handleProjectPress = () => {
     navigation.navigate("ProjectList", {
-      selectedProject,
-      selectedTeamMember,
-      name: "AddTimeEntry",
+      handleProjectSelection: handleProjectSelection,
     });
   };
 
@@ -68,6 +66,10 @@ const AddTimeEntry = ({ route }) => {
       selectedProject,
       selectedTeamMember,
     });
+  };
+
+  const handleProjectSelection = (selectedProject) => {
+    setSelectedProject(selectedProject);
   };
 
   return (
@@ -85,7 +87,6 @@ const AddTimeEntry = ({ route }) => {
           <TouchableOpacity onPress={handleProjectPress} style={styles.option}>
             <View style={styles.optionContainer}>
               <Text style={[{ color: colors.text }]}>{selectedProject}</Text>
-
               <Icons.ChevronDownIcon size={20} color={"gray"} />
             </View>
           </TouchableOpacity>
@@ -96,13 +97,9 @@ const AddTimeEntry = ({ route }) => {
         <View style={{ marginTop: 20 }}>
           <Text style={[styles.title, { color: "gray" }]}>Team Member *</Text>
 
-          <TouchableOpacity
-            onPress={handleTeamMemberPress}
-            style={styles.option}
-          >
+          <TouchableOpacity onPress={handleTeamMemberPress} style={styles.option}>
             <View style={styles.optionContainer}>
               <Text style={[{ color: colors.text }]}>{selectedTeamMember}</Text>
-
               <Icons.ChevronDownIcon size={20} color={"gray"} />
             </View>
           </TouchableOpacity>

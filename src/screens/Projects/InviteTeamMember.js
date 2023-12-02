@@ -15,7 +15,7 @@ const InviteTeamMember = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { colors } = useTheme();
   const [email, setEmail] = useState("");
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState("Select Project");
 
   const getBorderColor = (value) => {
     return value.length > 0 ? "#33AB5F90" : "#a9a9a950";
@@ -43,14 +43,8 @@ const InviteTeamMember = () => {
           )}
         </TouchableOpacity>
       ),
-      projectSelectionHandler: handleProjectSelection,
     });
   }, [navigation, isLoading]);
-
-  const handleProjectSelection = (selectedProject) => {
-    setSelectedProject(selectedProject);
-    // You can perform additional actions if needed
-  };
 
   return (
     <KeyboardAvoidingView
@@ -92,20 +86,17 @@ const InviteTeamMember = () => {
               <View style={{ marginTop: 30 }}>
                 <Text style={[{ color: colors.text }]}>Project</Text>
                 <TouchableOpacity
-                  onPress={() => navigation.navigate("ProjectList")}
+                  onPress={() => navigation.navigate("ProjectList", {
+                    handleProjectSelection: (selectedProject) => setSelectedProject(selectedProject),
+                  })}
                   style={{
                     marginTop: 10,
                     borderBottomWidth: 1,
                     borderBottomColor: "gray",
                   }}
                 >
-                  <Text style={{ marginBottom: 10 }}>Select Projects</Text>
+                  <Text style={{ marginBottom: 10 }}>{selectedProject}</Text>
                 </TouchableOpacity>
-                {selectedProject && (
-                  <Text style={{ marginTop: 10, color: colors.text }}>
-                    Selected Project: {selectedProject}
-                  </Text>
-                )}
               </View>
             </View>
           </View>
@@ -141,16 +132,5 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
   },
-  modalContainer: {
-    flex: 1,
-    justifyContent: "flex-end",
-    alignItems: "center",
-  },
-  modalContent: {
-    padding: 20,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
-    width: "100%",
-    height: 500,
-  },
 });
+

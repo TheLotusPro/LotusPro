@@ -1,30 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from "react-native";
-import { useRoute, useNavigation, useTheme } from "@react-navigation/native";
+import { useRoute, useTheme } from "@react-navigation/native";
 
-const ProjectList = () => {
-  const route = useRoute();
-  const navigation = useNavigation();
+const ProjectList = ({ navigation }) => {
   const { colors } = useTheme();
-
   const projects = ['House Design Park City', 'Parking Lot Construction', 'Bathroom Remodel'];
+  const route = useRoute();
+
+  useEffect(() => {
+    console.log("Route Params in ProjectList: ", route.params);
+  }, [route.params]);
 
   const handleProjectSelection = (selectedProject) => {
-    const routeParams = route.params || {};
-    console.log("routeParams:", routeParams);
+    // Check if route.params is defined
+    if (route.params && route.params.handleProjectSelection) {
+      // Call the handleProjectSelection function from the navigation options
+      route.params.handleProjectSelection(selectedProject);
 
-    if (routeParams.name === "InviteTeamMember") {
-      console.log("Navigating to InviteTeamMember");
-      navigation.navigate("InviteTeamMember", {
-        selectedProject,
-        selectedTeamMember: routeParams.selectedTeamMember,
-      });
-    } else if (routeParams.name === "AddTimeEntry") {
-      console.log("Navigating to AddTimeEntry");
-      navigation.navigate("AddTimeEntry", {
-        selectedProject,
-        selectedTeamMember: routeParams.selectedTeamMember,
-      });
+      // Navigate back to the previous screen
+      navigation.goBack();
     }
   };
 
@@ -37,7 +31,9 @@ const ProjectList = () => {
           onPress={() => handleProjectSelection(project)}
         >
           <View style={{ marginBottom: 15 }}>
-            <Text style={[styles.title, { color: colors.text }]}>{project}</Text>
+            <Text style={[styles.title, { color: colors.text }]}>
+              {project}
+            </Text>
           </View>
         </TouchableOpacity>
       ))}
