@@ -20,7 +20,7 @@ const ProjectDetails = () => {
   return (
     <View style={{ flex: 1 }}>
       <ProjectDetailsHeader />
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Team />
         <SubContractor />
         <Files />
@@ -40,24 +40,32 @@ const Team = () => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity
-      onPress={() => navigation.navigate("AddTeamMember")}
+    <View
       style={styles.border}
     >
       <View style={styles.borderContainer}>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Icons.UserGroupIcon size={20} color={colors.text} />
+        <TouchableOpacity 
+              onPress={() => navigation.navigate("AddTeamMember")}
+
+        style={{ flexDirection: "row", alignItems: "center" }}>
+          <Icons.UserGroupIcon size={20} color={'gray'} />
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Text style={[styles.optionTitle, { color: colors.text }]}>
               Team (0)
             </Text>
             <Icons.ChevronRightIcon size={20} color={colors.text} />
           </View>
-        </View>
+        </TouchableOpacity>
 
-        <Text style={[{ color: colors.text }]}>Add Member</Text>
+        <TouchableOpacity
+         onPress={() => navigation.navigate("InviteTeamMember")}
+        >
+        <Text style={[styles.textButton, { color: 'dodgerblue' }]}>Invite</Text>
+
+        </TouchableOpacity>
+
       </View>
-    </TouchableOpacity>
+    </View>
   );
 };
 
@@ -66,24 +74,32 @@ const SubContractor = () => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity
-      onPress={() => navigation.navigate("AddSubcontractor")}
+    <View
+     
       style={styles.border}
     >
       <View style={styles.borderContainer}>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Icons.UserGroupIcon size={20} color={colors.text} />
+        <TouchableOpacity 
+         onPress={() => navigation.navigate("AddSubcontractor")}
+        style={{ flexDirection: "row", alignItems: "center" }}>
+          <Icons.UserGroupIcon size={20} color={'gray'} />
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Text style={[styles.optionTitle, { color: colors.text }]}>
               Subcontractor (0)
             </Text>
             <Icons.ChevronRightIcon size={20} color={colors.text} />
           </View>
-        </View>
+        </TouchableOpacity>
 
-        <Text style={[{ color: colors.text }]}>Add</Text>
+        <TouchableOpacity
+                 onPress={() => navigation.navigate("InviteSubContractor")}
+
+        >
+        <Text style={[ styles.textButton, { color: 'dodgerblue' }]}>Invite</Text>
+        </TouchableOpacity>
+
       </View>
-    </TouchableOpacity>
+    </View>
   );
 };
 
@@ -99,7 +115,7 @@ const Files = () => {
       <View style={styles.borderContainer}>
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Icons.DocumentIcon size={20} color={colors.text} />
+            <Icons.DocumentIcon size={20} color={'gray'} />
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Text style={[styles.optionTitle, { color: colors.text }]}>
                 Files (0)
@@ -122,7 +138,7 @@ const FloorPlan = () => {
       <View style={styles.borderContainerMed}>
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Icons.CubeIcon size={20} color={colors.text} />
+            <Icons.CubeIcon size={20} color={'gray'} />
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Text style={[styles.optionTitle, { color: colors.text }]}>
                 3D Floor Plan(0)
@@ -133,7 +149,7 @@ const FloorPlan = () => {
           </View>
 
           <TouchableOpacity>
-          <Icons.PlusCircleIcon size={25} color={colors.text} />
+          <Icons.PlusCircleIcon size={25} color={'dodgerblue'}  />
           </TouchableOpacity>
         </View>
 
@@ -156,7 +172,7 @@ const Task = () => {
     >
       <View style={styles.borderContainer}>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Icons.DocumentPlusIcon size={20} color={colors.text} />
+          <Icons.DocumentPlusIcon size={20} color={'gray'} />
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Text style={[styles.optionTitle, { color: colors.text }]}>
               Task (0)
@@ -165,7 +181,7 @@ const Task = () => {
           </View>
         </View>
 
-        <Icons.PlusCircleIcon size={25} color={colors.text} />
+        <Icons.PlusCircleIcon size={25} color={'dodgerblue'} />
       </View>
     </TouchableOpacity>
   );
@@ -184,7 +200,7 @@ const TimeExpense = () => {
           onPress={() => navigation.navigate("TimeAndExpense")}
           style={{ flexDirection: "row", alignItems: "center" }}
         >
-          <Icons.DocumentPlusIcon size={20} color={colors.text} />
+          <Icons.DocumentPlusIcon size={20} color={'gray'} />
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Text style={[styles.optionTitle, { color: colors.text }]}>
               Time and Expenses (0)
@@ -194,7 +210,7 @@ const TimeExpense = () => {
         </TouchableOpacity>
 
         <TouchableOpacity onPress={handleClose}>
-        <Icons.PlusCircleIcon size={25} color={colors.text} />
+        <Icons.PlusCircleIcon size={25} color={'dodgerblue'}  />
         </TouchableOpacity>
       </View>
       <Actionsheet isOpen={showActionsheet} onClose={handleClose} zIndex={999}>
@@ -261,7 +277,7 @@ const TimeClock = () => {
       <View style={styles.borderContainerMed}>
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Icons.DocumentIcon size={20} color={colors.text} />
+            <Icons.DocumentIcon size={20} color={'gray'} />
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Text style={[styles.optionTitle, { color: colors.text }]}>
                 Time Clock (0)
@@ -272,7 +288,7 @@ const TimeClock = () => {
           </View>
 
           <TouchableOpacity>
-          <Icons.PlusCircleIcon size={25} color={colors.text} />
+          <Icons.PlusCircleIcon size={25} color={'dodgerblue'}  />
           </TouchableOpacity>
         </View>
 
@@ -286,13 +302,18 @@ const TimeClock = () => {
 
 const Estimates = () => {
   const { colors } = useTheme();
+  const navigation = useNavigation();
+
 
   return (
-    <TouchableOpacity style={styles.border}>
+    <TouchableOpacity 
+    onPress={() => navigation.navigate("Estimates")}
+
+    style={styles.border}>
       <View style={styles.borderContainerEstimate}>
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <View style={{ flexDirection: "row" }}>
-            <Icons.CalculatorIcon size={20} color={colors.text} />
+            <Icons.CalculatorIcon size={20} color={'gray'} />
 
             <Text style={[styles.optionTitle, { color: colors.text }]}>
               Estimate (0)
@@ -300,7 +321,7 @@ const Estimates = () => {
           </View>
 
           <TouchableOpacity>
-            <Icons.PlusCircleIcon size={25} color={colors.text} />
+            <Icons.PlusCircleIcon size={25} color={'dodgerblue'}  />
           </TouchableOpacity>
         </View>
 
@@ -321,7 +342,7 @@ const Invoices = () => {
       <View style={styles.borderContainerEstimate}>
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <View style={{ flexDirection: "row" }}>
-            <Icons.DocumentTextIcon size={20} color={colors.text} />
+            <Icons.DocumentTextIcon size={20} color={'gray'} />
 
             <Text style={[styles.optionTitle, { color: colors.text }]}>
               Invoices (0)
@@ -329,7 +350,7 @@ const Invoices = () => {
           </View>
 
           <TouchableOpacity>
-            <Icons.PlusCircleIcon size={25} color={colors.text} />
+            <Icons.PlusCircleIcon size={25} color={'dodgerblue'}  />
           </TouchableOpacity>
         </View>
 
@@ -369,6 +390,7 @@ const styles = StyleSheet.create({
   },
   optionTitle: {
     fontWeight: "bold",
+    marginLeft: 5
   },
   borderLarge: {
     margin: 20,
@@ -401,4 +423,7 @@ const styles = StyleSheet.create({
   option2: {
     marginBottom: 30,
   },
+  textButton: {
+    fontWeight: 'bold'
+  }
 });

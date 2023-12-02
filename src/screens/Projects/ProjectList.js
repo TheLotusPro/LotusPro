@@ -1,10 +1,20 @@
 import React, { useEffect } from "react";
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
 import { useRoute, useTheme } from "@react-navigation/native";
 
 const ProjectList = ({ navigation }) => {
   const { colors } = useTheme();
-  const projects = ['House Design Park City', 'Parking Lot Construction', 'Bathroom Remodel'];
+  const projects = [
+    "House Design Park City",
+    "Parking Lot Construction",
+    "Bathroom Remodel",
+  ];
   const route = useRoute();
 
   useEffect(() => {

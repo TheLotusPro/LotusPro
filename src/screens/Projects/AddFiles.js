@@ -15,9 +15,6 @@ import * as Icons from "react-native-heroicons/solid";
 import { Text } from "@gluestack-ui/themed";
 import DocumentPicker from "react-native-document-picker";
 import ImagePicker from "react-native-image-crop-picker";
-import { WebView } from 'react-native-webview';
-
-
 import { BottomSheet } from "react-native-btr";
 
 const AddFiles = () => {
@@ -119,23 +116,22 @@ const Files = () => {
       const result = await DocumentPicker.pick({
         type: [DocumentPicker.types.allFiles],
       });
-  
-      console.log('Picked document:', result);
-  
-      setMediaFiles(prevFiles => [
+
+      console.log("Picked document:", result);
+
+      setMediaFiles((prevFiles) => [
         ...prevFiles,
-        { type: 'document', uri: result.uri, name: result.name },
+        { type: "document", uri: result.uri, name: result.name },
       ]);
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
-        console.log('Document picking cancelled');
+        console.log("Document picking cancelled");
       } else {
-        console.error('Error picking document:', err);
-        Alert.alert('Error', 'Error picking document');
+        console.error("Error picking document:", err);
+        Alert.alert("Error", "Error picking document");
       }
     }
   };
-  
 
   const handlePickImage = () => {
     ImagePicker.openPicker({
@@ -144,7 +140,7 @@ const Files = () => {
       setMediaFiles((prevFiles) => [
         ...prevFiles,
         ...images.map((image) => ({
-          type: 'image',
+          type: "image",
           uri: image.path,
           name: image.filename,
         })),
@@ -170,24 +166,36 @@ const Files = () => {
 
   const renderMediaItem = ({ item, index }) => (
     <TouchableOpacity
-      style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 5 }}
+      style={{ flexDirection: "row", alignItems: "center", marginVertical: 5 }}
       onPress={() => handleViewMedia(item)}
     >
-      {item.type === 'image' ? (
-        <Image source={{ uri: item.uri }} style={{ width: 50, height: 50, marginRight: 10 }} />
+      {item.type === "image" ? (
+        <Image
+          source={{ uri: item.uri }}
+          style={{ width: 50, height: 50, marginRight: 10 }}
+        />
       ) : (
-        <View style={{ width: 50, height: 50, marginRight: 10, backgroundColor: 'gray' }}>
+        <View
+          style={{
+            width: 50,
+            height: 50,
+            marginRight: 10,
+            backgroundColor: "gray",
+          }}
+        >
           {/* You can customize the rendering of the document here */}
-          <Text style={{ color: 'white', textAlign: 'center' }}>Doc</Text>
+          <Text style={{ color: "white", textAlign: "center" }}>Doc</Text>
         </View>
       )}
       <Text>{item.name}</Text>
-      <TouchableOpacity onPress={() => handleRemoveMedia(index)} style={{ marginLeft: 'auto' }}>
-        <Icons.XCircleIcon size={20} color={'red'} />
+      <TouchableOpacity
+        onPress={() => handleRemoveMedia(index)}
+        style={{ marginLeft: "auto" }}
+      >
+        <Icons.XCircleIcon size={20} color={"red"} />
       </TouchableOpacity>
     </TouchableOpacity>
   );
-  
 
   return (
     <View style={{ margin: 10 }}>
@@ -213,18 +221,33 @@ const Files = () => {
         renderItem={renderMediaItem}
         keyExtractor={(item, index) => `${item.uri}-${index}`}
       />
-          <Modal transparent={false} visible={modalVisible} onRequestClose={closeModal}>
-        <View style={[styles.modalContainer, {backgroundColor: colors.background}]}>
-          {selectedMedia && selectedMedia.type === 'image' ? (
-            <Image source={{ uri: selectedMedia.uri }} style={styles.modalImage} resizeMode="contain" />
+      <Modal
+        transparent={false}
+        visible={modalVisible}
+        onRequestClose={closeModal}
+      >
+        <View
+          style={[
+            styles.modalContainer,
+            { backgroundColor: colors.background },
+          ]}
+        >
+          {selectedMedia && selectedMedia.type === "image" ? (
+            <Image
+              source={{ uri: selectedMedia.uri }}
+              style={styles.modalImage}
+              resizeMode="contain"
+            />
           ) : (
             <View style={styles.documentContainer}>
-              <Icons.XCircleIcon size={50} color={'gray'} />
-              <Text style={styles.documentName}>{selectedMedia && selectedMedia.name}</Text>
+              <Icons.XCircleIcon size={50} color={"gray"} />
+              <Text style={styles.documentName}>
+                {selectedMedia && selectedMedia.name}
+              </Text>
             </View>
           )}
           <TouchableOpacity onPress={closeModal} style={styles.closeButton}>
-            <Icons.XCircleIcon size={30} color={'red'} />
+            <Icons.XCircleIcon size={30} color={"red"} />
           </TouchableOpacity>
         </View>
       </Modal>
@@ -257,7 +280,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     maxWidth: 290,
     alignItems: "center",
-    padding: 10,
+    padding: 5,
+    borderRadius: 5
   },
   filterText: {
     fontWeight: "500",
@@ -277,26 +301,26 @@ const styles = StyleSheet.create({
   },
   modalContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   modalImage: {
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height,
     flex: 1,
   },
   documentContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginTop: 50, // Adjust this margin to position the document icon and name properly
   },
   documentName: {
     marginTop: 10,
     fontSize: 16,
-    color: 'red'
+    color: "red",
   },
   closeButton: {
-    position: 'absolute',
+    position: "absolute",
     top: 60,
     right: 20,
   },

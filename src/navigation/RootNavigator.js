@@ -56,6 +56,10 @@ import CreateProject from "../screens/Pro/CreateProject";
 import CreateLead from "../screens/Pro/CreateLead";
 import Services from "../screens/Projects/Services";
 import AddService from "../screens/Projects/AddService";
+import Estimates from "../screens/Projects/Estimates";
+import EstimatesDetails from "../screens/Projects/EstimatesDetails";
+import TermsInputScreen from "../screens/Projects/TermsInputScreen";
+import Memo from "../screens/Projects/Memo";
 
 const Stack = createNativeStackNavigator();
 
@@ -91,6 +95,28 @@ const RootNavigator = () => {
           headerShown: true,
           headerShadowVisible: false,
           headerTitle: "Subcontractor",
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <DoneGoBackButton />,
+        }}
+      />
+        <Stack.Screen
+        name="EstimatesDetails"
+        component={EstimatesDetails}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: " ",
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <DoneGoBackButton />,
+        }}
+      />
+          <Stack.Screen
+        name="Estimates"
+        component={Estimates}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Estimates",
           headerLeft: () => <GoBackHeaderButton />,
           headerRight: () => <DoneGoBackButton />,
         }}
@@ -327,6 +353,31 @@ const RootNavigator = () => {
           presentation: "modal",
         }}
       >
+
+<Stack.Screen
+          name="Memo"
+          component={Memo}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Memo",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+      <Stack.Screen
+          name="TermsInputScreen"
+          component={TermsInputScreen}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Add Terms and Conditions",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
        <Stack.Screen
           name="Add Service"
           component={AddService}

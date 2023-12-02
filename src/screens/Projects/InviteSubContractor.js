@@ -87,6 +87,7 @@ const InviteSubContractor = () => {
             placeholder="First Name *"
             value={firstName}
             numberOfLines={1}
+            autoFocus
             placeholderTextColor={"#a9a9a9"}
             onChangeText={(text) => setFirstName(text)}
             returnKeyType="done" // Set returnKeyType to "done"
