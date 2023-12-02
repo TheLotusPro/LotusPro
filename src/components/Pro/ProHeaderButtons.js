@@ -42,7 +42,7 @@ const ProHeaderButtons = () => {
 
           <ActionsheetItem
             style={{ backgroundColor: colors.background }}
-            onPress={() => navigation.navigate("CreateTask") || handleClose()}
+            onPress={() => navigation.navigate("NewTask") || handleClose()}
           >
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Icons.FolderPlusIcon size={28} color={"#33AB5F"} />

@@ -28,7 +28,6 @@ import SearchIdeas from "../screens/Ideas/SearchIdeas";
 import NewIdea from "../screens/Ideas/NewIdea";
 import Notifications from "../screens/Notifications/Notifications";
 import NewReview from "../screens/Shop/NewReview";
-import CreateTask from "../screens/Pro/CreateTask";
 import ProjectDetails from "../screens/Projects/ProjectDetails";
 import AddTeamMember from "../screens/Projects/AddTeamMember";
 import GoBackHeaderButton from "../components/GoBackHeaderButton";
@@ -53,6 +52,10 @@ import AddExpense from "../screens/Projects/AddExpense";
 import TimeAndExpense from "../screens/Projects/TimeAndExpense";
 import ProjectList from "../screens/Projects/ProjectList";
 import TeamMemberList from "../screens/Projects/TeamMemberList";
+import CreateProject from "../screens/Pro/CreateProject";
+import CreateLead from "../screens/Pro/CreateLead";
+import Services from "../screens/Projects/Services";
+import AddService from "../screens/Projects/AddService";
 
 const Stack = createNativeStackNavigator();
 
@@ -324,6 +327,55 @@ const RootNavigator = () => {
           presentation: "modal",
         }}
       >
+       <Stack.Screen
+          name="Add Service"
+          component={AddService}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Add Service",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="Services"
+          component={Services}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Services",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="CreateProject"
+          component={CreateProject}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "New Idea",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+         <Stack.Screen
+          name="CreateLead"
+          component={CreateLead}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "New Lead",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+
           <Stack.Screen
           name="ProjectList"
           component={ProjectList}
@@ -446,18 +498,7 @@ const RootNavigator = () => {
         />
 
 
-        <Stack.Screen
-          name="CreateTask"
-          component={CreateTask}
-          options={{
-            headerShown: true,
-            headerShadowVisible: false,
-            headerTitle: "New Task",
-            headerLeft: () => (
-              <Button title="Cancel" onPress={() => navigation.goBack()} />
-            ),
-          }}
-        />
+    
       </Stack.Group>
 
       <Stack.Group
