@@ -15,6 +15,7 @@ const InviteTeamMember = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { colors } = useTheme();
   const [email, setEmail] = useState("");
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const getBorderColor = (value) => {
     return value.length > 0 ? "#33AB5F90" : "#a9a9a950";
@@ -26,6 +27,7 @@ const InviteTeamMember = () => {
     setIsLoading(false);
     navigation.goBack();
   };
+
   useEffect(() => {
     navigation.setOptions({
       headerRight: () => (
@@ -41,15 +43,21 @@ const InviteTeamMember = () => {
           )}
         </TouchableOpacity>
       ),
+      projectSelectionHandler: handleProjectSelection,
     });
   }, [navigation, isLoading]);
+
+  const handleProjectSelection = (selectedProject) => {
+    setSelectedProject(selectedProject);
+    // You can perform additional actions if needed
+  };
 
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={{ flex: 1 }}
       keyboardVerticalOffset={120}
-      keyboardShouldPersistTaps="handled" // Add this line
+      keyboardShouldPersistTaps="handled"
     >
       <View style={{ flex: 1 }}>
         <Text style={{ marginBottom: -20, marginHorizontal: 30, fontSize: 13 }}>
@@ -70,8 +78,7 @@ const InviteTeamMember = () => {
             numberOfLines={1}
             placeholderTextColor={"#a9a9a9"}
             onChangeText={(text) => setEmail(text)}
-            returnKeyType="done" // Set returnKeyType to "done"
-            // onSubmitEditing={handleDonePress} // Call handleDonePress when return key is pressed
+            returnKeyType="done"
           />
           <View style={styles.permissionContainer}>
             <View>
@@ -94,6 +101,11 @@ const InviteTeamMember = () => {
                 >
                   <Text style={{ marginBottom: 10 }}>Select Projects</Text>
                 </TouchableOpacity>
+                {selectedProject && (
+                  <Text style={{ marginTop: 10, color: colors.text }}>
+                    Selected Project: {selectedProject}
+                  </Text>
+                )}
               </View>
             </View>
           </View>
@@ -110,7 +122,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     paddingHorizontal: 10,
     width: "90%",
-
     padding: 10,
     borderBottomWidth: 2,
   },

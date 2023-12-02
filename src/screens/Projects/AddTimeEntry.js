@@ -59,6 +59,7 @@ const AddTimeEntry = ({ route }) => {
     navigation.navigate("ProjectList", {
       selectedProject,
       selectedTeamMember,
+      name: "AddTimeEntry",
     });
   };
 
