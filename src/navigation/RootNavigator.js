@@ -357,7 +357,7 @@ const RootNavigator = () => {
           options={{
             headerShown: true,
             headerShadowVisible: false,
-            headerTitle: "New Idea",
+            headerTitle: "New Project",
             headerLeft: () => (
               <Button title="Cancel" onPress={() => navigation.goBack()} />
             ),

@@ -19,7 +19,7 @@ const TeamMemberList = ({ navigation }) => {
   const route = useRoute() 
   
   const handleTeamSelection = (selectedTeamMember) => {
-    navigation.navigate("AddTimeEntry", {
+    navigation.navigate("AddTimeEntry" ,  {
       selectedTeamMember,
       selectedProject: route.params?.selectedProject || null,
     });

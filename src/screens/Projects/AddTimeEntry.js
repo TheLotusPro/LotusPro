@@ -55,11 +55,14 @@ const AddTimeEntry = ({ route }) => {
     });
   }, [navigation, isLoading]);
 
-  const handleProjectPress = () => {
-    navigation.navigate("ProjectList", {
-      handleProjectSelection: handleProjectSelection,
-    });
-  };
+ const handleProjectPress = () => {
+  navigation.navigate("ProjectList", {
+    handleProjectSelection: handleProjectSelection, // make sure this is correct
+    selectedProject,
+    selectedTeamMember,
+  });
+};
+
 
   const handleTeamMemberPress = () => {
     navigation.navigate("TeamMemberList", {
