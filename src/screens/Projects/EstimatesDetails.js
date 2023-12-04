@@ -110,22 +110,24 @@ const Header = () => {
               alignItems: "center",
               justifyContent: "space-between",
               marginBottom: 30,
-              marginHorizontal: 10
+              marginHorizontal: 10,
             }}
           >
-            <Text style={[{ color: colors.text, fontWeight: 'bold' }]}>Cancel</Text>
+            <Text style={[{ color: colors.text, fontWeight: "bold" }]}>
+              Cancel
+            </Text>
             <Text style={[{ color: colors.text, fontWeight: "bold" }]}>
               Estimate Name
             </Text>
             <Text
               onPress={() => updateEstimateName(estimateName)}
-              style={[{ color: "dodgerblue", fontWeight: 'bold' }]}
+              style={[{ color: "dodgerblue", fontWeight: "bold" }]}
             >
               Done
             </Text>
           </View>
           <TextInput
-            style={[styles.input, {color: colors.text}]}
+            style={[styles.input, { color: colors.text }]}
             autoFocus
             placeholder="Enter new estimate name"
             onChangeText={(text) => setEstimateName(text)}
@@ -138,6 +140,7 @@ const Header = () => {
 
 const Items = () => {
   const { colors } = useTheme();
+  const navigation = useNavigation();
   return (
     <View style={styles.itemContainer}>
       <Text style={[styles.title, { color: colors.text, marginTop: 10 }]}>
@@ -147,8 +150,11 @@ const Items = () => {
       <EstimateItem />
 
       <View style={{ marginTop: 20 }}>
-        <TouchableOpacity style={styles.buttonContainer}>
-          <Text style={[{ color: "white", fontWeight: "bold" }]}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("AddItems")}
+          style={styles.buttonContainer}
+        >
+          <Text style={[{ color: colors.text, fontWeight: "bold" }]}>
             Add items
           </Text>
         </TouchableOpacity>
@@ -310,7 +316,7 @@ const Terms = ({ termsText }) => {
           onPress={() => navigation.navigate("TermsInputScreen")}
           style={styles.buttonContainer}
         >
-          <Text style={[{ color: "white", fontWeight: "bold" }]}>
+          <Text style={[{ color: colors.text, fontWeight: "bold" }]}>
             Add Terms and Conditions
           </Text>
         </TouchableOpacity>
@@ -336,7 +342,7 @@ const Memo = ({ memoText }) => {
           onPress={() => navigation.navigate("Memo")}
           style={styles.buttonContainer}
         >
-          <Text style={[{ color: "white", fontWeight: "bold" }]}>Memo</Text>
+          <Text style={[{ color: colors.text, fontWeight: "bold" }]}>Memo</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -401,11 +407,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fa807210",
     alignItems: "center",
     borderRadius: 10,
-    borderWidth:1,
-    borderStyle: 'dashed',
+    borderWidth: 1,
+    borderStyle: "dashed",
     borderColor: "#33AB5F",
-
-
   },
   totalContainer: {
     marginTop: 20,

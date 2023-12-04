@@ -60,6 +60,9 @@ import Estimates from "../screens/Projects/Estimates";
 import EstimatesDetails from "../screens/Projects/EstimatesDetails";
 import TermsInputScreen from "../screens/Projects/TermsInputScreen";
 import Memo from "../screens/Projects/Memo";
+import AddItems from "../screens/Projects/AddItems";
+import Catalog from "../screens/Projects/Catalog";
+import SubCatalog from "../screens/Projects/SubCatalog";
 
 const Stack = createNativeStackNavigator();
 
@@ -99,7 +102,7 @@ const RootNavigator = () => {
           headerRight: () => <DoneGoBackButton />,
         }}
       />
-        <Stack.Screen
+      <Stack.Screen
         name="EstimatesDetails"
         component={EstimatesDetails}
         options={{
@@ -110,7 +113,7 @@ const RootNavigator = () => {
           headerRight: () => <DoneGoBackButton />,
         }}
       />
-          <Stack.Screen
+      <Stack.Screen
         name="Estimates"
         component={Estimates}
         options={{
@@ -351,10 +354,53 @@ const RootNavigator = () => {
       <Stack.Group
         screenOptions={{
           presentation: "modal",
+          animation: "none"
+       
         }}
       >
+      <Stack.Screen
+          name="Catalog"
+          component={Catalog}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Add Items",
+            headerLeft: () => <GoBackHeaderButton />,
+          }}
+        />
+          <Stack.Screen
+          name="SubCatalog"
+          component={SubCatalog}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Add Items",
+            headerLeft: () => <GoBackHeaderButton />,
+          }}
+        />
 
-<Stack.Screen
+      </Stack.Group>
+
+
+
+      <Stack.Group
+        screenOptions={{
+          presentation: "modal",
+       
+        }}
+      >
+          
+       <Stack.Screen
+          name="AddItems"
+          component={AddItems}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Add Items",
+            headerLeft: () => <GoBackHeaderButton />,
+          }}
+        />
+        <Stack.Screen
           name="Memo"
           component={Memo}
           options={{
@@ -366,7 +412,7 @@ const RootNavigator = () => {
             ),
           }}
         />
-      <Stack.Screen
+        <Stack.Screen
           name="TermsInputScreen"
           component={TermsInputScreen}
           options={{
@@ -378,7 +424,7 @@ const RootNavigator = () => {
             ),
           }}
         />
-       <Stack.Screen
+        <Stack.Screen
           name="Add Service"
           component={AddService}
           options={{
@@ -414,7 +460,7 @@ const RootNavigator = () => {
             ),
           }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="CreateLead"
           component={CreateLead}
           options={{
@@ -427,7 +473,7 @@ const RootNavigator = () => {
           }}
         />
 
-          <Stack.Screen
+        <Stack.Screen
           name="ProjectList"
           component={ProjectList}
           options={{
@@ -439,7 +485,7 @@ const RootNavigator = () => {
             ),
           }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="TeamMemberList"
           component={TeamMemberList}
           options={{
@@ -547,9 +593,6 @@ const RootNavigator = () => {
             ),
           }}
         />
-
-
-    
       </Stack.Group>
 
       <Stack.Group
