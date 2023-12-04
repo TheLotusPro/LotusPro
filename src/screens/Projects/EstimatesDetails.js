@@ -19,6 +19,7 @@ const EstimatesDetails = ({ route }) => {
   const [termsText, setTermsText] = useState("");
   const [memoText, setMemoText] = useState("");
   const [selectedItem, setSelectedItem] = useState(null); // New state for selected item
+  const [items, setItems] = useState([]); // Array of items
 
 
   useEffect(() => {
@@ -41,6 +42,15 @@ const EstimatesDetails = ({ route }) => {
       setSelectedItem(selectedItemInfo);
     }
   }, [route.params]);
+
+  const removeItem = () => {
+    if (selectedItem) {
+      // Filter out the selected item from the items array
+      const updatedItems = items.filter((item) => item.id !== selectedItem.id);
+      setItems(updatedItems);
+      setSelectedItem(null); // Reset selected item after removal
+    }
+  };
   
   
   
@@ -49,7 +59,7 @@ const EstimatesDetails = ({ route }) => {
     <View style={{ flex: 1 }}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Header />
-        <Items selectedItem={selectedItem} />
+        <Items selectedItem={selectedItem} removeItem={removeItem} />
         <Payments />
         <Terms termsText={termsText} />
         <Memo memoText={memoText} />
@@ -152,7 +162,7 @@ const Header = () => {
   );
 };
 
-const Items = ({ selectedItem }) => {
+const Items = ({ selectedItem, removeItem }) => {
     const { colors } = useTheme();
     const navigation = useNavigation();
     console.log('Items component rendered. Selected Item:', selectedItem);
@@ -166,7 +176,7 @@ const Items = ({ selectedItem }) => {
         </Text>
   
         {selectedItem && (
-        <EstimateItem selectedItem={selectedItem} />
+        <EstimateItem selectedItem={selectedItem} removeItem={removeItem} />
       )}
 
   

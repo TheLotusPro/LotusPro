@@ -10,7 +10,7 @@ import { useNavigation, useTheme } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/solid";
 import { Text } from "@gluestack-ui/themed";
 
-const EstimateItem =  ({ selectedItem }) => {
+const EstimateItem =  ({ selectedItem, removeItem}) => {
   const { colors } = useTheme();
   const [isHidden, setIsHidden] = useState(true);
   const { title, price } = selectedItem || {};
@@ -43,7 +43,7 @@ const EstimateItem =  ({ selectedItem }) => {
         </View>
 
         <View style={{ flexDirection: "row" }}>
-          <TouchableOpacity style={[{ marginRight: 20 }]}>
+          <TouchableOpacity onPress={() => removeItem()} style={[{ marginRight: 20 }]}>
             <Icons.EllipsisHorizontalIcon
               style={{ color: colors.text }}
               size={25}
