@@ -18,6 +18,8 @@ const EstimatesDetails = ({ route }) => {
   const navigation = useNavigation();
   const [termsText, setTermsText] = useState("");
   const [memoText, setMemoText] = useState("");
+  const [selectedItem, setSelectedItem] = useState(null); // New state for selected item
+
 
   useEffect(() => {
     if (route.params && route.params.termsText) {
@@ -31,11 +33,23 @@ const EstimatesDetails = ({ route }) => {
     }
   }, [route.params]);
 
+  
+  useEffect(() => {
+    if (route.params && route.params.selectedItem) {
+      const selectedItemInfo = route.params.selectedItem;
+      console.log('Selected Item:', selectedItemInfo);
+      setSelectedItem(selectedItemInfo);
+    }
+  }, [route.params]);
+  
+  
+  
+
   return (
     <View style={{ flex: 1 }}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Header />
-        <Items />
+        <Items selectedItem={selectedItem} />
         <Payments />
         <Terms termsText={termsText} />
         <Memo memoText={memoText} />
@@ -138,89 +152,103 @@ const Header = () => {
   );
 };
 
-const Items = () => {
-  const { colors } = useTheme();
-  const navigation = useNavigation();
-  return (
-    <View style={styles.itemContainer}>
-      <Text style={[styles.title, { color: colors.text, marginTop: 10 }]}>
-        Items
-      </Text>
+const Items = ({ selectedItem }) => {
+    const { colors } = useTheme();
+    const navigation = useNavigation();
+    console.log('Items component rendered. Selected Item:', selectedItem);
 
-      <EstimateItem />
+    
+  
+    return (
+      <View style={styles.itemContainer}>
+        <Text style={[styles.title, { color: colors.text, marginTop: 10 }]}>
+          Items
+        </Text>
+  
+        {selectedItem && (
+        <EstimateItem selectedItem={selectedItem} />
+      )}
 
-      <View style={{ marginTop: 20 }}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("AddItems")}
-          style={styles.buttonContainer}
-        >
-          <Text style={[{ color: colors.text, fontWeight: "bold" }]}>
-            Add items
-          </Text>
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.totalContainer}>
-        <View style={{ borderBottomWidth: 0.3, borderBottomColor: "gray" }}>
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-between",
-              marginBottom: 20,
-            }}
+  
+        <View style={{ marginTop: 20 }}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("AddItems")}
+            style={styles.buttonContainer}
           >
-            <Text style={[styles.totalText, { color: colors.text }]}>
-              Subtotal
+            <Text style={[{ color: colors.text, fontWeight: "bold" }]}>
+              Add items
             </Text>
-            <Text style={[{ color: colors.text }]}>$5.00</Text>
+          </TouchableOpacity>
+        </View>
+  
+        <View style={styles.totalContainer}>
+          <View style={{ borderBottomWidth: 0.3, borderBottomColor: "gray" }}>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                marginBottom: 20,
+              }}
+            >
+              <Text style={[styles.totalText, { color: colors.text }]}>
+                Subtotal
+              </Text>
+              <Text style={[{ color: colors.text }]}>$5.00</Text>
+            </View>
+  
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                marginBottom: 20,
+              }}
+            >
+              <Text style={[styles.totalText, { color: colors.text }]}>
+                Markup
+              </Text>
+              <Text style={[{ color: colors.text }]}>$0.00</Text>
+            </View>
+  
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                marginBottom: 10,
+              }}
+            >
+              <Text style={[styles.totalText, { color: colors.text }]}>Tax</Text>
+              <Text style={[{ color: colors.text }]}>$0.00</Text>
+            </View>
           </View>
-
           <View
             style={{
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "space-between",
-              marginBottom: 20,
+              marginTop: 20,
             }}
           >
-            <Text style={[styles.totalText, { color: colors.text }]}>
-              Markup
+            <Text style={[styles.finalTotalText, { color: colors.text }]}>
+              Total
             </Text>
-            <Text style={[{ color: colors.text }]}>$0.00</Text>
-          </View>
-
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-between",
-              marginBottom: 10,
-            }}
-          >
-            <Text style={[styles.totalText, { color: colors.text }]}>Tax</Text>
-            <Text style={[{ color: colors.text }]}>$0.00</Text>
+            {selectedItem && selectedItem.price !== undefined ? (
+            <Text style={[styles.finalTotalText, { color: colors.text }]}>
+              {selectedItem.price}
+            </Text>
+          ) : (
+            <Text style={[styles.finalTotalText, { color: colors.text }]}>
+              $0.00
+            </Text>
+          )}
           </View>
         </View>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginTop: 20,
-          }}
-        >
-          <Text style={[styles.finalTotalText, { color: colors.text }]}>
-            Total
-          </Text>
-          <Text style={[styles.finalTotalText, { color: colors.text }]}>
-            $5.00
-          </Text>
-        </View>
       </View>
-    </View>
-  );
-};
+    );
+  };
+  
 
 const Payments = () => {
   const { colors } = useTheme();

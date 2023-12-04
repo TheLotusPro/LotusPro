@@ -10,9 +10,11 @@ import { useNavigation, useTheme } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/solid";
 import { Text } from "@gluestack-ui/themed";
 
-const EstimateItem = () => {
+const EstimateItem =  ({ selectedItem }) => {
   const { colors } = useTheme();
   const [isHidden, setIsHidden] = useState(true);
+  const { title, price } = selectedItem || {};
+
 
   const toggleVisibility = () => {
     setIsHidden(!isHidden);
@@ -30,13 +32,13 @@ const EstimateItem = () => {
     >
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
         <View>
-          <Text style={[{ color: colors.text }]}>Curb Cleaning</Text>
+          <Text style={[{ color: colors.text }]}>{title}</Text>
 
           <View style={{ marginTop: 10 }}>
             {!isHidden && (
               <Text style={[{ color: colors.text }]}>Quantity: 1</Text>
             )}
-            <Text style={[{ color: colors.text }]}>$0.00</Text>
+            <Text style={[{ color: colors.text }]}>{price}</Text>
           </View>
         </View>
 
