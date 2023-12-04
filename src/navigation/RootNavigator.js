@@ -354,7 +354,8 @@ const RootNavigator = () => {
       <Stack.Group
         screenOptions={{
           presentation: "modal",
-          animation: "none"
+          animation: "none",
+         
        
         }}
       >
@@ -362,6 +363,7 @@ const RootNavigator = () => {
           name="Catalog"
           component={Catalog}
           options={{
+            gestureEnabled: false,
             headerShown: true,
             headerShadowVisible: false,
             headerTitle: "Add Items",
@@ -374,6 +376,7 @@ const RootNavigator = () => {
           options={{
             headerShown: true,
             headerShadowVisible: false,
+            gestureEnabled: false,
             headerTitle: "Add Items",
             headerLeft: () => <GoBackHeaderButton />,
           }}

@@ -16,12 +16,10 @@ const SubCatalog = ({ route, navigation }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulating data loading delay
     const fetchData = async () => {
       // Simulate an API call or any asynchronous operation
       await new Promise((resolve) => setTimeout(resolve, 800));
 
-      // Set loading to false after 2 seconds to hide the activity indicator
       setLoading(false);
     };
 
