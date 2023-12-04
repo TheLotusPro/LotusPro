@@ -44,8 +44,8 @@ const EstimateItem =  ({ selectedItem, removeItem}) => {
 
         <View style={{ flexDirection: "row" }}>
           <TouchableOpacity onPress={() => removeItem()} style={[{ marginRight: 20 }]}>
-            <Icons.EllipsisHorizontalIcon
-              style={{ color: colors.text }}
+            <Icons.TrashIcon
+              style={{ color: 'red' }}
               size={25}
             />
           </TouchableOpacity>
