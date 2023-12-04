@@ -63,6 +63,7 @@ import Memo from "../screens/Projects/Memo";
 import AddItems from "../screens/Projects/AddItems";
 import Catalog from "../screens/Projects/Catalog";
 import SubCatalog from "../screens/Projects/SubCatalog";
+import ItemPrice from "../screens/Projects/ItemPrice";
 
 const Stack = createNativeStackNavigator();
 
@@ -381,6 +382,18 @@ const RootNavigator = () => {
             headerLeft: () => <GoBackHeaderButton />,
           }}
         />
+             <Stack.Screen
+          name="ItemPrice"
+          component={ItemPrice}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            gestureEnabled: false,
+            headerTitle: "Add Items",
+            headerLeft: () => <GoBackHeaderButton />,
+          }}
+        />
+
 
       </Stack.Group>
 

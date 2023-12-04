@@ -20,17 +20,18 @@ export default [
               { id: "201103", title: "Item 3", price: "$20.00" },
               { id: "201104", title: "Item 4", price: "$25.00" },
             ],
+            hasItemsForSale: true, // Add this property
           },
-          { id: "2012", title: "Rentals" },
+          { id: "2012", title: "Rentals", hasItemsForSale: false }, // Add this property
           // Add more subcategories as needed
         ],
       },
-      { id: "202", title: "Site Protection" },
-      { id: "203", title: "Demolition of exteriors" },
-      { id: "204", title: "Demolition of interiors" },
-      { id: "205", title: "Construction of exteriors" },
-      { id: "206", title: "Construction of interiors" },
-      { id: "207", title: "General" },
+      { id: "202", title: "Site Protection", hasItemsForSale: false }, // Add this property
+      { id: "203", title: "Demolition of exteriors", hasItemsForSale: false }, // Add this property
+      { id: "204", title: "Demolition of interiors", hasItemsForSale: false }, // Add this property
+      { id: "205", title: "Construction of exteriors", hasItemsForSale: false }, // Add this property
+      { id: "206", title: "Construction of interiors", hasItemsForSale: false }, // Add this property
+      { id: "207", title: "General", hasItemsForSale: false }, // Add this property
     ],
   },
 ];

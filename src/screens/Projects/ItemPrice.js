@@ -1,34 +1,34 @@
-import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { useTheme } from "@react-navigation/native";
+import React from "react";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 
 const ItemPrice = ({ route }) => {
   const { subcategory } = route.params;
+  // Use subcategory.items directly
   const { colors } = useTheme();
 
   return (
     <View style={styles.container}>
-      <Text style={[styles.title, { color: colors.text }]}>{subcategory.title}</Text>
+      <Text style={[styles.title, { color: colors.text }]}>
+        {subcategory && subcategory.title
+          ? subcategory.title
+          : "Unknown Subcategory"}
+      </Text>
 
-      {subcategory.subCategories.map((subSubcategory) => (
-        <View key={subSubcategory.id} style={styles.subcategoryItem}>
-          <Text style={[styles.subcategoryTitle, { color: colors.text }]}>
-            {subSubcategory.title}
-          </Text>
-
-          {subSubcategory.items && subSubcategory.items.length > 0 && (
-            <FlatList
-              data={subSubcategory.items}
-              keyExtractor={(item) => item.id}
-              renderItem={({ item }) => (
-                <View style={styles.itemContainer}>
-                  <Text style={styles.itemTitle}>{item.title}</Text>
-                  <Text style={styles.itemPrice}>{item.price}</Text>
-                </View>
-              )}
-            />
+      {subcategory && subcategory.items && subcategory.items.length > 0 ? (
+        <FlatList
+          data={subcategory.items}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <View style={styles.itemContainer}>
+              <Text style={styles.itemTitle}>{item.title}</Text>
+              <Text style={styles.itemPrice}>{item.price}</Text>
+            </View>
           )}
-        </View>
-      ))}
+        />
+      ) : (
+        <Text>No items found</Text>
+      )}
     </View>
   );
 };
@@ -40,21 +40,13 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 16,
   },
-  subcategoryItem: {
-    marginBottom: 20,
-  },
-  subcategoryTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
   itemContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     marginBottom: 8,
   },
   itemTitle: {
@@ -62,7 +54,7 @@ const styles = StyleSheet.create({
   },
   itemPrice: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
 

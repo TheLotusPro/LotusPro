@@ -38,38 +38,51 @@ const SubCatalog = ({ route, navigation }) => {
 };
 
 const List = ({ route }) => {
-  const { subcategory } = route.params;
-  const { colors } = useTheme();
-
-  return (
-    <View>
-      <AddItemsSearch />
-      <Text style={[styles.title, { color: colors.text }]}>
-        {subcategory.title}
-      </Text>
-
-      {/* Render subcategories */}
-      <FlatList
-        data={subcategory.subCategories}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            style={styles.options}
-            // onPress={() => handleSubcategoryPress(item)}
-          >
-            <View style={styles.subcategoryItem}>
-              <Text style={[styles.subcategoryTitle, { color: colors.text }]}>
-                {item.title}
-              </Text>
-              {/* Add content specific to each sub-subcategory */}
-            </View>
-          </TouchableOpacity>
-        )}
-      />
-    </View>
-  );
-};
-
+    const { subcategory } = route.params;
+    const { colors } = useTheme();
+    const navigation = useNavigation();
+  
+    const handleSubSubcategoryPress = (subSubcategory) => {
+        if (subSubcategory.items && subSubcategory.items.length > 0) {
+          navigation.navigate('ItemPrice', { subcategory: subSubcategory });
+        } else {
+          // Handle the case when there are no items for sale
+          console.log('No items for sale in:', subSubcategory.title);
+        }
+      };
+      
+  
+    return (
+      <View>
+        <AddItemsSearch />
+        <Text style={[styles.title, { color: colors.text }]}>
+          {subcategory.title}
+        </Text>
+  
+        {/* Render subcategories */}
+        <FlatList
+          data={subcategory.subCategories}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              style={styles.options}
+              onPress={() => handleSubSubcategoryPress(item)}
+            >
+              <View style={styles.subcategoryItem}>
+                <Text style={[styles.subcategoryTitle, { color: colors.text }]}>
+                  {item.title}
+                </Text>
+                {/* Add chevron icon if there are items for sale */}
+                {item.hasItemsForSale && (
+                  <Icons.ChevronRightIcon style={{ color: colors.text }} size={25} />
+                )}
+              </View>
+            </TouchableOpacity>
+          )}
+        />
+      </View>
+    );
+  };
 const styles = StyleSheet.create({
   container: {},
   title: {
