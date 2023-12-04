@@ -11,8 +11,8 @@ export default [
         id: "201",
         title: "Planning",
         subCategories: [
-          { id: "2011", title: "Subcategory 1" },
-          { id: "2012", title: "Subcategory 2" },
+          { id: "2011", title: "Plans & Permits" },
+          { id: "2012", title: "Rentals" },
           // Add more subcategories as needed
         ],
       },

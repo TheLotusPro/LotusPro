@@ -9,6 +9,7 @@ import {
 import AddItemsSearch from "../../components/Projects/AddItemsSearch";
 import { Text } from "@gluestack-ui/themed";
 import { useNavigation, useTheme } from "@react-navigation/native";
+import * as Icons from "react-native-heroicons/solid";
 
 const Catalog = ({ route, navigation }) => {
   const [loading, setLoading] = useState(true);
@@ -45,8 +46,14 @@ const CatalogList = ({ route }) => {
   const navigation = useNavigation();
 
   const handleSubcategoryPress = (subcategory) => {
-    // Handle navigation to a specific subcategory or perform other actions
-    Example:  navigation.navigate('SubCatalog', { subcategory });
+    if (subcategory.subCategories && subcategory.subCategories.length > 0) {
+      // Navigate to the SubCatalog screen only if there are subcategories
+      navigation.navigate("SubCatalog", { subcategory });
+    } else {
+      // Perform other actions when there are no subcategories
+      console.log("No subcategories available for:", subcategory.title);
+      // You can show a message or perform other actions here
+    }
   };
 
   return (
@@ -69,6 +76,12 @@ const CatalogList = ({ route }) => {
               <Text style={[styles.title, { color: colors.text }]}>
                 {item.title}
               </Text>
+              {item.subCategories && item.subCategories.length > 0 && (
+                <Icons.ChevronRightIcon
+                  style={{ color: colors.text }}
+                  size={25}
+                />
+              )}
             </View>
           </TouchableOpacity>
         )}
