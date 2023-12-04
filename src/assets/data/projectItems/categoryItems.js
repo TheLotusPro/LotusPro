@@ -15,10 +15,10 @@ export default [
             id: "2011",
             title: "Permits & Planning",
             items: [
-              { id: "201101", title: "Item 1", price: "$10.00" },
-              { id: "201102", title: "Item 2", price: "$15.00" },
-              { id: "201103", title: "Item 3", price: "$20.00" },
-              { id: "201104", title: "Item 4", price: "$25.00" },
+              { id: "201101", title: "Building permit fees", price: "$517.63" },
+              { id: "201102", title: "Provide: plans, on side survey, approval by owner", price: "$1,560.10" },
+              // { id: "201103", title: "Item 3", price: "$20.00" },
+              // { id: "201104", title: "Item 4", price: "$25.00" },
             ],
             hasItemsForSale: true, // Add this property
           },

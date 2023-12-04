@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, TouchableOpacity } from "react-native";
 import { useNavigation, useTheme } from "@react-navigation/native";
+import {Text} from '@gluestack-ui/themed'
 
 const ItemPrice = ({ route }) => {
   const { subcategory } = route.params;
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   title: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 16,
   },
@@ -62,12 +63,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 8,
     borderWidth: 1,
-    borderColor: '#ccc',
+
     padding: 12,
     borderRadius: 8,
+    borderStyle: "dashed",
+    borderColor: "#33AB5F",
   },
   itemTitle: {
     fontSize: 16,
+    width: "60%"
   },
   itemPrice: {
     fontSize: 16,
