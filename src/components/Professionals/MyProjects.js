@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Pressable,
+} from "react-native";
 import React from "react";
 import { useNavigation, useTheme } from "@react-navigation/native";
 import PlaceHolder from "../../assets/images/HomeDesign&Remodel/DesignBuildFirm.jpeg";
@@ -9,19 +16,19 @@ const MyProjects = (props) => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity>
+    <Pressable onPress={() => navigation.navigate("MyProjects")}>
       <View
         style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          marginHorizontal: 5,
+         
           marginBottom: 5,
         }}
       >
         <View style={styles.container}>
           <Image style={styles.image} source={props?.myProjects?.image} />
           <View style={styles.textContainer}>
-            <Text style={[styles.title, {color: colors.text}]}>{props?.myProjects?.title}</Text>
+            <Text style={[styles.title, { color: colors.text }]}>
+              {props?.myProjects?.title}
+            </Text>
 
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Icons.MapPinIcon size={14} color={"dodgerblue"} />
@@ -30,7 +37,7 @@ const MyProjects = (props) => {
           </View>
         </View>
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 
@@ -39,9 +46,11 @@ export default MyProjects;
 const styles = StyleSheet.create({
   container: {
     marginTop: 10,
-    width: 200,
+    width: 220,
     backgroundColor: "#fa807210",
     borderRadius: 10,
+
+    marginHorizontal: 10,
 
     marginBottom: 20,
     shadowColor: "gray",
@@ -49,8 +58,8 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     shadowOffset: {
       height: 1,
-      width: 1
-    }
+      width: 1,
+    },
   },
   image: {
     width: "100%",

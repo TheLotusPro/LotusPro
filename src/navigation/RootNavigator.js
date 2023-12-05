@@ -64,6 +64,7 @@ import AddItems from "../screens/Projects/AddItems";
 import Catalog from "../screens/Projects/Catalog";
 import SubCatalog from "../screens/Projects/SubCatalog";
 import ItemPrice from "../screens/Projects/ItemPrice";
+import MyProjects from "../screens/Professionals/MyProjects";
 
 const Stack = createNativeStackNavigator();
 
@@ -89,7 +90,18 @@ const RootNavigator = () => {
           headerShadowVisible: false,
           headerTitle: "Details",
           headerLeft: () => <GoBackHeaderButton />,
-          headerRight: () => <ProductHeaderRight />,
+          headerRight: () => <ShopHeaderRight />,
+        }}
+      />
+      <Stack.Screen
+        name="MyProjects"
+        component={MyProjects}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Projects",
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ShopHeaderRight />,
         }}
       />
       <Stack.Screen
@@ -163,10 +175,10 @@ const RootNavigator = () => {
         component={ProfessionalDetails}
         options={{
           headerShown: true,
-          headerTransparent: true,
-
+          headerTransparent: false,
+          headerBlurEffect: "systemUltraThinMaterial",
           headerShadowVisible: false,
-          headerTitle: " ",
+          headerTitle: "Professional Details",
           headerLeft: () => <GoBackHeaderButton />,
           headerRight: () => <ShopHeaderRight />,
         }}
@@ -555,7 +567,7 @@ const RootNavigator = () => {
           options={{
             headerShown: true,
             headerShadowVisible: false,
-            headerTitle: "New Message",
+            headerTitle: "Contact Pro",
             headerLeft: () => (
               <Button title="Cancel" onPress={() => navigation.goBack()} />
             ),

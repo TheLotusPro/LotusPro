@@ -1,4 +1,10 @@
-import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Image,
+  TouchableOpacity,
+  Pressable,
+} from "react-native";
 import React from "react";
 import PlaceHolder from "../../assets/images/HomeImprovement/Cabinets.jpeg";
 import {
@@ -17,7 +23,7 @@ const ProfessionalListCard = () => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity
+    <Pressable
       onPress={() => navigation.navigate("ProfessionalDetails")}
       style={styles.container}
     >
@@ -39,13 +45,18 @@ const ProfessionalListCard = () => {
             <View
               style={{ flexDirection: "row", alignItems: "center", width: 230 }}
             >
-              <Text style={[styles.username, {color: colors.text}]}>James General Contractors </Text>
+              <Text style={[styles.username, { color: colors.text }]}>
+                James General Contractors{" "}
+              </Text>
               <Icons.CheckBadgeIcon size={14} color={"dodgerblue"} />
             </View>
 
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Icons.GlobeAmericasIcon size={14} color={"dodgerblue"} />
-              <Text style={[styles.location, {color: colors.text}]}> Park City, Utah</Text>
+              <Text style={[styles.location, { color: colors.text }]}>
+                {" "}
+                Park City, Utah
+              </Text>
             </View>
           </View>
 
@@ -58,13 +69,16 @@ const ProfessionalListCard = () => {
               <Icons.StarIcon size={14} color={"gold"} />
             </View>
 
-            <Text style={[styles.reviewText, {color: colors.text}]}>(20) Reviews</Text>
+            <Text style={[styles.reviewText, { color: colors.text }]}>
+              (20) Reviews
+            </Text>
           </View>
         </View>
-
-       <NewMessageButton />
+        <View style={{ marginBottom: -10 }}>
+          <NewMessageButton />
+        </View>
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 
@@ -80,18 +94,18 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     shadowOffset: {
       height: 1,
-      width: 1
-    }
+      width: 1,
+    },
   },
   image: {
     width: "100%",
-    height: 160,
+    height: 150,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
   },
   avatar: {
     // position: "absolute",
-    bottom: 30,
+    bottom: 20,
 
     marginHorizontal: 10,
   },
@@ -102,7 +116,7 @@ const styles = StyleSheet.create({
     borderColor: "white",
   },
   userContainer: {
-    marginTop: 1,
+    marginTop: 10,
     flexDirection: "row",
     justifyContent: "space-between",
   },
@@ -115,13 +129,5 @@ const styles = StyleSheet.create({
   },
   reviewText: {
     fontSize: 12,
-  },
-  messageButton: {
-    backgroundColor: "dodgerblue",
-    padding: 10,
-    alignItems: "center",
-    borderRadius: 10,
-    marginTop: 5,
-    marginBottom: -10,
   },
 });

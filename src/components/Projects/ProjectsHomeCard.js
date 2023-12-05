@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   projectContainer: {
-    backgroundColor: "rgba(52, 52, 52, 0.2)",
+    backgroundColor: "#fa807210",
     padding: 20,
     borderRadius: 10,
   },

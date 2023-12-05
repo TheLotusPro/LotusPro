@@ -47,8 +47,9 @@ export default Reviews;
 const styles = StyleSheet.create({
   container: {
     margin: 10,
+    padding: 15,
     borderRadius: 10,
-    padding: 10,
+ 
     backgroundColor: "#fa807210",
     alignSelf: "center",
 

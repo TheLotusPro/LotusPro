@@ -8,7 +8,7 @@ export default [
         image: house,
         name: 'Nicole G',
         date: '1/1/2023',
-        review: 'this is my review',
+        review: 'this is my review. this is my review. this is my review',
     },
     {
         id: '2',

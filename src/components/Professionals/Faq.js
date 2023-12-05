@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   header: {
-    marginHorizontal: 20,
+    marginHorizontal: 10,
     
 
   },

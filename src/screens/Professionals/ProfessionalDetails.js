@@ -6,6 +6,7 @@ import {
   ScrollView,
   FlatList,
   Image,
+  SafeAreaView,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import { useNavigation, useTheme } from "@react-navigation/native";
@@ -28,26 +29,18 @@ import Faq from "../../components/Professionals/Faq";
 
 const ProfessionalDetails = () => {
   return (
-    <View style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1 }}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Header />
         <AboutUs />
         <Projects />
         <BusinessDetails />
         <Review />
-        <Faq />
+        {/* <Faq /> */}
       </ScrollView>
-      <View
-        style={{
-          marginBottom: 40,
-          width: "90%",
-          justifyContent: "center",
-          alignSelf: "center",
-        }}
-      >
-        <NewMessageButton />
-      </View>
-    </View>
+
+      <NewMessageButton />
+    </SafeAreaView>
   );
 };
 
@@ -74,11 +67,11 @@ const Header = () => {
           </Avatar>
           <View>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Text style={[styles.username, { color: "black" }]}>
+              <Text style={[styles.username, { color: colors.text }]}>
                 {" "}
                 James General Contractors{" "}
               </Text>
-              <Icons.CheckBadgeIcon style={{ color: "dodgerblue" }} size={20} />
+              <Icons.CheckBadgeIcon style={{ color: "dodgerblue" }} size={18} />
             </View>
 
             <View style={styles.reviewContainer}>
@@ -90,7 +83,7 @@ const Header = () => {
                 <Icons.StarIcon size={14} color={"gold"} />
               </View>
 
-              <Text style={[styles.reviewText, { color: "black" }]}>
+              <Text style={[styles.reviewText, { color: colors.text }]}>
                 (20) Reviews
               </Text>
             </View>
@@ -99,7 +92,7 @@ const Header = () => {
 
         <View
           style={{
-            flexDirection: "row",
+         
             justifyContent: "space-between",
             marginHorizontal: 10,
           }}
@@ -113,7 +106,7 @@ const Header = () => {
               }}
             >
               <Icons.CheckBadgeIcon style={{ color: "dodgerblue" }} size={15} />
-              <Text style={[{ color: "black", fontSize: 13 }]}>
+              <Text style={[{ color: colors.text, fontSize: 13 }]}>
                 {" "}
                 Verified User
               </Text>
@@ -127,7 +120,7 @@ const Header = () => {
               }}
             >
               <Icons.FireIcon style={{ color: "red" }} size={15} />
-              <Text style={[{ color: "black", fontSize: 13 }]}>
+              <Text style={[{ color: colors.text, fontSize: 13 }]}>
                 {" "}
                 Responds Quickly
               </Text>
@@ -142,15 +135,13 @@ const Header = () => {
             }}
           >
             <Icons.ClockIcon style={{ color: "gold" }} size={15} />
-            <Text style={[{ color: "black", fontSize: 13 }]}>
+            <Text style={[{ color: colors.text, fontSize: 13 }]}>
               {" "}
               General Contractor
             </Text>
           </View>
         </View>
       </View>
-
-    
     </View>
   );
 };
@@ -178,7 +169,10 @@ const Projects = () => {
 
   return (
     <View style={styles.projectsContainer}>
-      <Text style={[styles.title, { color: colors.text }]}>Projects</Text>
+      <View style={{ marginHorizontal: 10 }}>
+        <Text style={[styles.title, { color: colors.text }]}>Projects</Text>
+      </View>
+
       <FlatList
         data={myProjects}
         horizontal={true}
@@ -194,7 +188,10 @@ const Review = () => {
 
   return (
     <View style={styles.projectsContainer}>
-      <Text style={[styles.title, { color: colors.text }]}>Reviews</Text>
+      <View style={{ marginHorizontal: 10 }}>
+        <Text style={[styles.title, { color: colors.text }]}>Reviews</Text>
+      </View>
+
       <FlatList
         data={reviews}
         horizontal={true}
@@ -210,9 +207,7 @@ export default ProfessionalDetails;
 const styles = StyleSheet.create({
   image: {
     width: "100%",
-    height: 250,
-    borderBottomLeftRadius: 50,
-    borderBottomRightRadius: 50,
+    height: 180,
   },
   backButton: {
     position: "absolute",
@@ -225,19 +220,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   userContainer: {
-    padding: 30,
-    backgroundColor: "#e0ffff",
-    bottom: 30,
-
-    alignSelf: "center",
-    borderRadius: 25,
-    shadowColor: "#2f4f4f",
-    shadowOpacity: 0.5,
-    shadowRadius: 2,
-    shadowOffset: {
-      height: 1,
-      width: 2,
-    },
+    padding: 10,
+    marginBottom: 10,
   },
   username: {
     fontWeight: "bold",
@@ -255,7 +239,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   aboutContainer: {
-    marginHorizontal: 20,
+    marginHorizontal: 10,
     marginBottom: 20,
   },
   title: {
@@ -265,7 +249,5 @@ const styles = StyleSheet.create({
   aboutUs: {
     fontSize: 14,
   },
-  projectsContainer: {
-    marginHorizontal: 20,
-  },
+  projectsContainer: {},
 });

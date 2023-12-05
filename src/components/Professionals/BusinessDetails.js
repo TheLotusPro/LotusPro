@@ -8,7 +8,7 @@ const BusinessDetails = () => {
 
   return (
     <View>
-      <View style={{ marginHorizontal: 20 }}>
+      <View style={{ marginHorizontal: 10 }}>
         <Text
           style={[{ color: colors.text, fontWeight: "bold", fontSize: 18 }]}
         >
@@ -20,8 +20,8 @@ const BusinessDetails = () => {
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <View>
             <View style={styles.row}>
-              <Icons.UserIcon style={{ color: "#33AB5F" }} size={18} />
-              <View style={{ marginLeft: 5 }}>
+              {/* <Icons.UserIcon style={{ color: "#33AB5F" }} size={18} /> */}
+              <View style={{ }}>
                 <Text style={[styles.business, { color: colors.text }]}>
                   Business Name
                 </Text>
@@ -32,9 +32,9 @@ const BusinessDetails = () => {
             </View>
 
             <View style={styles.row}>
-              <Icons.PhoneIcon style={{ color: "#33AB5F" }} size={18} />
-              <View style={{ marginLeft: 5 }}>
-                <Text style={[styles.business, {color: colors.text  }]}>
+              {/* <Icons.PhoneIcon style={{ color: "#33AB5F" }} size={18} /> */}
+              <View style={{  }}>
+                <Text style={[styles.business, { color: colors.text }]}>
                   Phone Number
                 </Text>
                 <View style={{ marginTop: 8 }}>
@@ -44,9 +44,9 @@ const BusinessDetails = () => {
             </View>
 
             <View style={styles.row}>
-              <Icons.GlobeAltIcon style={{ color: "#33AB5F" }} size={18} />
-              <View style={{ marginLeft: 5 }}>
-                <Text style={[styles.business, { color: colors.text  }]}>
+              {/* <Icons.GlobeAltIcon style={{ color: "#33AB5F" }} size={18} /> */}
+              <View style={{ }}>
+                <Text style={[styles.business, { color: colors.text }]}>
                   Website
                 </Text>
                 <View style={{ marginTop: 8 }}>
@@ -56,9 +56,12 @@ const BusinessDetails = () => {
             </View>
 
             <View style={styles.row}>
-              <Icons.BuildingStorefrontIcon style={{ color: "#33AB5F" }} size={18} />
-              <View style={{ marginLeft: 5 }}>
-                <Text style={[styles.business, { color: colors.text  }]}>
+              {/* <Icons.BuildingStorefrontIcon
+                style={{ color: "#33AB5F" }}
+                size={18}
+              /> */}
+              <View style={{  }}>
+                <Text style={[styles.business, { color: colors.text }]}>
                   Address
                 </Text>
                 <View style={{ marginTop: 8 }}>
@@ -73,9 +76,12 @@ const BusinessDetails = () => {
           {/* bottom */}
           <View>
             <View style={styles.row}>
-              <Icons.CurrencyDollarIcon style={{ color: "#33AB5F" }} size={18} />
-              <View style={{ marginLeft: 5 }}>
-                <Text style={[styles.business, { color: colors.text  }]}>
+              {/* <Icons.CurrencyDollarIcon
+                style={{ color: "#33AB5F" }}
+                size={18}
+              /> */}
+              <View style={{ }}>
+                <Text style={[styles.business, { color: colors.text }]}>
                   Typical Job Cost
                 </Text>
                 <View style={{ marginTop: 8 }}>
@@ -85,9 +91,9 @@ const BusinessDetails = () => {
             </View>
 
             <View style={styles.row}>
-              <Icons.DocumentCheckIcon style={{ color: "#33AB5F" }} size={18} />
-              <View style={{ marginLeft: 5 }}>
-                <Text style={[styles.business, { color: colors.text  }]}>
+              {/* <Icons.DocumentCheckIcon style={{ color: "#33AB5F" }} size={18} /> */}
+              <View style={{  }}>
+                <Text style={[styles.business, { color: colors.text }]}>
                   License Number
                 </Text>
                 <View style={{ marginTop: 8 }}>
@@ -97,9 +103,9 @@ const BusinessDetails = () => {
             </View>
 
             <View style={styles.row}>
-              <Icons.UserGroupIcon style={{ color: "#33AB5F" }} size={18} />
-              <View style={{ marginLeft: 5 }}>
-                <Text style={[styles.business, {color: colors.text }]}>
+              {/* <Icons.UserGroupIcon style={{ color: "#33AB5F" }} size={18} /> */}
+              <View style={{  }}>
+                <Text style={[styles.business, { color: colors.text }]}>
                   Followers
                 </Text>
                 <View style={{ marginTop: 8 }}>
@@ -118,7 +124,7 @@ export default BusinessDetails;
 
 const styles = StyleSheet.create({
   container: {
-    margin: 20,
+    margin: 10,
     padding: 20,
     borderRadius: 10,
     backgroundColor: "#fa807210",
@@ -127,13 +133,12 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     shadowOffset: {
       height: 1,
-      width: 1
-    }
-
+      width: 1,
+    },
   },
   mine: {
     color: "gray",
-    width: 130
+    width: 130,
   },
   row: {
     flexDirection: "row",
