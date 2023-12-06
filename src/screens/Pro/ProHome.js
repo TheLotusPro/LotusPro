@@ -6,20 +6,14 @@ import { ScrollView } from "react-native";
 
 const ProHome = () => {
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <ProHeaderButtons />
       <ScrollView>
-      <ProjectsFeedWidget />
+        <ProjectsFeedWidget />
       </ScrollView>
-     
-      
-     
     </View>
   );
 };
-
-
-
 
 export default ProHome;
 
