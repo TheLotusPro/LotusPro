@@ -66,6 +66,7 @@ import SubCatalog from "../screens/Projects/SubCatalog";
 import ItemPrice from "../screens/Projects/ItemPrice";
 import MyProjects from "../screens/Professionals/MyProjects";
 import Client from "../screens/Pro/Client";
+import CreateNewClient from "../screens/Pro/CreateNewClient";
 
 const Stack = createNativeStackNavigator();
 
@@ -411,6 +412,16 @@ const RootNavigator = () => {
           presentation: "modal",
         }}
       >
+       <Stack.Screen
+          name="CreateNewClient"
+          component={CreateNewClient}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Create New Client",
+            headerLeft: () => <GoBackHeaderButton />,
+          }}
+        />
         <Stack.Screen
           name="Client"
           component={Client}
