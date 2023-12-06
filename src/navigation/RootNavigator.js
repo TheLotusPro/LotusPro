@@ -65,6 +65,7 @@ import Catalog from "../screens/Projects/Catalog";
 import SubCatalog from "../screens/Projects/SubCatalog";
 import ItemPrice from "../screens/Projects/ItemPrice";
 import MyProjects from "../screens/Professionals/MyProjects";
+import Client from "../screens/Pro/Client";
 
 const Stack = createNativeStackNavigator();
 
@@ -368,11 +369,9 @@ const RootNavigator = () => {
         screenOptions={{
           presentation: "modal",
           animation: "none",
-         
-       
         }}
       >
-      <Stack.Screen
+        <Stack.Screen
           name="Catalog"
           component={Catalog}
           options={{
@@ -383,7 +382,7 @@ const RootNavigator = () => {
             headerLeft: () => <GoBackHeaderButton />,
           }}
         />
-          <Stack.Screen
+        <Stack.Screen
           name="SubCatalog"
           component={SubCatalog}
           options={{
@@ -394,7 +393,7 @@ const RootNavigator = () => {
             headerLeft: () => <GoBackHeaderButton />,
           }}
         />
-             <Stack.Screen
+        <Stack.Screen
           name="ItemPrice"
           component={ItemPrice}
           options={{
@@ -405,20 +404,25 @@ const RootNavigator = () => {
             headerLeft: () => <GoBackHeaderButton />,
           }}
         />
-
-
       </Stack.Group>
-
-
 
       <Stack.Group
         screenOptions={{
           presentation: "modal",
-       
         }}
       >
-          
-       <Stack.Screen
+        <Stack.Screen
+          name="Client"
+          component={Client}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Client",
+            headerLeft: () => <GoBackHeaderButton />,
+          }}
+        />
+
+        <Stack.Screen
           name="AddItems"
           component={AddItems}
           options={{
