@@ -12,6 +12,7 @@ import {
   import { Text } from "@gluestack-ui/themed";
 import ProfessionalListCard from "../../components/Professionals/ProfessionalListCard";
 import MatchHeaderButton from "../../components/Match/MatchHeaderButton";
+import ProfessionalListHeader from "../../components/Professionals/ProfessionalList/ProfessionalListHeader";
 
 const ProfessionalList = () => {
     const { colors } = useTheme();
@@ -20,22 +21,14 @@ const ProfessionalList = () => {
 
   return (
     <View>
-    <Header />
+  <ProfessionalListHeader />
   
       <ProfessionalListCard />
     </View>
   );
 };
 
-const Header = () => {
-  return (
-    <View>
-      <View>
-        <Text>Header</Text>
-      </View>
-    </View>
-  )
-}
+
 export default ProfessionalList;
 
 const styles = StyleSheet.create({});
