@@ -67,6 +67,7 @@ import ItemPrice from "../screens/Projects/ItemPrice";
 import MyProjects from "../screens/Professionals/MyProjects";
 import Client from "../screens/Pro/Client";
 import CreateNewClient from "../screens/Pro/CreateNewClient";
+import LeadSource from "../screens/Pro/LeadSource";
 
 const Stack = createNativeStackNavigator();
 
@@ -412,6 +413,16 @@ const RootNavigator = () => {
           presentation: "modal",
         }}
       >
+      <Stack.Screen
+          name="LeadSource"
+          component={LeadSource}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Lead Source",
+            headerLeft: () => <GoBackHeaderButton />,
+          }}
+        />
        <Stack.Screen
           name="CreateNewClient"
           component={CreateNewClient}

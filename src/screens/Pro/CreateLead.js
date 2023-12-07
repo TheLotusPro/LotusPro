@@ -59,13 +59,14 @@ const ContactDetails = ({ selectedClient }) => {
             borderBottomColor: "gray",
           }}
         >
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-        <Text style={[{ color: colors.text, marginBottom: 10 }]}>
-            {selectedClient}
-          </Text>
-          <Icons.ChevronDownIcon size={20} color={colors.text} />
-        </View>
-        
+          <View
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
+          >
+            <Text style={[{ color: colors.text, marginBottom: 10 }]}>
+              {selectedClient}
+            </Text>
+            <Icons.ChevronDownIcon size={20} color={colors.text} />
+          </View>
         </TouchableOpacity>
         {/* input */}
       </View>
@@ -86,6 +87,13 @@ const ContactDetails = ({ selectedClient }) => {
 const LeadDetails = () => {
   const { colors } = useTheme();
   const [name, setName] = useState("");
+  const navigation = useNavigation();
+
+  const handleLeadPress = () => {
+    navigation.navigate("LeadSource", {
+      // handleLeadSelection: selectedLead,
+    });
+  };
 
   return (
     <View>
@@ -109,6 +117,30 @@ const LeadDetails = () => {
               onChangeText={(text) => setName(text)}
             />
           </View>
+          {/* input */}
+          <TouchableOpacity
+            onPress={handleLeadPress}
+            style={{
+              marginTop: 10,
+              borderBottomWidth: 0.3,
+              borderBottomColor: "gray",
+            }}
+          >
+            <Text
+              style={[{ color: colors.text, marginBottom: 10, fontSize: 13 }]}
+            >
+              Lead Source *
+            </Text>
+            <View
+              style={{ flexDirection: "row", justifyContent: "space-between" }}
+            >
+              <Text style={[{ color: colors.text, marginBottom: 10 }]}>
+                Lead Source
+              </Text>
+              <Icons.ChevronDownIcon size={20} color={colors.text} />
+            </View>
+          </TouchableOpacity>
+          {/* input */}
         </KeyboardAvoidingView>
       </View>
     </View>
