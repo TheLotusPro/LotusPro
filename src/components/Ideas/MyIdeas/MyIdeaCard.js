@@ -1,14 +1,17 @@
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import Design from "../../../assets/images/HomeDesign&Remodel/InteriorDesign.png";
 import { Text } from "@gluestack-ui/themed";
-import { useTheme } from "@react-navigation/native";
+import { useNavigation, useTheme } from "@react-navigation/native";
 
 const MyIdeaCard = () => {
     const { colors } = useTheme();
+    const navigation = useNavigation()
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+     onPress={() => navigation.navigate('IdeaDetails')}
+     style={styles.container}>
       <View style={{ margin: 10 }}>
         <Image source={Design} style={styles.image} />
 
@@ -17,7 +20,7 @@ const MyIdeaCard = () => {
           <Text style={[styles.ideas, {color: colors.text}]}>2 Ideas</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

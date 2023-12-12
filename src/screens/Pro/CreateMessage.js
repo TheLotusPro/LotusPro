@@ -1,14 +1,47 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import React from "react";
+import InboxInput from "../../components/Pro/InboxInput";
 
 const CreateMessage = () => {
   return (
-    <View>
-      <Text>CreateMessage</Text>
+    <View style={{ flex: 1 }}>
+ <ScrollView>
+ <Option />
+ </ScrollView>
+
+   
+      
+        <InboxInput />
+
     </View>
-  )
-}
+  );
+};
 
-export default CreateMessage
+const Option = () => {
+  return (
+    <View style={styles.container}>
+      <Text>Choose a </Text>
+    </View>
+  );
+};
 
-const styles = StyleSheet.create({})
+export default CreateMessage;
+
+const styles = StyleSheet.create({
+  container: {
+    
+    alignItems: 'center',
+    justifyContent: 'center', 
+    flex: 1
+  },
+  scroll: {
+  
+   
+  }
+});

@@ -4,7 +4,7 @@ import { Text, Avatar, AvatarFallbackText } from "@gluestack-ui/themed";
 import * as Icons from "react-native-heroicons/solid";
 import { useNavigation, useTheme } from "@react-navigation/native";
 
-const ProjectsFeedWidget = () => {
+const LeadsWidget = () => {
   const { colors } = useTheme();
   const navigation = useNavigation();
 
@@ -18,15 +18,15 @@ const ProjectsFeedWidget = () => {
             <Icons.CircleStackIcon size={14} color={colors.text} />
             <Text style={[styles.text, { color: colors.text }]}>
               {" "}
-              Projects (10)
+              Leads (18)
             </Text>
           </View>
 
           <TouchableOpacity
-            onPress={() => navigation.navigate("Projects")}
+            onPress={() => navigation.navigate("Leads")}
             style={{ flexDirection: "row", alignItems: "center" }}
           >
-            <Text style={[styles.seeAll, {color: colors.text}]}>See All</Text>
+            <Text style={[styles.seeAll, { color: colors.text }]}>See All</Text>
             <Icons.ChevronRightIcon size={20} color={colors.text} />
           </TouchableOpacity>
         </View>
@@ -35,29 +35,24 @@ const ProjectsFeedWidget = () => {
 
         {/* project */}
         <TouchableOpacity
-        onPress={() => navigation.navigate("ProjectDetails")}
+          onPress={() => navigation.navigate("ProjectDetails")}
           style={{ borderBottomWidth: 0.2, borderBottomColor: "gray" }}
         >
           <View style={styles.projectContainer}>
-            <View style={styles.iconContainer}>
-              <Icons.WrenchScrewdriverIcon size={25} color={colors.text} />
-            </View>
+            <Avatar bgColor="$amber600" size="md" borderRadius="$full">
+              <AvatarFallbackText>Sam Jon</AvatarFallbackText>
+            </Avatar>
 
             <View style={{ marginLeft: 10 }}>
               <View>
                 <Text style={[styles.projectName, { color: colors.text }]}>
-                  Kitchen and Bath Remodel
+                  Landscape Job for Sam
                 </Text>
               </View>
 
               <View style={styles.userContainer}>
-                <View>
-                  <Avatar bgColor="$amber600" size="xs" borderRadius="$full">
-                    <AvatarFallbackText>Sam Jon</AvatarFallbackText>
-                  </Avatar>
-                </View>
+                <View></View>
                 <Text style={[styles.username, { color: colors.text }]}>
-                  {" "}
                   Sam John
                 </Text>
               </View>
@@ -68,30 +63,53 @@ const ProjectsFeedWidget = () => {
 
         {/* project */}
         <TouchableOpacity
-         onPress={() => navigation.navigate("ProjectDetails")}
+          onPress={() => navigation.navigate("ProjectDetails")}
           style={{ borderBottomWidth: 0.2, borderBottomColor: "gray" }}
         >
           <View style={styles.projectContainer}>
-            <View style={styles.iconContainer}>
-              <Icons.WrenchScrewdriverIcon size={25} color={colors.text} />
-            </View>
+            <Avatar bgColor="$amber600" size="md" borderRadius="$full">
+              <AvatarFallbackText>Mark Robert</AvatarFallbackText>
+            </Avatar>
 
             <View style={{ marginLeft: 10 }}>
               <View>
                 <Text style={[styles.projectName, { color: colors.text }]}>
-                  Rebuilding Deck
+                  Landscape Job for Mark
                 </Text>
               </View>
 
               <View style={styles.userContainer}>
-                <View>
-                  <Avatar bgColor="$amber600" size="xs" borderRadius="$full">
-                    <AvatarFallbackText>Matt Foster</AvatarFallbackText>
-                  </Avatar>
-                </View>
+                <View></View>
                 <Text style={[styles.username, { color: colors.text }]}>
-                  {" "}
-                  Matt Foster
+                  Mark Robert
+                </Text>
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
+        {/* project */}
+
+          {/* project */}
+          <TouchableOpacity
+          onPress={() => navigation.navigate("ProjectDetails")}
+          style={{ borderBottomWidth: 0.2, borderBottomColor: "gray" }}
+        >
+          <View style={styles.projectContainer}>
+            <Avatar bgColor="$amber600" size="md" borderRadius="$full">
+              <AvatarFallbackText>Xavier James</AvatarFallbackText>
+            </Avatar>
+
+            <View style={{ marginLeft: 10 }}>
+              <View>
+                <Text style={[styles.projectName, { color: colors.text }]}>
+                  Landscape Job for Xavier James
+                </Text>
+              </View>
+
+              <View style={styles.userContainer}>
+                <View></View>
+                <Text style={[styles.username, { color: colors.text }]}>
+                  Xavier James
                 </Text>
               </View>
             </View>
@@ -103,12 +121,11 @@ const ProjectsFeedWidget = () => {
   );
 };
 
-export default ProjectsFeedWidget;
+export default LeadsWidget;
 
 const styles = StyleSheet.create({
   container: {
     margin: 20,
-    marginBottom: 1
   },
   project: {
     backgroundColor: "#fa807210",

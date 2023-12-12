@@ -3,6 +3,8 @@ import React from "react";
 import ProHeaderButtons from "../../components/Pro/ProHeaderButtons";
 import ProjectsFeedWidget from "../../components/Pro/ProjectsFeedWidget";
 import { ScrollView } from "react-native";
+import HeaderOptions from "../../components/Pro/HeaderOptions";
+import LeadsWidget from "../../components/Pro/LeadsWidget";
 
 const ProHome = () => {
   return (
@@ -10,6 +12,7 @@ const ProHome = () => {
       <ProHeaderButtons />
       <ScrollView>
         <ProjectsFeedWidget />
+        <LeadsWidget />
       </ScrollView>
     </View>
   );

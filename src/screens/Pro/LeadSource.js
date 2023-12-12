@@ -1,15 +1,24 @@
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { StyleSheet, Text, View, ScrollView, TouchableWithoutFeedback } from "react-native";
 import React from "react";
 import leadSource from "../../assets/data/leadSource";
 import LeadSourceCard from "../../components/Pro/LeadSourceCard";
 
-const LeadSource = () => {
+const LeadSource = ({ navigation }) => {
+  const handleLeadSourcePress = (selectedLeadSource) => {
+    navigation.navigate("CreateLead", { selectedLeadSource });
+  };
+
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       {leadSource.map((item, index) => (
-        <View key={index} style={{}}>
-          <LeadSourceCard leadSource={item} />
-        </View>
+        <TouchableWithoutFeedback
+          key={index}
+          onPress={() => handleLeadSourcePress(item)}
+        >
+          <View style={{flex: 1,}}>
+            <LeadSourceCard leadSource={item} />
+          </View>
+        </TouchableWithoutFeedback>
       ))}
     </ScrollView>
   );

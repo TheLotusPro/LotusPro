@@ -18,9 +18,10 @@ const ChatRoomItem = () => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity 
-     onPress={() => navigation.navigate('ChatScreen')}
-    style={styles.container}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("ChatScreen")}
+      style={styles.container}
+    >
       <View>
         <Avatar style={styles.userImage}>
           <AvatarFallbackText>SS</AvatarFallbackText>
@@ -41,14 +42,14 @@ const ChatRoomItem = () => {
             alignItems: "center",
           }}
         >
-          <Text style={[styles.username, { color: '#33AB5F' }]}>
-          Black Diamond
+          <Text style={[styles.username, { color: "#33AB5F" }]}>
+            Black Diamond
           </Text>
           <Text style={[styles.time]}>1 min</Text>
         </View>
 
-        <Text style={[styles.message, { color: colors.text}]}>
-         Yes we will be able to fulfill your request by....
+        <Text style={[styles.message, { color: colors.text }]}>
+          Yes we will be able to fulfill your request by....
         </Text>
       </View>
     </TouchableOpacity>
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     margin: 10,
-    backgroundColor: "rgba(42, 42, 42, 0.1)",
+    backgroundColor: "#fa807210",
     padding: 10,
     borderRadius: 10,
   },
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
   },
   message: {
     width: width - 90,
-    fontWeight: '500',
+    fontWeight: "400",
     fontSize: 14,
   },
   time: {

@@ -275,14 +275,7 @@ const styles = StyleSheet.create({
     margin: 20,
     flexDirection: "row",
   },
-  button: {
-    borderColor: "green",
-    borderWidth: 1,
-    maxWidth: 290,
-    alignItems: "center",
-    padding: 5,
-    borderRadius: 5
-  },
+  
   filterText: {
     fontWeight: "500",
   },

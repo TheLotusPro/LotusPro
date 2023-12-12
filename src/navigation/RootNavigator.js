@@ -68,6 +68,15 @@ import MyProjects from "../screens/Professionals/MyProjects";
 import Client from "../screens/Pro/Client";
 import CreateNewClient from "../screens/Pro/CreateNewClient";
 import LeadSource from "../screens/Pro/LeadSource";
+import IdeaDetails from "../screens/Ideas/IdeaDetails";
+import IdeaDetailsHeaderRight from "../components/Ideas/IdeaDetailsHeaderRight";
+import InviteCollaborator from "../screens/Ideas/InviteCollaborator";
+import Inbox from "../screens/Pro/Inbox";
+import InboxDetails from "../screens/Pro/InboxDetails";
+import CreateMessage from "../screens/Pro/CreateMessage";
+import Leads from "../screens/Leads/Leads";
+import ProHeaderRight from "../components/Pro/ProHeaderRight";
+import LeadDetails from "../screens/Leads/LeadDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -119,6 +128,17 @@ const RootNavigator = () => {
         }}
       />
       <Stack.Screen
+        name="IdeaDetails"
+        component={IdeaDetails}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: " ",
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <IdeaDetailsHeaderRight />,
+        }}
+      />
+      <Stack.Screen
         name="EstimatesDetails"
         component={EstimatesDetails}
         options={{
@@ -162,6 +182,27 @@ const RootNavigator = () => {
           headerRight: () => <DoneGoBackButton />,
         }}
       />
+        <Stack.Screen
+        name="InboxDetails"
+        component={InboxDetails}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Message",
+          headerLeft: () => <GoBackHeaderButton />,
+          // headerRight: () => <DoneGoBackButton />,
+        }}
+      />
+        <Stack.Screen
+          name="Inbox"
+          component={Inbox}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Inbox",
+            headerLeft: () => <GoBackHeaderButton />,
+          }}
+        />
       <Stack.Screen
         name="AddFiles"
         component={AddFiles}
@@ -171,6 +212,28 @@ const RootNavigator = () => {
           headerTitle: "Files",
           headerLeft: () => <GoBackHeaderButton />,
           headerRight: () => <DoneGoBackButton />,
+        }}
+      />
+        <Stack.Screen
+        name="LeadDetails"
+        component={LeadDetails}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Lead",
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <DoneGoBackButton />,
+        }}
+      />
+         <Stack.Screen
+        name="Leads"
+        component={Leads}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: "Leads",
+          headerLeft: () => <GoBackHeaderButton />,
+          headerRight: () => <ProHeaderRight />,
         }}
       />
       <Stack.Screen
@@ -413,7 +476,17 @@ const RootNavigator = () => {
           presentation: "modal",
         }}
       >
-      <Stack.Screen
+        <Stack.Screen
+          name="InviteCollaborator"
+          component={InviteCollaborator}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Invite Collaborator",
+            headerLeft: () => <GoBackHeaderButton />,
+          }}
+        />
+        <Stack.Screen
           name="LeadSource"
           component={LeadSource}
           options={{
@@ -423,7 +496,7 @@ const RootNavigator = () => {
             headerLeft: () => <GoBackHeaderButton />,
           }}
         />
-       <Stack.Screen
+        <Stack.Screen
           name="CreateNewClient"
           component={CreateNewClient}
           options={{
@@ -654,6 +727,7 @@ const RootNavigator = () => {
           presentation: "fullScreenModal",
         }}
       >
+
         <Stack.Screen
           name="EditClientProfile"
           component={EditClientProfile}
@@ -661,9 +735,7 @@ const RootNavigator = () => {
             headerShown: true,
             headerShadowVisible: false,
             headerTitle: "Edit Profile",
-            headerLeft: () => (
-              <Button title="Cancel" onPress={() => navigation.goBack()} />
-            ),
+            headerLeft: () => <GoBackHeaderButton />,
           }}
         />
         <Stack.Screen
@@ -733,6 +805,18 @@ const RootNavigator = () => {
             headerShown: true,
             headerShadowVisible: false,
             headerTitle: "New Task",
+            headerLeft: () => (
+              <Button title="Cancel" onPress={() => navigation.goBack()} />
+            ),
+          }}
+        />
+          <Stack.Screen
+          name="CreateMessage"
+          component={CreateMessage}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "New Message",
             headerLeft: () => (
               <Button title="Cancel" onPress={() => navigation.goBack()} />
             ),

@@ -123,6 +123,12 @@ const ProHeaderButtons = () => {
             <ActionsheetDragIndicator />
           </ActionsheetDragIndicatorWrapper>
 
+          {/* <View style={{ alignSelf: "flex-start", padding: 10 }}>
+            <Text style={[styles.titleMenu, { color: colors.text }]}>
+              Project Planning
+            </Text>
+          </View> */}
+
           <ActionsheetItem
             style={{ backgroundColor: colors.background }}
             onPress={() => navigation.navigate("NewTask") || handleClose()}
@@ -179,10 +185,19 @@ const ProHeaderButtons = () => {
               </Text>
             </View>
           </ActionsheetItem>
+
+          {/* <View
+            style={{
+              width: "100%",
+              borderBottomColor: "rgba(52, 52, 52, 0.2)",
+              borderBottomWidth: 5,
+            }}
+          /> */}
           <ActionsheetItem
             style={{ backgroundColor: colors.background }}
+     
             onPress={() =>
-              navigation.navigate("CreateInvoice") || handleClose()
+              navigation.navigate("Projects") || handleClose()
             }
           >
             <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -202,7 +217,7 @@ const ProHeaderButtons = () => {
           <ActionsheetItem
             style={{ backgroundColor: colors.background }}
             onPress={() =>
-              navigation.navigate("CreateEstimate") || handleClose()
+              navigation.navigate("Projects") || handleClose()
             }
           >
             <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -221,7 +236,7 @@ const ProHeaderButtons = () => {
           </ActionsheetItem>
           <ActionsheetItem
             style={{ backgroundColor: colors.background }}
-            onPress={() => navigation.navigate("CreateNote") || handleClose()}
+            onPress={() => navigation.navigate("Projects") || handleClose()}
           >
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Icons.ClipboardDocumentCheckIcon size={28} color={"#33AB5F"} />
@@ -255,7 +270,7 @@ const ProHeaderButtons = () => {
               </Text>
             </View>
           </ActionsheetItem>
-          <ActionsheetItem
+          {/* <ActionsheetItem
             style={{ backgroundColor: colors.background }}
             onPress={() =>
               navigation.navigate("CreateMessage") || handleClose()
@@ -274,7 +289,7 @@ const ProHeaderButtons = () => {
                 Message
               </Text>
             </View>
-          </ActionsheetItem>
+          </ActionsheetItem> */}
         </ActionsheetContent>
       </Actionsheet>
     </View>
@@ -329,6 +344,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 15,
     fontSize: 20,
+    fontWeight: "bold",
+  },
+  titleMenu: {
     fontWeight: "bold",
   },
 });

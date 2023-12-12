@@ -5,11 +5,11 @@ import { useTheme } from "@react-navigation/native";
 const LeadSourceCard = (props) => {
   const { colors } = useTheme();
   return (
-    <TouchableOpacity style={styles.container}>
+    <View style={styles.container}>
       <View style={{ marginBottom: 20 }}>
         <Text style={[{ color: colors.text }]}>{props?.leadSource?.title}</Text>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 };
 
