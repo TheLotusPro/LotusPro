@@ -35,7 +35,7 @@ const LeadsWidget = () => {
 
         {/* project */}
         <TouchableOpacity
-          onPress={() => navigation.navigate("ProjectDetails")}
+          onPress={() => navigation.navigate("LeadDetails")}
           style={{ borderBottomWidth: 0.2, borderBottomColor: "gray" }}
         >
           <View style={styles.projectContainer}>
@@ -63,7 +63,7 @@ const LeadsWidget = () => {
 
         {/* project */}
         <TouchableOpacity
-          onPress={() => navigation.navigate("ProjectDetails")}
+          onPress={() => navigation.navigate("LeadDetails")}
           style={{ borderBottomWidth: 0.2, borderBottomColor: "gray" }}
         >
           <View style={styles.projectContainer}>
@@ -91,7 +91,7 @@ const LeadsWidget = () => {
 
           {/* project */}
           <TouchableOpacity
-          onPress={() => navigation.navigate("ProjectDetails")}
+          onPress={() => navigation.navigate("LeadDetails")}
           style={{ borderBottomWidth: 0.2, borderBottomColor: "gray" }}
         >
           <View style={styles.projectContainer}>

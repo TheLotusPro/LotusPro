@@ -22,13 +22,15 @@ import {
   ActionsheetItem,
   ActionsheetItemText,
 } from "@gluestack-ui/themed";
+import LeadsOptions from "./LeadsOptions";
 
 const LeadsHeader = () => {
   const { colors } = useTheme();
   return (
     <View>
       <Filter />
-      {/* <Options /> */}
+      <LeadsOptions />
+ 
     </View>
   );
 };
@@ -143,14 +145,6 @@ const Filter = () => {
   );
 };
 
-const Options = () => {
-    return (
-        <View>
-            <Text>hi</Text>
-        </View>
-    )
-}
-
 export default LeadsHeader;
 
 const styles = StyleSheet.create({
@@ -161,6 +155,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fa807210",
     padding: 8,
     margin: 10,
+
     borderRadius: 10,
     borderWidth: 0.5,
     borderColor: "gray",

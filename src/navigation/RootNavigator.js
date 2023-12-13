@@ -77,6 +77,7 @@ import CreateMessage from "../screens/Pro/CreateMessage";
 import Leads from "../screens/Leads/Leads";
 import ProHeaderRight from "../components/Pro/ProHeaderRight";
 import LeadDetails from "../screens/Leads/LeadDetails";
+import EditClient from "../screens/Leads/EditClient";
 
 const Stack = createNativeStackNavigator();
 
@@ -476,6 +477,17 @@ const RootNavigator = () => {
           presentation: "modal",
         }}
       >
+
+<Stack.Screen
+          name="EditClient"
+          component={EditClient}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: "Edit Client",
+            headerLeft: () => <GoBackHeaderButton />,
+          }}
+        />
         <Stack.Screen
           name="InviteCollaborator"
           component={InviteCollaborator}
