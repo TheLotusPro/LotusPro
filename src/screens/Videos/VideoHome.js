@@ -1,23 +1,22 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import VideoCard from '../../components/Videos/VideoCard'
-import videos from '../../assets/videos'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import VideoCard from "../../components/Videos/VideoCard";
+import videos from "../../assets/videos";
 
 const VideoHome = () => {
   return (
     <View>
-    <VideoThumbnail />
-     
+      <VideoThumbnail />
     </View>
-  )
-}
+  );
+};
 
 const VideoThumbnail = () => {
   return (
     <View>
-    <VideoCard />
+      <VideoCard />
 
-{/* 
+      {/* 
      {videos.map((item, index) => (
         <View
           key={index}
@@ -32,11 +31,10 @@ const VideoThumbnail = () => {
           <VideoCard videos={item} />
         </View>
       ))} */}
-
     </View>
-  )
-}
+  );
+};
 
-export default VideoHome
+export default VideoHome;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

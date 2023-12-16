@@ -25,13 +25,6 @@ const Client = () => {
     });
   }, [navigation]);
 
-  // const handleClientSelection = (selectedClient) => {
-  //   if (route.params && route.params.handleClientSelection) {
-  //     route.params.handleClientSelection(selectedClient);
-  //   }
-  //   navigation.goBack();
-  // };
-
   const handleClientSelection = (selectedClient) => {
     navigation.navigate("CreateLead" ,  {
       selectedClient,

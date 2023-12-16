@@ -23,18 +23,16 @@ import TalkCommentInput from "../../components/Stories/TalkCommentInput";
 import TalkComments from "../../components/Stories/TalkComments";
 
 const TalksPostScreen = ({ navigation }) => {
-
   return (
-    <View style={{flex: 1}}>
-    <ScrollView showsVerticalScrollIndicator={false}>
-    <Header />
-      <PostHeader />
-      <Attachments />
-      <Footer />
-      <TalkComments />
-    </ScrollView>
-    <TalkCommentInput />
-    
+    <View style={{ flex: 1 }}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Header />
+        <PostHeader />
+        <Attachments />
+        <Footer />
+        <TalkComments />
+      </ScrollView>
+      <TalkCommentInput />
     </View>
   );
 };
@@ -259,6 +257,5 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     borderBottomWidth: 0.5,
     borderBottomColor: "#33AB5F30",
-
   },
 });

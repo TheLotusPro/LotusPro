@@ -6,30 +6,28 @@ import HistoryCard from "../../components/History/HistoryCard";
 import { useTheme } from "@react-navigation/native";
 
 const History = ({ navigation }) => {
- 
-  
   return (
-    <View style={{margin: 15}}>
-    <Date />
+    <View style={{ margin: 15 }}>
+      <Date />
       <HistoryCard />
     </View>
-  )
-}
+  );
+};
 
 const Date = () => {
   const { colors } = useTheme();
 
   return (
-    <View style={{margin: 10}}>
-      <Text style={[styles.date, {color: colors.text}]}>Today</Text>
+    <View style={{ margin: 10 }}>
+      <Text style={[styles.date, { color: colors.text }]}>Today</Text>
     </View>
-  )
-}
+  );
+};
 
-export default History
+export default History;
 
 const styles = StyleSheet.create({
   date: {
-    fontWeight: 'bold'
-  }
-})
+    fontWeight: "bold",
+  },
+});
